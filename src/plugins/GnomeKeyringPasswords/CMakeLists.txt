@@ -1,0 +1,18 @@
+add_definitions(${GNOME_KEYRING_CFLAGS} ${GNOME_KEYRING_CFLAGS_OTHER})
+
+set( GnomeKeyringPasswords_SRCS
+	gnomekeyringplugin.cpp
+	gnomekeyringpasswordbackend.cpp
+	)
+
+ecm_create_qm_loader( GnomeKeyringPasswords_SRCS kclient_gnomekeyringpasswords_qt )
+
+set( GnomeKeyringPasswords_RSCS
+	gnomekeyringpasswords.qrc
+	)
+qt5_add_resources(RSCS ${GnomeKeyringPasswords_RSCS})
+
+add_library(GnomeKeyringPasswords MODULE ${GnomeKeyringPasswords_SRCS} ${RSCS})
+install(TARGETS GnomeKeyringPasswords DESTINATION ${KCLIENT_INSTALL_PLUGINDIR})
+target_link_libraries(GnomeKeyringPasswords PkgConfig::GNOME_KEYRING KClientPrivate)
+

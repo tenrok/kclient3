@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>org.kde.kclient.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>KClient</name>
+  <name xml:lang="ast">KClient</name>
+  <name xml:lang="ca">KClient</name>
+  <name xml:lang="ca-valencia">KClient</name>
+  <name xml:lang="cs">KClient</name>
+  <name xml:lang="da">KClient</name>
+  <name xml:lang="de">KClient</name>
+  <name xml:lang="en-GB">KClient</name>
+  <name xml:lang="es">KClient</name>
+  <name xml:lang="fi">KClient</name>
+  <name xml:lang="fr">KClient</name>
+  <name xml:lang="gl">KClient</name>
+  <name xml:lang="id">KClient</name>
+  <name xml:lang="it">KClient</name>
+  <name xml:lang="nl">KClient</name>
+  <name xml:lang="nn">KClient</name>
+  <name xml:lang="pl">KClient</name>
+  <name xml:lang="pt">KClient</name>
+  <name xml:lang="pt-BR">KClient</name>
+  <name xml:lang="ru">KClient</name>
+  <name xml:lang="sk">KClient</name>
+  <name xml:lang="sv">KClient</name>
+  <name xml:lang="uk">KClient</name>
+  <name xml:lang="x-test">xxKClientxx</name>
+  <name xml:lang="zh-CN">KClient</name>
+  <name xml:lang="zh-TW">KClient</name>
+  <summary>Web Browser</summary>
+  <summary xml:lang="ast">Restolador web</summary>
+  <summary xml:lang="ca">Navegador web</summary>
+  <summary xml:lang="ca-valencia">Navegador web</summary>
+  <summary xml:lang="cs">Webový prohlížeč</summary>
+  <summary xml:lang="da">Webbrowser</summary>
+  <summary xml:lang="de">Webbrowser</summary>
+  <summary xml:lang="en-GB">Web Browser</summary>
+  <summary xml:lang="es">Navegador web</summary>
+  <summary xml:lang="fi">Verkkoselain</summary>
+  <summary xml:lang="fr">Navigateur Web</summary>
+  <summary xml:lang="gl">Navegador web</summary>
+  <summary xml:lang="id">Penelusur Web</summary>
+  <summary xml:lang="it">Browser web</summary>
+  <summary xml:lang="nl">Webbrowser</summary>
+  <summary xml:lang="nn">Nettlesar</summary>
+  <summary xml:lang="pl">Przeglądarka sieciowa</summary>
+  <summary xml:lang="pt">Navegador Web</summary>
+  <summary xml:lang="pt-BR">Navegador Web</summary>
+  <summary xml:lang="ru">Веб-браузер</summary>
+  <summary xml:lang="sk">Webový prehliadač</summary>
+  <summary xml:lang="sv">Webbläsare</summary>
+  <summary xml:lang="uk">Переглядач інтернету</summary>
+  <summary xml:lang="x-test">xxWeb Browserxx</summary>
+  <summary xml:lang="zh-CN">网页浏览器</summary>
+  <summary xml:lang="zh-TW">網路瀏覽器</summary>
+  <description>
+    <p>
+    KClient is a new and very fast Qt web browser. It aims to be a lightweight web browser available through all major platforms. This project has been originally started only for educational purposes. But from its start, KClient has grown into a feature-rich browser.
+  </p>
+    <p xml:lang="ca">El KClient és un navegador Qt nou i molt ràpid. Pretén ser un navegador web lleuger, disponible a través de totes les principals plataformes. Aquest projecte només es va iniciar originalment amb finalitats educatives. Però des del seu inici, el KClient s'ha convertit en un navegador ric en característiques.</p>
+    <p xml:lang="ca-valencia">El KClient és un navegador Qt nou i molt ràpid. Pretén ser un navegador web lleuger, disponible a través de totes les principals plataformes. Aquest projecte només es va iniciar originalment amb finalitats educatives. Però des del seu inici, el KClient s'ha convertit en un navegador ric en característiques.</p>
+    <p xml:lang="cs">KClient je nový a velmi rychlý webový prohlížeč ve Qt. Cílem je poskytnout lehký prohlížeč dostupný na všech hlavních platformách. Tento projekt původně začal pouze pro vzdělávací účely, ale stal se z něj prohlížeč plný různých užitečných vlastností.</p>
+    <p xml:lang="da">KClient er en ny og meget hurtig Qt-webbrowser. Den går efter at være en letvægts-webbrowser tilgængelig på alle større platforme. Projektet blev oprindeligt kun startet til uddannelsesformål, men KClient har siden sin begyndelse vokset sig til en funktionsrig browser.</p>
+    <p xml:lang="en-GB">KClient is a new and very fast Qt web browser. It aims to be a lightweight web browser available through all major platforms. This project has been originally started only for educational purposes. But from its start, KClient has grown into a feature-rich browser.</p>
+    <p xml:lang="es">KClient es un nuevo y muy rápido navegador web. Pretende ser un navegador web ligero disponible para todas las plataformas más populares. Este proyecto se inició originalmente con fines educativos. Aunque, desde el principio, KClient se ha ido convirtiendo en un navegador rico en funcionalidades.</p>
+    <p xml:lang="fi">KClient on uusi ja hyvin nopea Qt-verkkoselain. Se pyrkii olemaan kaikilla merkittävillä alustoilla käytettävissä oleva kevyt selain. Hanke käynnistettiin alkuaan opetustarkoituksin, mutta alusta saakka KClientista on kasvanut monitoimintainen selain.</p>
+    <p xml:lang="fr">KClient est un nouveau navigateur web Qt ultra-rapide. Il a pour objectif de devenir un navigateur web léger disponible sur toutes les plate-formes majeures. Ce projet avait à l'origine des fins purement éducatives. Mais après ces débuts, KClient est devenu un navigateur riche en fonctionnalités.</p>
+    <p xml:lang="gl">KClient é un navegador web novo e moi rápido feito con Qt. Pretende ser un navegador web lixeiro dispoñíbel nas plataformas maioritarias. O proxecto comezou por curiosidade. Pero desde entón, KClient converteuse nun navegador moi completo.</p>
+    <p xml:lang="id">KClient adalah penelusur web Qt yang baru dan sangat cepat. Ini bertujuan untuk menjadi penelusur web ringan yang tersedia melalui semua platform utama. Proyek ini awalnya hanya dimulai untuk tujuan pendidikan. Tapi sejak awal, KClient telah tumbuh menjadi penelusur kaya fitur.</p>
+    <p xml:lang="it">KClient è un nuovo e velocissimo browser web Qt. Mira ad essere un browser web leggero e disponibile per tutte le maggiori piattaforme. Il progetto è iniziato inizialmente a scopo educativo, ma da allora KClient è diventato un browser ricco di funzionalità.</p>
+    <p xml:lang="nl">Flacon is een nieuwe en zeer snelle Qt-webbrowser. Zijn doel is om een lichtgewicht webbrowser te zijn beschikbaar via alle belangrijke platformen. Dit project is oorspronkelijk gestart alleen gestart voor onderwijsdoeleinden. Maar vanaf zijn start is Falcon gegroeid in een functierijke browser.</p>
+    <p xml:lang="nn">KClient er ein ny og svært kjapp Qt-nettlesar. Målet er ein nettlesar som ikkje krev mykje systemressursar og som er tilgjengeleg på dei mest brukte plattformene. Programmet vart opphavleg utvikla berre som eit læreprosjekt, men har over tid blitt til ein funksjonsrik nettlesar.</p>
+    <p xml:lang="pl">KClient jest nową i bardzo szybką przeglądarką sieciową Qt. Jej celem jest być dostępną na wszystkich głównych platformach. Projekt zaczął się ze względów edukacyjnych, lecz od jego początków KClient stał się bogatą w możliwości przeglądarką.</p>
+    <p xml:lang="pt">O KClient é um navegador novo e muito rápido em QtWebKit. Pretende ser um navegador Web leve e disponível em todas as plataformas importantes. Este projecto foi iniciado originalmente para fins educativos. Porém, desde o início, o KClient cresceu para um navegador rico em funcionalidades.</p>
+    <p xml:lang="pt-BR">O KClient é um navegador Web novo e muito rápido feito em Qt. Destina-se a ser um navegador Web leve disponível em todas as principais plataformas. Este projeto começou originalmente apenas para fins educacionais. Mas, desde o início, o KClient tornou-se um navegador rico em funcionalidades.</p>
+    <p xml:lang="sk">KClient je nový a veľmi rýchly Qt prehliadač. Jeho cieľom je byť ľahký a dostupný na všetkých platformách. Tento projekt začal iba na účely vzdelávania. Ale časom sa stal plnohodnotným prehliadačom.</p>
+    <p xml:lang="sv">KClient är en ny och mycket snabb Qt webbläsare. Den har som mål att vara en lättviktig webbläsare tillgänglig på alla större plattformar. Projektet startades ursprungligen bara i utbildningssyfte, men från starten har KClient växt till en funktionsrik webbläsare.</p>
+    <p xml:lang="uk">KClient — нова і дуже швидка програма для перегляду інтернету на основі навігатора Qt. Метою проекту є створення невибагливого до ресурсів переглядача інтернету для усіх основних програмних платформ. Реалізацію проекту було розпочато з навчальною метою. Втім, з того часу KClient стала повноцінним переглядачем.</p>
+    <p xml:lang="x-test">xxKClient is a new and very fast Qt web browser. It aims to be a lightweight web browser available through all major platforms. This project has been originally started only for educational purposes. But from its start, KClient has grown into a feature-rich browser.xx</p>
+    <p xml:lang="zh-CN">KClient 是一款全新的超快速 Qt 网络浏览器。它将是一款轻量级的跨平台浏览器。这个项目当初仅仅作为教育项目。但是从一开始，KClient 就成长为一款功能丰富的浏览器。</p>
+    <p>
+    KClient has all standard functions you expect from a web browser. It includes bookmarks, history (both also in sidebar) and tabs. Above that, you can manage RSS feeds with an included RSS reader, block ads with a built-in AdBlock plugin, block Flash content with Click2Flash and edit the local CA Certificates database with an SSL manager.
+  </p>
+    <p xml:lang="ca">El KClient té totes les funcions estàndard que s'esperen d'un navegador web. Inclou adreces d'interès, historial (ambdós també a la barra lateral) i pestanyes. A més, podeu gestionar els canals RSS amb un lector RSS inclòs, bloquejar els anuncis amb un complement AdBlock integrat, bloquejar el contingut Flash amb Click2Flash i editar la base de dades de certificats de l'AC local amb un gestor SSL.</p>
+    <p xml:lang="ca-valencia">El KClient té totes les funcions estàndard que s'esperen d'un navegador web. Inclou adreces d'interés, historial (ambdós també a la barra lateral) i pestanyes. A més, podeu gestionar els canals RSS amb un lector RSS inclòs, bloquejar els anuncis amb un complement AdBlock integrat, bloquejar el contingut Flash amb Click2Flash i editar la base de dades de certificats de l'AC local amb un gestor SSL.</p>
+    <p xml:lang="cs">KClient obsahuje všechny standardní funcke, které byste u prohlížeče čekali. Obsahuje záložky, historii (obojí rovněž v postranní liště) a karty. Navíc může pomocí vlastní čtečky RSS spravovat kanály RSS, blokovat reklamu s vlastním modulem AdBlock, blokovat Flash s Click2Flash a upravovat místní databázi certifikátů CA se správcem SSL.</p>
+    <p xml:lang="da">KClient har alle standardfunktioner som du forventer fra en webbrowser. Den inkluderer bogmærker, historik (begge findes også i sidebjælken) og faneblade. Derudover kan du håndtere RSS-feeds med en inkluderet RSS-læser, blokere reklamer med et indbygget AdBlock-plugin, blokere Flash-indhold med Click2Flash og redigere den lokale CA-certifikater-database med en SSL-manager.</p>
+    <p xml:lang="en-GB">KClient has all standard functions you expect from a web browser. It includes bookmarks, history (both also in sidebar) and tabs. Above that, you can manage RSS feeds with an included RSS reader, block ads with a built-in AdBlock plugin, block Flash content with Click2Flash and edit the local CA Certificates database with an SSL manager.</p>
+    <p xml:lang="es">KClient posee todas las funciones estándares que cabría esperar de un navegador web. Incluye marcadores, historial (ambos disponibles también en una barra lateral) y pestañas. Además, puede gestionar fuentes RSS con el lector RSS que incluye, bloquear publicidad mediante un complemento integrado, bloquear contenido Flash con Click2Flash y editar la base de datos local de certificados con un gestor SSL.</p>
+    <p xml:lang="fi">KClientissa on kaikki selaimelta odottamasi toiminnallisuus: kirjanmerkit, historia (kumpikin myös sivupalkissa) ja välilehdet. Lisäksi voit hallita RSS-syötteitäsi sisään rakennetulla RSS-lukuohjelmalla, estää mainokset sisään rakennetulla AdBlock-liitännäisellä, estää Flash-sisällön Click2Flashillä sekä muokata paikallista CA-varmennetietokantaa SSL-hallintatyökalulla.</p>
+    <p xml:lang="fr">KClient dispose de toutes les fonctionnalités standard que l'on peut attendre d'un navigateur. Il comporte des signets, un historique (tous deux également disponibles dans la barre latérale) et des onglets. En plus de cela, vous pouvez gérer des flux RSS grâce au lecteur RSS intégré, bloquer les publicités avec le module externe AdBlock intégré, bloquer les contenus Flash avec Click2Flash et modifier la base de données de certificats CA locaux en utilisant un gestionnaire SSL.</p>
+    <p xml:lang="gl">KClient ten todas as funcións estándar que esperaría dun navegador web. Inclúe marcadores, historial (ambos dispoñíbeis en barras laterais) e lapelas. Ademais, pode xestionar fontes de novas RSS cun lector de RSS incluído, bloquear anuncios cun complemento de AdBlock integrado, bloquear contido en Flash con Click2Flash e editar a base de datos local de certificados de autoridades certificadoras cun xestor de SSL.</p>
+    <p xml:lang="id">KClient memiliki semua fungsi standar yang kamu harapkan dari penelusur web. Ini termasuk markah, histori (keduanya juga di bilah sisi) dan tab. Di samping itu, kamu bisa mengelola feed RSS dengan pembaca RSS yang disertakan, mencekal iklan dengan plugin AdBlock bawaan, mencekal konten Flash dengan Click2Flash dan mengedit database CA Certificates lokal dengan pengelola SSL.</p>
+    <p xml:lang="it">KClient ha tutte le funzioni standard che ti aspetteresti da un browser web. Include i segnalibri e la cronologia, entrambi anche nella barra laterale, e le schede. Puoi inoltre gestire i feed RSS con un lettore RSS incluso, bloccare sia le inserzioni con un'estensione AdBlock integrata, sia i contenuti Flash con Click2Flash, ed infine modificare la banca dati dei certificati CA con un gestore SSL.</p>
+    <p xml:lang="nl">Falcon heeft alle standaard functies die u verwacht van een webbrowser. Het bevat bladwijzers, geschiedenis (ook in de zijbalk) en tabbladen. Bovendien kunt u RSS-feeds beheren met een ingevoegde RSS-reader, ads blokkeren met een ingebouwde AdBlock plug-in, Flash-inhoud blokkeren met Click2Flash en de lokale database met CA Certificaten met een SSL-beheerder.</p>
+    <p xml:lang="nn">KClient har alle funksjonane du forventar av ein nettlesar, som fane- og bokmerkestøtte, og ein logg over vitja sider (også tilgjengeleg frå ein sidestolpe). Han har òg innebygd RSS-lesar, reklamefilter, Flash-blokkering (klikk for å starta) og redigerbar CA-sertifikatdabase.</p>
+    <p xml:lang="pl">KClient ma wszystkie standardowe funkcje, których oczekuje się od przglądarek. Zawiera zakładki, historię (zarówno obie na pasku bocznym) i karty. Poza tym, może obsługiwać kanały RSS przy użyciu załączonego czytnika, blokować reklamy przy użyciu wbudowanej wtyczki AdBlock, blokować treści Flash przy użyciu Click2Flash i dedytować lokalne certyfikaty UC przy użyciu zarządzania SSL.</p>
+    <p xml:lang="pt">O KClient tem todas as funções-padrão que iria esperar de um navegador Web. Inclui os favoritos, o histórico (ambos na barra lateral) e páginas separadas. Para além disso, pode gerir fontes RSS com um leitor de RSS incluído, o bloqueio de anúncios com um 'plugin' do AdBlock incorporado, o bloqueio de conteúdos em Flash com o Click2Flash e a edição da base de dados de Certificados da AC locais com um gestor de SSL.</p>
+    <p xml:lang="pt-BR">O KClient possui todas as funções padrão que você espera de um navegador Web. Inclui favoritos, histórico (ambos também na barra lateral) e guias. Em cima disso, você pode gerenciar feeds RSS com um leitor de RSS incluído, bloquear anúncios com um plugin AdBlock incorporado, bloquear conteúdo em Flash com Click2Flash e editar o banco de dados de certificados CA local com um gerenciador SSL.</p>
+    <p xml:lang="sk">KClient má všetky bežné funkcie, ktoré by ste čakali od bežného internetového prehliadača. Obsahuje záložky, históriu (oboje aj v bočnom paneli) a karty. Okrem toho, môžete spravovať RSS prúdy so zabudovaným čítačom, blokovať reklamy s AdBlockom, blokovať Flash s Click2Flash a upravovať lokálnu databázu CA certifikátov so SSL správcom.</p>
+    <p xml:lang="sv">KClient har alla standardfunktioner man kan förvänta sig av en webbläsare. Det omfattar bokmärken, historik (båda också i sidorad) och flikar. Förutom det, kan man hantera RSS-kanaler med en inbyggd RSS-läsare, blockera reklam med ett inbyggt insticksprogram för reklamblockering, blockera Flash-innehåll med Click2Flash och redigera den lokala certifikatdatabasen för certifikatutfärdare med en SSL-hanterare.</p>
+    <p xml:lang="uk">У KClient ви знайдете усі можливості типової програми для перегляду інтернету. Передбачено можливість користування закладками, журналом перегляду (ці дві можливості реалізовано і на бічній панелі) та вкладками. Крім того ви можете отримувати подачі новин RSS за допомогою вбудованого засобу читання RSS, блокувати рекламні повідомлення за допомогою вбудованого додатка блокування реклами, блокувати включення Flash за допомогою додатка Click2Flash та редагувати локальну базу сертифікатів CA за допомогою засобу керування даними SSL.</p>
+    <p xml:lang="x-test">xxKClient has all standard functions you expect from a web browser. It includes bookmarks, history (both also in sidebar) and tabs. Above that, you can manage RSS feeds with an included RSS reader, block ads with a built-in AdBlock plugin, block Flash content with Click2Flash and edit the local CA Certificates database with an SSL manager.xx</p>
+    <p xml:lang="zh-CN">KClient 包含所有浏览器的高级功能，包括书签、历史、侧边栏和标签页。您可以通过内置的 RSS 阅读器管理 RSS 资源，通过内置的 AdBlock 插件屏蔽广告，通过 Click2Flash 屏蔽 Flash 内容，通过 SSL 管理器编辑本地 CA 认证数据库。</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image width="1105" height="855">https://cdn.kde.org/screenshots/falkon/falkon.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://falkon.org</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=falkon</url>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>kclient</binary>
+  </provides>
+</component>

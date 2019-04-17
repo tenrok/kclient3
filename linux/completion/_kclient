@@ -1,0 +1,28 @@
+#compdef kclient
+#
+# Zsh completion for KClient
+#
+opts=(
+    '(-)'{-h,--help}'[print usage help]'
+    '(-)'{-a,--authors}'[print KClient authors]'
+    '(-)'{-v,--version}'[print KClient version]'
+
+    '(-)'{-p,--profile=}'[start with specified profile]'
+    '(-)'{-e,--no-extensions}'[start without extensions]'
+    '(-)'{-o,--portable}'[start in portable mode]'
+
+    '(-)'{-t,--new-tab}'[open new tab]'
+    '(-)'{-w,--new-window}'[open new window]'
+    '(-)'{-i,--private-browsing}'[start private browsing]'
+    '(-)'{-d,--download-manager}'[show download manager]'
+    '(-)'{-f,--fullscreen}'[toggle fullscreen]'
+    '(-)'{-r,--no-remote}'[open new browser instance]'
+    '(-)'{-c,--current-tab=}'[open URL in current tab]'
+    '(-)'{-u,--open-window=}'[open URL in new window]'
+    '--wmclass[application class (X11 only)]'
+    '*:files:_files'
+    )
+
+_x_arguments -C $opts
+
+return 0

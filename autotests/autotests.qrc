@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/autotests">
+        <file>data/basic_page.html</file>
+        <file>data/basic_page2.html</file>
+        <file>data/adblock_empty_lines.txt</file>
+    </qresource>
+</RCC>

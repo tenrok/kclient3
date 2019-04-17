@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/tabmanager">
+        <file>metadata.desktop</file>
+        <file>data/tabmanager.png</file>
+        <file>data/tab-close.png</file>
+        <file>data/tab-bookmark.png</file>
+        <file>data/tab-detach.png</file>
+        <file>data/tab-loading.png</file>
+        <file>data/tab-pinned.png</file>
+        <file>data/side-by-side.png</file>
+        <file>data/closetab.png</file>
+        <file>data/addtab.png</file>
+    </qresource>
+</RCC>
