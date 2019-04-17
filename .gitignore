@@ -1,11 +1,11 @@
-/build*/
+#/build*/
 DEBIAN
 *.deb
 *.pro.user*
 *.autosave
 *~
-*.qm
-!qt_*.qm
+#*.qm
+#!qt_*.qm
 headers*.tar.gz
 license_template
 bin/kclient
@@ -39,4 +39,7 @@ tests/autotests/autotests
 *.stash
 bin/profiles
 CMakeLists.txt.user*
+/windows/dependencies/
+/windows/wininstall/
 !/windows/scripts/**/*.dll
+!/build/bin/locale/*
