@@ -40,26 +40,16 @@ install:
   - echo "KClient BUILD %APPVEYOR_BUILD_VERSION%_%QMAKESPEC%_%CONFIGURATION%_%ARCH%"
 
 build_script:
+  - set APP_DIR=%CD%
   - echo "Clone, compile and install ECM..."
   # - git clone git://anongit.kde.org/extra-cmake-modules
   - git clone https://github.com/KDE/extra-cmake-modules.git
-  - cd extra-cmake-modules
-  - mkdir build
-  - cd build
+  - mkdir %APP_DIR%\extra-cmake-modules\build
+  - cd %APP_DIR%\extra-cmake-modules\build
   - cmake  -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "NMake Makefiles JOM" ..
   - call %MAKETOOL%
   - call %MAKETOOL% install
-  - cd ../..
-  # - echo "Downloading source of KClient..."
-  # - git clone https://github.com/solodyagin/kclient3.git
-  # - cd kclient3
-  # - echo "Apply my patches..."
-  # - git config --global user.name "Patch"
-  # - git config --global user.email "patcher@patchev.com"
-  # - git am --3way --ignore-space-change --keep-cr "..\patches\0001-My-default-settings.patch"
-  - set APP_DIR=%CD%
-  # - mkdir build
-  - cd build
+  - cd %APP_DIR%\build
   - echo "Generating NMake Makefiles JOM using CMake..."
   - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DOPENSSL_ROOT_DIR=%OPENSSL_DIR% -G "NMake Makefiles JOM" ..
   - echo "Build KClient..."
@@ -69,23 +59,18 @@ after_build:
   # Prepare dependencies
   - echo [Paths] > %APP_DIR%\build\bin\qt.conf && echo Plugins="." >> %APP_DIR%\build\bin\qt.conf
   - copy %APP_DIR%\COPYING %APP_DIR%\build\bin\COPYRIGHT.txt
-  - cd %APP_DIR%\windows
-  - if not exist "dependencies" (mkdir dependencies)
-  - cd dependencies
+  - if not exist "%APP_DIR%\windows\dependencies" (mkdir %APP_DIR%\windows\dependencies)
+  - cd %APP_DIR%\windows\dependencies
   - if not exist "%ICU_DIR_NAME%.zip" (appveyor DownloadFile %ICU_DOWNLOAD_URL%) else (echo "Use cached %ICU_DIR_NAME%.zip")
   - if not exist "master.tar.gz" (appveyor DownloadFile "http://chromium.googlesource.com/chromium/deps/hunspell_dictionaries/+archive/master.tar.gz") else (echo "Use cached master.tar.gz")
-  # - if not exist "locale.tar.gz" (appveyor DownloadFile "https://raw.githubusercontent.com/solodyagin/KClient-Release/master/locale.tar.gz") else (echo "Use cached locale.tar.gz")
-  - mkdir ..\wininstall
-  - cd ..\wininstall
+  - mkdir %APP_DIR%\windows\wininstall
+  - cd %APP_DIR%\windows\wininstall
   # Prepare icu
   - 7z x "%APP_DIR%\windows\dependencies\%ICU_DIR_NAME%.zip"
   # Prepare qtwebengine_dictionaries
-  - mkdir qtwebengine_dictionaries
-  - cd qtwebengine_dictionaries
+  - mkdir %APP_DIR%\windows\qtwebengine_dictionaries
+  - cd %APP_DIR%\windows\qtwebengine_dictionaries
   - 7z x "%APP_DIR%\windows\dependencies\master.tar.gz" && 7z x "master.tar" && mkdir "doc" && move README* "doc\" && move COPYING* "doc\"
-  # Prepare translations
-  # - cd %APP_DIR%\build\bin
-  # - 7z x "%APP_DIR%\windows\dependencies\locale.tar.gz" && 7z x "locale.tar"
   - cd %APP_DIR%\windows
   # Set paths
   - set OPENSSL_BIN_DIR=%OPENSSL_DIR%\bin
