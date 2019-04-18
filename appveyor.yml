@@ -19,8 +19,8 @@ version: $(APP_VER)-{build}
 
 skip_tags: true
 
-cache:
-  - windows/dependencies
+#cache:
+#  - windows/dependencies
 
 build:
   parallel: true
@@ -44,12 +44,12 @@ build_script:
   - echo "Clone, compile and install ECM..."
   # - git clone git://anongit.kde.org/extra-cmake-modules
   - git clone https://github.com/KDE/extra-cmake-modules.git
-  - cd %APP_DIR%\extra-cmake-modules
-  - mkdir build && cd build
+  - mkdir "%APP_DIR%\extra-cmake-modules\build"
+  - cd "%APP_DIR%\extra-cmake-modules\build"
   - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "NMake Makefiles JOM" ..
   - call %MAKETOOL%
   - call %MAKETOOL% install
-  - cd %APP_DIR%\build
+  - cd "%APP_DIR%\build"
   - echo "Generating NMake Makefiles JOM using CMake..."
   - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DOPENSSL_ROOT_DIR=%OPENSSL_DIR% -G "NMake Makefiles JOM" ..
   - echo "Build KClient..."
@@ -59,20 +59,22 @@ after_build:
   # Prepare dependencies
   - echo [Paths] > %APP_DIR%\build\bin\qt.conf && echo Plugins="." >> %APP_DIR%\build\bin\qt.conf
   - copy %APP_DIR%\COPYING %APP_DIR%\build\bin\COPYRIGHT.txt
-  - cd %APP_DIR%\windows
-  - if not exist "dependencies" (mkdir dependencies)
-  - cd dependencies
+  - if not exist "%APP_DIR%\windows\dependencies" (mkdir "%APP_DIR%\windows\dependencies")
+  - cd "%APP_DIR%\windows\dependencies"
   - if not exist "%ICU_DIR_NAME%.zip" (appveyor DownloadFile %ICU_DOWNLOAD_URL%) else (echo "Use cached %ICU_DIR_NAME%.zip")
   - if not exist "master.tar.gz" (appveyor DownloadFile "http://chromium.googlesource.com/chromium/deps/hunspell_dictionaries/+archive/master.tar.gz") else (echo "Use cached master.tar.gz")
-  - mkdir %APP_DIR%\windows\wininstall
-  - cd %APP_DIR%\windows\wininstall
+  - mkdir "%APP_DIR%\windows\wininstall"
+  - cd "%APP_DIR%\windows\wininstall"
   # Prepare icu
   - 7z x "%APP_DIR%\windows\dependencies\%ICU_DIR_NAME%.zip"
   # Prepare qtwebengine_dictionaries
-  - mkdir qtwebengine_dictionaries
-  - cd qtwebengine_dictionaries
-  - 7z x "%APP_DIR%\windows\dependencies\master.tar.gz" && 7z x "master.tar" && mkdir "doc" && move README* "doc\" && move COPYING* "doc\"
-  - cd %APP_DIR%\windows
+  - mkdir "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries"
+  - cd "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries"
+  - 7z x "%APP_DIR%\windows\dependencies\master.tar.gz" && 7z x "master.tar"
+  - mkdir "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries\doc"
+  - move README* "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries\doc\"
+  - move COPYING* "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries\doc\"
+  - cd "%APP_DIR%\windows"
   # Set paths
   - set OPENSSL_BIN_DIR=%OPENSSL_DIR%\bin
   - set MSVC_REDIST_DIR="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Redist\MSVC\14.16.27012\%ARCH%\Microsoft.VC141.CRT"
