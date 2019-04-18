@@ -11,9 +11,9 @@ environment:
     TOOLSDIR: C:\Qt\Tools\QtCreator
 
   matrix:
-    - QT_DIR: C:\Qt\5.12.1\msvc2017
+    - QT_DIR: C:\Qt\5.12.2\msvc2017
     - ARCH: x64
-      QT_DIR: C:\Qt\5.12.1\msvc2017_64
+      QT_DIR: C:\Qt\5.12.2\msvc2017_64
 
 version: $(APP_VER)-{build}
 
