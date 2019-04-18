@@ -1,4 +1,4 @@
-#/build*/
+/build*/
 DEBIAN
 *.deb
 *.pro.user*
@@ -42,4 +42,4 @@ CMakeLists.txt.user*
 /windows/dependencies/
 /windows/wininstall/
 !/windows/scripts/**/*.dll
-!/build/bin/locale/*
+!/build/bin/locale/

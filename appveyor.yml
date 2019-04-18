@@ -40,18 +40,16 @@ install:
   - echo "KClient BUILD %APPVEYOR_BUILD_VERSION%_%QMAKESPEC%_%CONFIGURATION%_%ARCH%"
 
 build_script:
+  - set APP_DIR=%CD%
   - echo "Clone, compile and install ECM..."
   # - git clone git://anongit.kde.org/extra-cmake-modules
   - git clone https://github.com/KDE/extra-cmake-modules.git
-  - cd extra-cmake-modules
-  - mkdir build
-  - cd build
-  - cmake  -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "NMake Makefiles JOM" ..
+  - cd %APP_DIR%\extra-cmake-modules
+  - mkdir build && cd build
+  - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "NMake Makefiles JOM" ..
   - call %MAKETOOL%
   - call %MAKETOOL% install
-  - cd ../..
-  - set APP_DIR=%CD%
-  - cd build
+  - cd %APP_DIR%\build
   - echo "Generating NMake Makefiles JOM using CMake..."
   - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DOPENSSL_ROOT_DIR=%OPENSSL_DIR% -G "NMake Makefiles JOM" ..
   - echo "Build KClient..."
@@ -66,8 +64,8 @@ after_build:
   - cd dependencies
   - if not exist "%ICU_DIR_NAME%.zip" (appveyor DownloadFile %ICU_DOWNLOAD_URL%) else (echo "Use cached %ICU_DIR_NAME%.zip")
   - if not exist "master.tar.gz" (appveyor DownloadFile "http://chromium.googlesource.com/chromium/deps/hunspell_dictionaries/+archive/master.tar.gz") else (echo "Use cached master.tar.gz")
-  - mkdir ..\wininstall
-  - cd ..\wininstall
+  - mkdir %APP_DIR%\windows\wininstall
+  - cd %APP_DIR%\windows\wininstall
   # Prepare icu
   - 7z x "%APP_DIR%\windows\dependencies\%ICU_DIR_NAME%.zip"
   # Prepare qtwebengine_dictionaries
