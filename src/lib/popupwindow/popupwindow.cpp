@@ -208,9 +208,9 @@ void PopupWindow::showStatusBarMessage(const QString &message)
 
 void PopupWindow::loadStarted()
 {
-    this->showNormal();
-    this->activateWindow();
-    this->raise();
+    show();
+    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
+    raise();
 
     m_progressBar->setValue(0);
     m_progressBar->show();

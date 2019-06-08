@@ -4,7 +4,6 @@ image:
 environment:
  global:
   KCLIENT_VER: 3.1.0
-  #VSVER: 15
   ARCH: x86
   QMAKESPEC: win32-msvc
   MAKETOOL: nmake
