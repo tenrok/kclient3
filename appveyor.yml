@@ -14,7 +14,7 @@ environment:
   - ARCH: x64
     QT_DIR: C:\Qt\5.12.2\msvc2017_64
 
-version: $(KCLIENT_VER).{build}
+version: $(KCLIENT_VER)-{build}
 
 skip_tags: true
 
@@ -103,17 +103,17 @@ deploy:
  # appveyor_repo_tag: true # Deploy on tag push only
 
 notifications:
- # - provider: Email
-   # to:
-    # - solodyagin@gmail.com
-   # on_build_success: true
-   # on_build_failure: true
-   # on_build_status_changed: true
+ - provider: Email
+   to:
+    - admin@kornet35.ru
+   on_build_success: true
+   on_build_failure: true
+   #on_build_status_changed: true
 
 # Remote desktop connection on init
-init:
- - ps: IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+# init:
+ # - ps: IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
-# # remote desktop connection on finish and block build to not destroy VM
+# Remote desktop connection on finish and block build to not destroy VM
 # on_finish:
-  # - ps: $blockRdp = $true; IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+ # - ps: $blockRdp = $true; IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
