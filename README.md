@@ -1,8 +1,9 @@
 # KClient
 [![Build status](https://ci.appveyor.com/api/projects/status/94xj04do4ej4by9y?svg=true)](https://ci.appveyor.com/project/solodyagin/kclient3)
 [![Release](https://img.shields.io/github/release/solodyagin/kclient3.svg)](https://github.com/solodyagin/kclient3/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/solodyagin/kclient3/latest/total.svg?maxAge=3600)](https://github.com/solodyagin/kclient3/releases)
 
-KClient is a web browser based on sources of Falkon. It uses QtWebEngine rendering engine.
+KClient - веб-браузер, основанный на исходном коде Falkon.
 
 По умолчанию применены следующие настройки:
 
@@ -24,6 +25,6 @@ KClient is a web browser based on sources of Falkon. It uses QtWebEngine renderi
   - Включена опция "Вкладки > Открывать новую пустую вкладку после текущей" (newEmptyTabAfterActive=true)
   - Включена опция "Вкладки > Переключаться на открываемую вкладку" (OpenNewTabsSelected=true)
 
-## Downloads
+## Загрузки
 
-KClient downloads are available from [releases](https://github.com/solodyagin/kclient3/releases).
+KClient можно скачать по ссылке [releases](https://github.com/solodyagin/kclient3/releases).

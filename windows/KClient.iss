@@ -22,7 +22,8 @@
 #define AppExeName                   'kclient.exe'
 #define AppExePath                   KCLIENT_BIN_DIR + '\' + AppExeName
 
-#define AppVersion() ParseVersion(AppExePath, Local[0], Local[1], Local[2], Local[3]), Str(Local[0]) + '.' + Str(Local[1]) + '.' + Str(Local[2]) + '.' + Str(Local[3]);
+;#define AppVersion() ParseVersion(AppExePath, Local[0], Local[1], Local[2], Local[3]), Str(Local[0]) + '.' + Str(Local[1]) + '.' + Str(Local[2]) + '.' + Str(Local[3]);
+#define AppVersion                   GetEnvEx('APPVEYOR_BUILD_VERSION')
 
 #if ARCH == "x64"
 	#define AppVerName AppName + ' (x64)'
@@ -31,7 +32,7 @@
 #endif
 
 #define OutputBaseFilename StringChange(AppName, ' ', '') + '-' + AppVersion + '-' + ARCH;
-	
+
 [Setup]
 AppCopyright={#AppCopyright}
 AppId={#AppVerName}
