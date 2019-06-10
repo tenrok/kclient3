@@ -1,6 +1,6 @@
 ; Dependencies
 #define use_msiproduct
-;#define use_vc2013
+#define use_vc2013
 ;#define use_vc2015
 #define use_vc2017
 
