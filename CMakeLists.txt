@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.1)
 
 # Project name and version
-project(KClient VERSION 3.1.1)
+project(KClient VERSION 3.1.2)
 
 # Find ECM, with nice error handling in case of failure
 include(FeatureSummary)
