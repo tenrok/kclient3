@@ -53,7 +53,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Settings</string>
+        <string>Настройки</string>
        </property>
       </widget>
      </item>

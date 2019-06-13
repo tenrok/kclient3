@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Manage Search Engines</string>
+   <string>Управление поисковыми системами</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
@@ -19,21 +19,21 @@
      <item>
       <widget class="QPushButton" name="add">
        <property name="text">
-        <string>Add...</string>
+        <string>Добавить...</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="remove">
        <property name="text">
-        <string>Remove</string>
+        <string>Удалить</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="edit">
        <property name="text">
-        <string>Edit</string>
+        <string>Редактировать</string>
        </property>
       </widget>
      </item>
@@ -53,21 +53,21 @@
      <item>
       <widget class="QPushButton" name="setAsDefault">
        <property name="text">
-        <string>Set as default</string>
+        <string>Установить по-умолчанию</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="moveUp">
        <property name="text">
-        <string>Up</string>
+        <string>Вверх</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="moveDown">
        <property name="text">
-        <string>Down</string>
+        <string>Вниз</string>
        </property>
       </widget>
      </item>
@@ -86,12 +86,12 @@
      </attribute>
      <column>
       <property name="text">
-       <string>Search Engine</string>
+       <string>Поисковая система</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Shortcut</string>
+       <string>Сокращение</string>
       </property>
      </column>
     </widget>
@@ -101,7 +101,7 @@
      <item>
       <widget class="QPushButton" name="defaults">
        <property name="text">
-        <string>Defaults</string>
+        <string>Умолчания</string>
        </property>
       </widget>
      </item>

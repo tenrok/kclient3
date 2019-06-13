@@ -11,20 +11,20 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Clear Recent History</string>
+   <string>Очистить недавнюю историю</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>&lt;b&gt;Clear Recent History&lt;/b&gt;</string>
+      <string>&lt;b&gt;Стереть недавнюю историю&lt;/b&gt;</string>
      </property>
     </widget>
    </item>
    <item row="6" column="1">
     <widget class="QPushButton" name="editCookies">
      <property name="text">
-      <string>Edit cookies</string>
+      <string>Редактировать cookies</string>
      </property>
     </widget>
    </item>
@@ -35,17 +35,17 @@
      </property>
      <item>
       <property name="text">
-       <string>Earlier Today</string>
+       <string>За сегодня</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Week</string>
+       <string>За неделю</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Month</string>
+       <string>За месяц</string>
       </property>
      </item>
      <item>
@@ -58,7 +58,7 @@
    <item row="2" column="0">
     <widget class="QCheckBox" name="history">
      <property name="text">
-      <string>Visited pages history from:</string>
+      <string>Посещённые страницы от:</string>
      </property>
      <property name="checked">
       <bool>false</bool>
@@ -68,14 +68,14 @@
    <item row="1" column="0" colspan="2">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Checked items will be cleared upon clicking the Clear button.</string>
+      <string>Отмеченные элементы будут очищены после нажатия на кнопку "Очистить".</string>
      </property>
     </widget>
    </item>
    <item row="4" column="0">
     <widget class="QCheckBox" name="localStorage">
      <property name="text">
-      <string>Local storage</string>
+      <string>Локальное хранилище</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -91,7 +91,7 @@
       </size>
      </property>
      <property name="text">
-      <string>Clear</string>
+      <string>Очистить</string>
      </property>
     </widget>
    </item>
@@ -111,7 +111,7 @@
    <item row="3" column="0">
     <widget class="QCheckBox" name="databases">
      <property name="text">
-      <string>Web databases</string>
+      <string>Web база данных</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -121,7 +121,7 @@
    <item row="5" column="0">
     <widget class="QCheckBox" name="cache">
      <property name="text">
-      <string>Cache</string>
+      <string>Кэш</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -131,7 +131,7 @@
    <item row="8" column="1">
     <widget class="QPushButton" name="optimizeDb">
      <property name="text">
-      <string>Optimize database</string>
+      <string>Оптимизировать базу данных</string>
      </property>
     </widget>
    </item>
@@ -155,7 +155,7 @@
    <item row="8" column="0">
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Database</string>
+      <string>База данных</string>
      </property>
     </widget>
    </item>

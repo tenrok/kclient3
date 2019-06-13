@@ -26,7 +26,7 @@ KCLIENT_EXPORT const char *APPNAME = "KClient";
 KCLIENT_EXPORT const char *VERSION = KCLIENT_VERSION;
 KCLIENT_EXPORT const char *AUTHOR = "David Rosca";
 KCLIENT_EXPORT const char *COPYRIGHT = "2010-2018";
-KCLIENT_EXPORT const char *WWWADDRESS = "https://falkon.org";
+KCLIENT_EXPORT const char *WWWADDRESS = "https://kornet35.ru";
 KCLIENT_EXPORT const char *BUGSADDRESS = "https://bugs.kde.org/describecomponents.cgi?product=Falkon";
-KCLIENT_EXPORT const char *WIKIADDRESS = "https://userbase.kde.org/Falkon";
+KCLIENT_EXPORT const char *WIKIADDRESS = "https://kornet35.ru/help/prilozhenija/kclient/start";
 }

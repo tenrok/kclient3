@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>JavaScript Options</string>
+   <string>Параметры JavaScript</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Allow JavaScript to:</string>
+      <string>Разрешить JavaScript:</string>
      </property>
     </widget>
    </item>
@@ -26,28 +26,28 @@
      <item>
       <widget class="QCheckBox" name="jscanOpenWindow">
        <property name="text">
-        <string>Open popup windows</string>
+        <string>Открывать всплывающие окна</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="jscanActivateWindow">
        <property name="text">
-        <string>Activate windows</string>
+        <string>Активировать окна</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="jscanAccessClipboard">
        <property name="text">
-        <string>Access clipboard</string>
+        <string>Доступ к буферу обмена</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="jscanPaste">
        <property name="text">
-        <string>Paste from clipboard</string>
+        <string>Вставка из буфера обмена</string>
        </property>
       </widget>
      </item>

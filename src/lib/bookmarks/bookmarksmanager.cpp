@@ -102,16 +102,16 @@ void BookmarksManager::bookmarksSelected(const QList<BookmarkItem*> &items)
 void BookmarksManager::createContextMenu(const QPoint &pos)
 {
     QMenu menu;
-    QAction* actNewTab = menu.addAction(IconProvider::newTabIcon(), tr("Open in new tab"));
-    QAction* actNewWindow = menu.addAction(IconProvider::newWindowIcon(), tr("Open in new window"));
-    QAction* actNewPrivateWindow = menu.addAction(IconProvider::privateBrowsingIcon(), tr("Open in new private window"));
+    QAction* actNewTab = menu.addAction(IconProvider::newTabIcon(), tr("Открыть в новой вкладке"));
+    QAction* actNewWindow = menu.addAction(IconProvider::newWindowIcon(), tr("Открыть в новом окне"));
+    QAction* actNewPrivateWindow = menu.addAction(IconProvider::privateBrowsingIcon(), tr("Открыть в новом приватном окне"));
 
     menu.addSeparator();
-    menu.addAction(tr("New Bookmark"), this, SLOT(addBookmark()));
-    menu.addAction(tr("New Folder"), this, &BookmarksManager::addFolder);
-    menu.addAction(tr("New Separator"), this, &BookmarksManager::addSeparator);
+    menu.addAction(tr("Новая закладка"), this, SLOT(addBookmark()));
+    menu.addAction(tr("Новая папка"), this, &BookmarksManager::addFolder);
+    menu.addAction(tr("Новый разделитель"), this, &BookmarksManager::addSeparator);
     menu.addSeparator();
-    QAction* actDelete = menu.addAction(QIcon::fromTheme(QSL("edit-delete")), tr("Delete"));
+    QAction* actDelete = menu.addAction(QIcon::fromTheme(QSL("edit-delete")), tr("Удалить"));
 
     connect(actNewTab, SIGNAL(triggered()), this, SLOT(openBookmarkInNewTab()));
     connect(actNewWindow, SIGNAL(triggered()), this, SLOT(openBookmarkInNewWindow()));
@@ -168,7 +168,7 @@ void BookmarksManager::openBookmarkInNewPrivateWindow(BookmarkItem* item)
 void BookmarksManager::addBookmark()
 {
     BookmarkItem* item = new BookmarkItem(BookmarkItem::Url);
-    item->setTitle(tr("New Bookmark"));
+    item->setTitle(tr("Новая закладка"));
     item->setUrl(QUrl(QSL("http://")));
     addBookmark(item);
 }
@@ -176,7 +176,7 @@ void BookmarksManager::addBookmark()
 void BookmarksManager::addFolder()
 {
     BookmarkItem* item = new BookmarkItem(BookmarkItem::Folder);
-    item->setTitle(tr("New Folder"));
+    item->setTitle(tr("Новая папка"));
     addBookmark(item);
 }
 

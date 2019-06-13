@@ -67,7 +67,7 @@ DisableReadyMemo=no
 ;Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl";
 
 ; Supported languages
-#include "scripts\lang\english.iss"
+;#include "scripts\lang\english.iss"
 ;#include "scripts\lang\german.iss"
 ;#include "scripts\lang\french.iss"
 ;#include "scripts\lang\italian.iss"
@@ -85,10 +85,10 @@ Name: "compact"; Description: "{code:GetCompactInstallation}"
 Name: "custom"; Description: "{code:GetCustomInstallation}"; Flags: iscustom
 
 [Components]
-Name: "main"; Description: "Main components"; Types: full compact custom; Flags: fixed
-Name: "themes"; Description: "Themes"; Types: full;
-Name: "plugins"; Description: "Plugins"; Types: full;
-Name: "translations"; Description: "Translations"; Types: full;
+Name: "main"; Description: "Основные компоненты"; Types: full compact custom; Flags: fixed
+Name: "themes"; Description: "Темы"; Types: full;
+Name: "plugins"; Description: "Расширения"; Types: full;
+Name: "translations"; Description: "Переводы"; Types: full;
 
 [Files]
 Source: "{#KCLIENT_BIN_DIR}\plugins\*.dll"; DestDir: "{app}\{#AppVersion}\plugins"; Components: "plugins"; Flags: ignoreversion

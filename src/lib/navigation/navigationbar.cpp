@@ -66,14 +66,14 @@ NavigationBar::NavigationBar(BrowserWindow* window)
     setObjectName(QSL("navigationbar"));
 
     m_layout = new QHBoxLayout(this);
-    m_layout->setMargin(style()->pixelMetric(QStyle::PM_ToolBarItemMargin, 0, this)
-                          + style()->pixelMetric(QStyle::PM_ToolBarFrameWidth, 0, this));
-    m_layout->setSpacing(style()->pixelMetric(QStyle::PM_ToolBarItemSpacing, 0, this));
+    m_layout->setMargin(style()->pixelMetric(QStyle::PM_ToolBarItemMargin, nullptr, this)
+                          + style()->pixelMetric(QStyle::PM_ToolBarFrameWidth, nullptr, this));
+    m_layout->setSpacing(style()->pixelMetric(QStyle::PM_ToolBarItemSpacing, nullptr, this));
     setLayout(m_layout);
 
     m_buttonBack = new ToolButton(this);
     m_buttonBack->setObjectName("navigation-button-back");
-    m_buttonBack->setToolTip(tr("Back"));
+    m_buttonBack->setToolTip(tr("Назад"));
     m_buttonBack->setToolButtonStyle(Qt::ToolButtonIconOnly);
     m_buttonBack->setToolbarButtonLook(true);
     m_buttonBack->setShowMenuOnRightClick(true);
@@ -83,7 +83,7 @@ NavigationBar::NavigationBar(BrowserWindow* window)
 
     m_buttonForward = new ToolButton(this);
     m_buttonForward->setObjectName("navigation-button-next");
-    m_buttonForward->setToolTip(tr("Forward"));
+    m_buttonForward->setToolTip(tr("Вперёд"));
     m_buttonForward->setToolButtonStyle(Qt::ToolButtonIconOnly);
     m_buttonForward->setToolbarButtonLook(true);
     m_buttonForward->setShowMenuOnRightClick(true);
@@ -103,7 +103,7 @@ NavigationBar::NavigationBar(BrowserWindow* window)
 
     ToolButton *buttonHome = new ToolButton(this);
     buttonHome->setObjectName("navigation-button-home");
-    buttonHome->setToolTip(tr("Home"));
+    buttonHome->setToolTip(tr("Домой"));
     buttonHome->setToolButtonStyle(Qt::ToolButtonIconOnly);
     buttonHome->setToolbarButtonLook(true);
     buttonHome->setAutoRaise(true);
@@ -111,7 +111,7 @@ NavigationBar::NavigationBar(BrowserWindow* window)
 
     ToolButton *buttonAddTab = new ToolButton(this);
     buttonAddTab->setObjectName("navigation-button-addtab");
-    buttonAddTab->setToolTip(tr("New Tab"));
+    buttonAddTab->setToolTip(tr("Добавить вкладку"));
     buttonAddTab->setToolButtonStyle(Qt::ToolButtonIconOnly);
     buttonAddTab->setToolbarButtonLook(true);
     buttonAddTab->setAutoRaise(true);
@@ -131,7 +131,7 @@ NavigationBar::NavigationBar(BrowserWindow* window)
     buttonTools->setObjectName("navigation-button-tools");
     buttonTools->setPopupMode(QToolButton::InstantPopup);
     buttonTools->setToolbarButtonLook(true);
-    buttonTools->setToolTip(tr("Tools"));
+    buttonTools->setToolTip(tr("Инструменты"));
     buttonTools->setAutoRaise(true);
     buttonTools->setFocusPolicy(Qt::NoFocus);
     buttonTools->setShowMenuInside(true);
@@ -144,7 +144,7 @@ NavigationBar::NavigationBar(BrowserWindow* window)
     m_supMenu->setObjectName("navigation-button-supermenu");
     m_supMenu->setPopupMode(QToolButton::InstantPopup);
     m_supMenu->setToolbarButtonLook(true);
-    m_supMenu->setToolTip(tr("Main Menu"));
+    m_supMenu->setToolTip(tr("Основное меню"));
     m_supMenu->setAutoRaise(true);
     m_supMenu->setFocusPolicy(Qt::NoFocus);
     m_supMenu->setMenu(m_window->superMenu());
@@ -161,7 +161,7 @@ NavigationBar::NavigationBar(BrowserWindow* window)
 
     m_exitFullscreen = new ToolButton(this);
     m_exitFullscreen->setObjectName("navigation-button-exitfullscreen");
-    m_exitFullscreen->setToolTip(tr("Exit Fullscreen"));
+    m_exitFullscreen->setToolTip(tr("Выйти из полноэкранного режима"));
     m_exitFullscreen->setToolButtonStyle(Qt::ToolButtonIconOnly);
     m_exitFullscreen->setToolbarButtonLook(true);
     m_exitFullscreen->setFocusPolicy(Qt::NoFocus);
@@ -187,13 +187,13 @@ NavigationBar::NavigationBar(BrowserWindow* window)
     connect(buttonAddTab, &ToolButton::middleMouseClicked, m_window->tabWidget(), &TabWidget::addTabFromClipboard);
     connect(m_exitFullscreen, &QAbstractButton::clicked, m_window, &BrowserWindow::toggleFullScreen);
 
-    addWidget(backNextWidget, QSL("button-backforward"), tr("Back and Forward buttons"));
-    addWidget(m_reloadStop, QSL("button-reloadstop"), tr("Reload button"));
-    addWidget(buttonHome, QSL("button-home"), tr("Home button"));
-    addWidget(buttonAddTab, QSL("button-addtab"), tr("Add tab button"));
-    addWidget(m_navigationSplitter, QSL("locationbar"), tr("Address and Search bar"));
-    addWidget(buttonTools, QSL("button-tools"), tr("Tools button"));
-    addWidget(m_exitFullscreen, QSL("button-exitfullscreen"), tr("Exit Fullscreen button"));
+    addWidget(backNextWidget, QSL("button-backforward"), tr("Кнопки \"Назад\" и \"Вперёд\""));
+    addWidget(m_reloadStop, QSL("button-reloadstop"), tr("Кнопка \"Обновить\""));
+    addWidget(buttonHome, QSL("button-home"), tr("Кнопка \"Домой\""));
+    addWidget(buttonAddTab, QSL("button-addtab"), tr("Кнопка \"Добавить вкладку\""));
+    addWidget(m_navigationSplitter, QSL("locationbar"), tr("Адресная и поисковая панели"));
+    addWidget(buttonTools, QSL("button-tools"), tr("Кнопка \"Инструменты\""));
+    addWidget(m_exitFullscreen, QSL("button-exitfullscreen"), tr("Кнопка \"Выход из полноэкранного режима\""));
 
     loadSettings();
 }
@@ -431,8 +431,8 @@ void NavigationBar::aboutToShowToolsMenu()
 {
     m_menuTools->clear();
 
-    m_window->createToolbarsMenu(m_menuTools->addMenu(tr("Toolbars")));
-    m_window->createSidebarsMenu(m_menuTools->addMenu(tr("Sidebar")));
+    m_window->createToolbarsMenu(m_menuTools->addMenu(tr("Панели инструментов")));
+    m_window->createSidebarsMenu(m_menuTools->addMenu(tr("Боковая панель")));
     m_menuTools->addSeparator();
 
     for (const WidgetData &data : qAsConst(m_widgets)) {
@@ -447,7 +447,7 @@ void NavigationBar::aboutToShowToolsMenu()
     }
 
     m_menuTools->addSeparator();
-    m_menuTools->addAction(IconProvider::settingsIcon(), tr("Configure Toolbar"), this, &NavigationBar::openConfigurationDialog);
+    m_menuTools->addAction(IconProvider::settingsIcon(), tr("Настроить панель"), this, &NavigationBar::openConfigurationDialog);
 }
 
 void NavigationBar::clearHistory()

@@ -22,7 +22,7 @@
    <item row="7" column="0" colspan="3">
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>What should KClient do with this file?</string>
+      <string>Что KClient должен сделать с этим файлом?</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
@@ -44,14 +44,14 @@
       <item row="0" column="1">
        <widget class="QRadioButton" name="radioOpen">
         <property name="text">
-         <string>Open...</string>
+         <string>Открыть...</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
        <widget class="QRadioButton" name="radioSave">
         <property name="text">
-         <string>Save File</string>
+         <string>Сохранить файл</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -212,7 +212,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>from:</string>
+           <string>из:</string>
           </property>
          </widget>
         </item>
@@ -238,7 +238,7 @@
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string>Copy download link</string>
+           <string>Скопировать адрес загрузки</string>
           </property>
           <property name="html-link-look" stdset="0">
            <bool>true</bool>

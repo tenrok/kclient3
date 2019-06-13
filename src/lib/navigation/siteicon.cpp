@@ -32,12 +32,12 @@ SiteIcon::SiteIcon(LocationBar *parent)
     : ToolButton(parent)
     , m_window(nullptr)
     , m_locationBar(parent)
-    , m_view(0)
+    , m_view(nullptr)
 {
     setObjectName("locationbar-siteicon");
     setToolButtonStyle(Qt::ToolButtonIconOnly);
     setCursor(Qt::ArrowCursor);
-    setToolTip(LocationBar::tr("Show information about this page"));
+    setToolTip(LocationBar::tr("Показать информацию об этой странице"));
     setFocusPolicy(Qt::NoFocus);
 
     m_updateTimer = new QTimer(this);

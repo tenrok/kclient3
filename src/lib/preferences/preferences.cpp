@@ -97,8 +97,8 @@ Preferences::Preferences(BrowserWindow* window)
     : QDialog(window)
     , ui(new Ui::Preferences)
     , m_window(window)
-    , m_autoFillManager(0)
-    , m_pluginsList(0)
+    , m_autoFillManager(nullptr)
+    , m_pluginsList(nullptr)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     ui->setupUi(this);
@@ -156,11 +156,11 @@ Preferences::Preferences(BrowserWindow* window)
         ui->checkDefaultBrowser->setChecked(settings.value("Web-Browser-Settings/CheckDefaultBrowser",
                                                            DEFAULT_CHECK_DEFAULTBROWSER).toBool());
         if (mApp->associationManager()->isDefaultForAllCapabilities()) {
-            ui->checkNowDefaultBrowser->setText(tr("Default"));
+            ui->checkNowDefaultBrowser->setText(tr("По-умолчанию"));
             ui->checkNowDefaultBrowser->setEnabled(false);
         }
         else {
-            ui->checkNowDefaultBrowser->setText(tr("Set as default"));
+            ui->checkNowDefaultBrowser->setText(tr("Установить по-умолчанию"));
             ui->checkNowDefaultBrowser->setEnabled(true);
             connect(ui->checkNowDefaultBrowser, SIGNAL(clicked()), this, SLOT(makeKClientDefault()));
         }
@@ -784,7 +784,7 @@ void Preferences::buttonClicked(QAbstractButton* button)
 
 void Preferences::createProfile()
 {
-    QString name = QInputDialog::getText(this, tr("New Profile"), tr("Enter the new profile's name:"));
+    QString name = QInputDialog::getText(this, tr("Новый профиль"), tr("Введите имя нового профиля:"));
     name = QzTools::filterCharsFromFilename(name);
 
     if (name.isEmpty()) {
@@ -794,12 +794,12 @@ void Preferences::createProfile()
     int res = ProfileManager::createProfile(name);
 
     if (res == -1) {
-        QMessageBox::warning(this, tr("Error!"), tr("This profile already exists!"));
+        QMessageBox::warning(this, tr("Ошибка!"), tr("Такой профиль уже существует!"));
         return;
     }
 
     if (res != 0) {
-        QMessageBox::warning(this, tr("Error!"), tr("Cannot create profile directory!"));
+        QMessageBox::warning(this, tr("Ошибка!"), tr("Невозможно создать каталог профиля!"));
         return;
     }
 
@@ -810,7 +810,7 @@ void Preferences::createProfile()
 void Preferences::deleteProfile()
 {
     QString name = ui->startProfile->currentText();
-    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Confirmation"),
+    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Подтверждение"),
                                          tr("Are you sure you want to permanently delete \"%1\" profile? This action cannot be undone!").arg(name), QMessageBox::Yes | QMessageBox::No);
     if (button != QMessageBox::Yes) {
         return;
@@ -826,7 +826,7 @@ void Preferences::startProfileIndexChanged(int index)
     const bool current = ui->startProfile->itemText(index) == ProfileManager::currentProfile();
 
     ui->deleteProfile->setEnabled(!current);
-    ui->cannotDeleteActiveProfileLabel->setText(current ? tr("Note: You cannot delete active profile.") : QString());
+    ui->cannotDeleteActiveProfileLabel->setText(current ? tr("Примечание: Нельзя удалить активный профиль.") : QString());
 }
 
 void Preferences::closeEvent(QCloseEvent* event)
@@ -1081,7 +1081,7 @@ void Preferences::setProgressBarColorIcon(QColor color)
 
 void Preferences::selectCustomProgressBarColor()
 {
-    QColor newColor = QColorDialog::getColor(ui->customColorToolButton->property("ProgressColor").value<QColor>(), this, tr("Select Color"));
+    QColor newColor = QColorDialog::getColor(ui->customColorToolButton->property("ProgressColor").value<QColor>(), this, tr("Выберите цвет"));
     if (newColor.isValid()) {
         setProgressBarColorIcon(newColor);
     }

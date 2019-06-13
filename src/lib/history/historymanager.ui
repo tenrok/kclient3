@@ -11,20 +11,20 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>History</string>
+   <string>История</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">
     <widget class="QPushButton" name="deleteB">
      <property name="text">
-      <string>Delete</string>
+      <string>Удалить</string>
      </property>
     </widget>
    </item>
    <item row="1" column="1">
     <widget class="QPushButton" name="clearAll">
      <property name="text">
-      <string>Clear All History</string>
+      <string>Очистить всю историю</string>
      </property>
     </widget>
    </item>

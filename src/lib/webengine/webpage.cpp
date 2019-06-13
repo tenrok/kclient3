@@ -73,8 +73,8 @@ static const bool kEnableJsNonBlockDialogs = qEnvironmentVariableIsSet("KCLIENT_
 
 WebPage::WebPage(QObject* parent)
     : QWebEnginePage(mApp->webProfile(), parent)
-    , m_fileWatcher(0)
-    , m_runningLoop(0)
+    , m_fileWatcher(nullptr)
+    , m_runningLoop(nullptr)
     , m_loadProgress(100)
     , m_blockAlerts(false)
     , m_secureStatus(false)
@@ -340,8 +340,8 @@ void WebPage::handleUnknownProtocol(const QUrl &url)
                             "open this link in system application?").arg(protocol, wrappedUrl);
 
     dialog.setText(text);
-    dialog.setCheckBoxText(tr("Remember my choice for this protocol"));
-    dialog.setWindowTitle(tr("External Protocol Request"));
+    dialog.setCheckBoxText(tr("Запомнить мой выбор для этого протокола"));
+    dialog.setWindowTitle(tr("Запрос внешнего протокола"));
     dialog.setIcon(QMessageBox::Question);
 
     switch (dialog.exec()) {
@@ -483,11 +483,11 @@ QStringList WebPage::chooseFiles(QWebEnginePage::FileSelectionMode mode, const Q
 
     switch (mode) {
     case FileSelectOpen:
-        files = QStringList(QzTools::getOpenFileName("WebPage-ChooseFile", view(), tr("Choose file..."), suggestedFileName));
+        files = QStringList(QzTools::getOpenFileName("WebPage-ChooseFile", view(), tr("Выбрать файл..."), suggestedFileName));
         break;
 
     case FileSelectOpenMultiple:
-        files = QzTools::getOpenFileNames("WebPage-ChooseFile", view(), tr("Choose files..."), suggestedFileName);
+        files = QzTools::getOpenFileNames("WebPage-ChooseFile", view(), tr("Выбрать файлы..."), suggestedFileName);
         break;
 
     default:
@@ -636,7 +636,7 @@ void WebPage::javaScriptAlert(const QUrl &securityOrigin, const QString &msg)
         dialog.setDefaultButton(QMessageBox::Ok);
         dialog.setWindowTitle(title);
         dialog.setText(msg);
-        dialog.setCheckBoxText(tr("Prevent this page from creating additional dialogs"));
+        dialog.setCheckBoxText(tr("Запретить этой странице создавать дополнительные диалоги"));
         dialog.setIcon(QMessageBox::Information);
         dialog.exec();
 

@@ -41,8 +41,8 @@ void AdBlockUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &request)
         page.append(QzTools::readAllFileContents(QSL(":adblock/data/adblock.html")));
         page.replace(QSL("%FAVICON%"), QSL("qrc:adblock/data/adblock_big.png"));
         page.replace(QSL("%IMAGE%"), QSL("qrc:adblock/data/adblock_big.png"));
-        page.replace(QSL("%TITLE%"), tr("Blocked content"));
-        page.replace(QSL("%RULE%"), tr("Blocked by <i>%1 (%2)</i>").arg(ruleFilter, ruleSubscription));
+        page.replace(QSL("%TITLE%"), tr("Заблокированное содержимое"));
+        page.replace(QSL("%RULE%"), tr("Заблокировано с помощью <i>%1 (%2)</i>").arg(ruleFilter, ruleSubscription));
         page = QzTools::applyDirectionToPage(page);
         request.redirect(QUrl(QString::fromUtf8(QByteArray("data:text/html;base64,") + page.toUtf8().toBase64())));
     } else {

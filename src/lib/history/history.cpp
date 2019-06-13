@@ -29,7 +29,7 @@
 History::History(QObject* parent)
     : QObject(parent)
     , m_isSaving(true)
-    , m_model(0)
+    , m_model(nullptr)
 {
     loadSettings();
 }
@@ -79,7 +79,7 @@ void History::addHistoryEntry(const QUrl &url, QString title)
     }
 
     if (title.isEmpty()) {
-        title = tr("Empty Page");
+        title = tr("Пустая страница");
     }
 
     auto job = new SqlQueryJob(QSL("SELECT id, count, date, title FROM history WHERE url=?"), this);
@@ -269,29 +269,29 @@ QString History::titleCaseLocalizedMonth(int month)
 {
     switch (month) {
     case 1:
-        return tr("January");
+        return tr("Январь");
     case 2:
-        return tr("February");
+        return tr("Февраль");
     case 3:
-        return tr("March");
+        return tr("Март");
     case 4:
-        return tr("April");
+        return tr("Апрель");
     case 5:
-        return tr("May");
+        return tr("Май");
     case 6:
-        return tr("June");
+        return tr("Июнь");
     case 7:
-        return tr("July");
+        return tr("Июль");
     case 8:
-        return tr("August");
+        return tr("Август");
     case 9:
-        return tr("September");
+        return tr("Сентябрь");
     case 10:
-        return tr("October");
+        return tr("Октябрь");
     case 11:
-        return tr("November");
+        return tr("Ноябрь");
     case 12:
-        return tr("December");
+        return tr("Декабрь");
     default:
         qWarning("Month number out of range!");
         return QString();

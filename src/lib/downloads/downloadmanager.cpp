@@ -221,7 +221,7 @@ void DownloadManager::timerEvent(QTimerEvent* e)
     if (e->timerId() == m_timer.timerId()) {
         if (!ui->list->count()) {
             ui->speedLabel->clear();
-            setWindowTitle(tr("Download Manager"));
+            setWindowTitle(tr("Менеджер загрузок"));
 #ifdef Q_OS_WIN
             taskbarButton()->progress()->hide();
 #endif
@@ -450,7 +450,7 @@ void DownloadManager::downloadFinished(bool success)
             }
         }
         ui->speedLabel->clear();
-        setWindowTitle(tr("Download Manager"));
+        setWindowTitle(tr("Менеджер загрузок"));
 #ifdef Q_OS_WIN
         taskbarButton()->progress()->hide();
 #endif
@@ -497,7 +497,7 @@ void DownloadManager::closeEvent(QCloseEvent* e)
 {
     if (mApp->windowCount() == 0) { // No main windows -> we are going to quit
         if (!canClose()) {
-            QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Warning"),
+            QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Внимание"),
                                                  tr("Are you sure you want to quit? All uncompleted downloads will be cancelled!"), QMessageBox::Yes | QMessageBox::No);
             if (button != QMessageBox::Yes) {
                 e->ignore();

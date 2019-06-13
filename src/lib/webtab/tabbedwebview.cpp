@@ -37,7 +37,7 @@
 
 TabbedWebView::TabbedWebView(WebTab* webTab)
     : WebView(webTab)
-    , m_window(0)
+    , m_window(nullptr)
     , m_webTab(webTab)
     , m_menu(new Menu(this))
 {
@@ -191,7 +191,7 @@ void TabbedWebView::_contextMenuEvent(QContextMenuEvent *event)
 
     if (WebInspector::isEnabled()) {
         m_menu->addSeparator();
-        m_menu->addAction(tr("Inspect Element"), this, &TabbedWebView::inspectElement);
+        m_menu->addAction(tr("Исследовать элемент"), this, &TabbedWebView::inspectElement);
     }
 
     if (!m_menu->isEmpty()) {

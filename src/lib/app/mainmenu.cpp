@@ -81,7 +81,7 @@ void MainMenu::initSuperMenu(QMenu* superMenu) const
     superMenu->addAction(m_actions[QSL("File/OpenFile")]);
     if (mApp->sessionManager()) {
         superMenu->addSeparator();
-        QMenu* sessionsSubmenu = new QMenu(tr("Sessions"));
+        QMenu* sessionsSubmenu = new QMenu(tr("Сессии"));
         connect(sessionsSubmenu, SIGNAL(aboutToShow()), mApp->sessionManager(), SLOT(aboutToShowSessionsMenu()));
         superMenu->addMenu(sessionsSubmenu);
         superMenu->addAction(m_actions[QSL("File/SessionManager")]);
@@ -464,83 +464,83 @@ void MainMenu::init()
     m_actions[QSL(name)] = action
 
     // Standard actions - needed on Mac to be placed correctly in "application" menu
-    QAction* action = new QAction(QIcon::fromTheme(QSL("help-about")), tr("&About KClient"), this);
+    QAction* action = new QAction(QIcon::fromTheme(QSL("help-about")), tr("О KClient"), this);
     action->setMenuRole(QAction::AboutRole);
     connect(action, &QAction::triggered, this, &MainMenu::showAboutDialog);
     m_actions[QSL("Standard/About")] = action;
 
-    action = new QAction(IconProvider::settingsIcon(), tr("Pr&eferences"), this);
+    action = new QAction(IconProvider::settingsIcon(), tr("Настройки"), this);
     action->setMenuRole(QAction::PreferencesRole);
     action->setShortcut(QKeySequence(QKeySequence::Preferences));
     connect(action, &QAction::triggered, this, &MainMenu::showPreferences);
     m_actions[QSL("Standard/Preferences")] = action;
 
-    action = new QAction(QIcon::fromTheme(QSL("application-exit")), tr("Quit"), this);
+    action = new QAction(QIcon::fromTheme(QSL("application-exit")), tr("Выход"), this);
     action->setMenuRole(QAction::QuitRole);
     // shortcut set from browserwindow
     connect(action, &QAction::triggered, this, &MainMenu::quitApplication);
     m_actions[QSL("Standard/Quit")] = action;
 
     // File menu
-    m_menuFile = new QMenu(tr("&File"));
+    m_menuFile = new QMenu(tr("Файл"));
     connect(m_menuFile, &QMenu::aboutToShow, this, &MainMenu::aboutToShowFileMenu);
 
-    ADD_ACTION("File/NewTab", m_menuFile, IconProvider::newTabIcon(), tr("New Tab"), SLOT(newTab()), "Ctrl+T");
-    ADD_ACTION("File/NewWindow", m_menuFile, IconProvider::newWindowIcon(), tr("&New Window"), SLOT(newWindow()), "Ctrl+N");
-    ADD_ACTION("File/NewPrivateWindow", m_menuFile, IconProvider::privateBrowsingIcon(), tr("New &Private Window"), SLOT(newPrivateWindow()), "Ctrl+Shift+P");
-    ADD_ACTION("File/OpenLocation", m_menuFile, QIcon::fromTheme(QSL("document-open-remote")), tr("Open Location"), SLOT(openLocation()), "Ctrl+L");
-    ADD_ACTION("File/OpenFile", m_menuFile, QIcon::fromTheme(QSL("document-open")), tr("Open &File..."), SLOT(openFile()), "Ctrl+O");
-    ADD_ACTION("File/CloseWindow", m_menuFile, QIcon::fromTheme(QSL("window-close")), tr("Close Window"), SLOT(closeWindow()), "Ctrl+Shift+W");
+    ADD_ACTION("File/NewTab", m_menuFile, IconProvider::newTabIcon(), tr("Новая вкладка"), SLOT(newTab()), "Ctrl+T");
+    ADD_ACTION("File/NewWindow", m_menuFile, IconProvider::newWindowIcon(), tr("Новое окно"), SLOT(newWindow()), "Ctrl+N");
+    ADD_ACTION("File/NewPrivateWindow", m_menuFile, IconProvider::privateBrowsingIcon(), tr("Новое приватное окно"), SLOT(newPrivateWindow()), "Ctrl+Shift+P");
+    ADD_ACTION("File/OpenLocation", m_menuFile, QIcon::fromTheme(QSL("document-open-remote")), tr("Открыть расположение"), SLOT(openLocation()), "Ctrl+L");
+    ADD_ACTION("File/OpenFile", m_menuFile, QIcon::fromTheme(QSL("document-open")), tr("Открыть файл..."), SLOT(openFile()), "Ctrl+O");
+    ADD_ACTION("File/CloseWindow", m_menuFile, QIcon::fromTheme(QSL("window-close")), tr("Закрыть окно"), SLOT(closeWindow()), "Ctrl+Shift+W");
     m_menuFile->addSeparator();
 
     if (mApp->sessionManager()) {
-        QMenu* sessionsSubmenu = new QMenu(tr("Sessions"));
+        QMenu* sessionsSubmenu = new QMenu(tr("Сессии"));
         connect(sessionsSubmenu, SIGNAL(aboutToShow()), mApp->sessionManager(), SLOT(aboutToShowSessionsMenu()));
         m_menuFile->addMenu(sessionsSubmenu);
-        action = new QAction(tr("Session Manager"), this);
+        action = new QAction(tr("Менеджер сессий"), this);
         connect(action, &QAction::triggered, mApp->sessionManager(), &SessionManager::openSessionManagerDialog);
         m_actions[QSL("File/SessionManager")] = action;
         m_menuFile->addAction(action);
         m_menuFile->addSeparator();
     }
 
-    ADD_ACTION("File/SavePageAs", m_menuFile, QIcon::fromTheme(QSL("document-save")), tr("&Save Page As..."), SLOT(savePageAs()), "Ctrl+S");
-    ADD_ACTION("File/SendLink", m_menuFile, QIcon::fromTheme(QSL("mail-message-new")), tr("Send Link..."), SLOT(sendLink()), "");
-    ADD_ACTION("File/Print", m_menuFile, QIcon::fromTheme(QSL("document-print")), tr("&Print..."), SLOT(printPage()), "Ctrl+P");
+    ADD_ACTION("File/SavePageAs", m_menuFile, QIcon::fromTheme(QSL("document-save")), tr("Сохранить страницу как..."), SLOT(savePageAs()), "Ctrl+S");
+    ADD_ACTION("File/SendLink", m_menuFile, QIcon::fromTheme(QSL("mail-message-new")), tr("Отправить ссылку..."), SLOT(sendLink()), "");
+    ADD_ACTION("File/Print", m_menuFile, QIcon::fromTheme(QSL("document-print")), tr("Печать..."), SLOT(printPage()), "Ctrl+P");
     m_menuFile->addSeparator();
     m_menuFile->addAction(m_actions[QSL("Standard/Quit")]);
 
     // Edit menu
-    m_menuEdit = new QMenu(tr("&Edit"));
+    m_menuEdit = new QMenu(tr("Правка"));
     connect(m_menuEdit, &QMenu::aboutToShow, this, &MainMenu::aboutToShowEditMenu);
 
-    ADD_ACTION("Edit/Undo", m_menuEdit, QIcon::fromTheme(QSL("edit-undo")), tr("&Undo"), SLOT(editUndo()), "Ctrl+Z");
+    ADD_ACTION("Edit/Undo", m_menuEdit, QIcon::fromTheme(QSL("edit-undo")), tr("Отменить"), SLOT(editUndo()), "Ctrl+Z");
     action->setShortcutContext(Qt::WidgetShortcut);
-    ADD_ACTION("Edit/Redo", m_menuEdit, QIcon::fromTheme(QSL("edit-redo")), tr("&Redo"), SLOT(editRedo()), "Ctrl+Shift+Z");
-    action->setShortcutContext(Qt::WidgetShortcut);
-    m_menuEdit->addSeparator();
-    ADD_ACTION("Edit/Cut", m_menuEdit, QIcon::fromTheme(QSL("edit-cut")), tr("&Cut"), SLOT(editCut()), "Ctrl+X");
-    action->setShortcutContext(Qt::WidgetShortcut);
-    ADD_ACTION("Edit/Copy", m_menuEdit, QIcon::fromTheme(QSL("edit-copy")), tr("C&opy"), SLOT(editCopy()), "Ctrl+C");
-    action->setShortcutContext(Qt::WidgetShortcut);
-    ADD_ACTION("Edit/Paste", m_menuEdit, QIcon::fromTheme(QSL("edit-paste")), tr("&Paste"), SLOT(editPaste()), "Ctrl+V");
+    ADD_ACTION("Edit/Redo", m_menuEdit, QIcon::fromTheme(QSL("edit-redo")), tr("Повторить"), SLOT(editRedo()), "Ctrl+Shift+Z");
     action->setShortcutContext(Qt::WidgetShortcut);
     m_menuEdit->addSeparator();
-    ADD_ACTION("Edit/SelectAll", m_menuEdit, QIcon::fromTheme(QSL("edit-select-all")), tr("Select &All"), SLOT(editSelectAll()), "Ctrl+A");
+    ADD_ACTION("Edit/Cut", m_menuEdit, QIcon::fromTheme(QSL("edit-cut")), tr("Вырезать"), SLOT(editCut()), "Ctrl+X");
     action->setShortcutContext(Qt::WidgetShortcut);
-    ADD_ACTION("Edit/Find", m_menuEdit, QIcon::fromTheme(QSL("edit-find")), tr("&Find"), SLOT(editFind()), "Ctrl+F");
+    ADD_ACTION("Edit/Copy", m_menuEdit, QIcon::fromTheme(QSL("edit-copy")), tr("Копировать"), SLOT(editCopy()), "Ctrl+C");
+    action->setShortcutContext(Qt::WidgetShortcut);
+    ADD_ACTION("Edit/Paste", m_menuEdit, QIcon::fromTheme(QSL("edit-paste")), tr("Вставить"), SLOT(editPaste()), "Ctrl+V");
+    action->setShortcutContext(Qt::WidgetShortcut);
+    m_menuEdit->addSeparator();
+    ADD_ACTION("Edit/SelectAll", m_menuEdit, QIcon::fromTheme(QSL("edit-select-all")), tr("Выделить всё"), SLOT(editSelectAll()), "Ctrl+A");
+    action->setShortcutContext(Qt::WidgetShortcut);
+    ADD_ACTION("Edit/Find", m_menuEdit, QIcon::fromTheme(QSL("edit-find")), tr("Найти"), SLOT(editFind()), "Ctrl+F");
     action->setShortcutContext(Qt::WidgetShortcut);
     m_menuEdit->addSeparator();
 
     // View menu
-    m_menuView = new QMenu(tr("&View"));
+    m_menuView = new QMenu(tr("Вид"));
     connect(m_menuView, &QMenu::aboutToShow, this, &MainMenu::aboutToShowViewMenu);
 
-    QMenu* toolbarsMenu = new QMenu(tr("Toolbars"));
+    QMenu* toolbarsMenu = new QMenu(tr("Панели инструментов"));
     connect(toolbarsMenu, &QMenu::aboutToShow, this, &MainMenu::aboutToShowToolbarsMenu);
-    QMenu* sidebarMenu = new QMenu(tr("Sidebar"));
+    QMenu* sidebarMenu = new QMenu(tr("Боковая панель"));
     connect(sidebarMenu, &QMenu::aboutToShow, this, &MainMenu::aboutToShowSidebarsMenu);
-    QMenu* encodingMenu = new QMenu(tr("Character &Encoding"));
+    QMenu* encodingMenu = new QMenu(tr("Кодировка"));
     connect(encodingMenu, &QMenu::aboutToShow, this, &MainMenu::aboutToShowEncodingMenu);
 
     // Create menus to make shortcuts available even before first showing the menu
@@ -549,33 +549,33 @@ void MainMenu::init()
 
     m_menuView->addMenu(toolbarsMenu);
     m_menuView->addMenu(sidebarMenu);
-    ADD_CHECKABLE_ACTION("View/ShowStatusBar", m_menuView, QIcon(), tr("Sta&tus Bar"), SLOT(showStatusBar()), "");
+    ADD_CHECKABLE_ACTION("View/ShowStatusBar", m_menuView, QIcon(), tr("Панель статуса"), SLOT(showStatusBar()), "");
     m_menuView->addSeparator();
-    ADD_ACTION("View/Stop", m_menuView, QIcon::fromTheme(QSL("process-stop")), tr("&Stop"), SLOT(stop()), "Esc");
-    ADD_ACTION("View/Reload", m_menuView, QIcon::fromTheme(QSL("view-refresh")), tr("&Reload"), SLOT(reload()), "F5");
+    ADD_ACTION("View/Stop", m_menuView, QIcon::fromTheme(QSL("process-stop")), tr("Остановить"), SLOT(stop()), "Esc");
+    ADD_ACTION("View/Reload", m_menuView, QIcon::fromTheme(QSL("view-refresh")), tr("Обновить"), SLOT(reload()), "F5");
     m_menuView->addSeparator();
-    ADD_ACTION("View/ZoomIn", m_menuView, QIcon::fromTheme(QSL("zoom-in")), tr("Zoom &In"), SLOT(zoomIn()), "Ctrl++");
-    ADD_ACTION("View/ZoomOut", m_menuView, QIcon::fromTheme(QSL("zoom-out")), tr("Zoom &Out"), SLOT(zoomOut()), "Ctrl+-");
-    ADD_ACTION("View/ZoomReset", m_menuView, QIcon::fromTheme(QSL("zoom-original")), tr("Reset"), SLOT(zoomReset()), "Ctrl+0");
+    ADD_ACTION("View/ZoomIn", m_menuView, QIcon::fromTheme(QSL("zoom-in")), tr("Увеличить"), SLOT(zoomIn()), "Ctrl++");
+    ADD_ACTION("View/ZoomOut", m_menuView, QIcon::fromTheme(QSL("zoom-out")), tr("Уменьшить"), SLOT(zoomOut()), "Ctrl+-");
+    ADD_ACTION("View/ZoomReset", m_menuView, QIcon::fromTheme(QSL("zoom-original")), tr("Восстановить"), SLOT(zoomReset()), "Ctrl+0");
     m_menuView->addSeparator();
     m_menuView->addMenu(encodingMenu);
     m_menuView->addSeparator();
-    ADD_ACTION("View/PageSource", m_menuView, QIcon::fromTheme(QSL("text-html")), tr("&Page Source"), SLOT(showPageSource()), "Ctrl+U");
+    ADD_ACTION("View/PageSource", m_menuView, QIcon::fromTheme(QSL("text-html")), tr("Исходный код страницы"), SLOT(showPageSource()), "Ctrl+U");
     action->setShortcutContext(Qt::WidgetShortcut);
-    ADD_CHECKABLE_ACTION("View/FullScreen", m_menuView, QIcon::fromTheme(QSL("view-fullscreen")), tr("&FullScreen"), SLOT(showFullScreen()), "F11");
+    ADD_CHECKABLE_ACTION("View/FullScreen", m_menuView, QIcon::fromTheme(QSL("view-fullscreen")), tr("Полный экран"), SLOT(showFullScreen()), "F11");
 
     // Tools menu
-    m_menuTools = new QMenu(tr("&Tools"));
+    m_menuTools = new QMenu(tr("Инструменты"));
     connect(m_menuTools, &QMenu::aboutToShow, this, &MainMenu::aboutToShowToolsMenu);
 
-    ADD_ACTION("Tools/WebSearch", m_menuTools, QIcon::fromTheme(QSL("edit-find")), tr("&Web Search"), SLOT(webSearch()), "Ctrl+K");
-    ADD_ACTION("Tools/SiteInfo", m_menuTools, QIcon::fromTheme(QSL("dialog-information")), tr("Site &Info"), SLOT(showSiteInfo()), "Ctrl+I");
+    ADD_ACTION("Tools/WebSearch", m_menuTools, QIcon::fromTheme(QSL("edit-find")), tr("Поиск в интернете"), SLOT(webSearch()), "Ctrl+K");
+    ADD_ACTION("Tools/SiteInfo", m_menuTools, QIcon::fromTheme(QSL("dialog-information")), tr("Информация о странице"), SLOT(showSiteInfo()), "Ctrl+I");
     action->setShortcutContext(Qt::WidgetShortcut);
     m_menuTools->addSeparator();
-    ADD_ACTION("Tools/DownloadManager", m_menuTools, QIcon::fromTheme(QSL("download")), tr("&Download Manager"), SLOT(showDownloadManager()), "Ctrl+Y");
-    ADD_ACTION("Tools/CookiesManager", m_menuTools, QIcon(), tr("&Cookies Manager"), SLOT(showCookieManager()), "");
-    ADD_ACTION("Tools/WebInspector", m_menuTools, QIcon(), tr("Web In&spector"), SLOT(toggleWebInspector()), "Ctrl+Shift+I");
-    ADD_ACTION("Tools/ClearRecentHistory", m_menuTools, QIcon::fromTheme(QSL("edit-clear")), tr("Clear Recent &History"), SLOT(showClearRecentHistoryDialog()), "Ctrl+Shift+Del");
+    ADD_ACTION("Tools/DownloadManager", m_menuTools, QIcon::fromTheme(QSL("download")), tr("Менеджер загрузок"), SLOT(showDownloadManager()), "Ctrl+Y");
+    ADD_ACTION("Tools/CookiesManager", m_menuTools, QIcon(), tr("Менеджер Cookies"), SLOT(showCookieManager()), "");
+    ADD_ACTION("Tools/WebInspector", m_menuTools, QIcon(), tr("Веб-инспектор"), SLOT(toggleWebInspector()), "Ctrl+Shift+I");
+    ADD_ACTION("Tools/ClearRecentHistory", m_menuTools, QIcon::fromTheme(QSL("edit-clear")), tr("Очистить недавнюю историю"), SLOT(showClearRecentHistoryDialog()), "Ctrl+Shift+Del");
 
     if (!WebInspector::isEnabled())
         m_actions.value(QSL("Tools/WebInspector"))->setVisible(false);
@@ -586,17 +586,17 @@ void MainMenu::init()
     m_menuTools->addSeparator();
 
     // Help menu
-    m_menuHelp = new QMenu(tr("&Help"));
+    m_menuHelp = new QMenu(tr("Справка"));
 
 #ifndef Q_OS_MACOS
-    ADD_ACTION("Help/AboutQt", m_menuHelp, QIcon(), tr("About &Qt"), SLOT(aboutQt()), "");
+    ADD_ACTION("Help/AboutQt", m_menuHelp, QIcon(), tr("О &Qt"), SLOT(aboutQt()), "");
     m_menuHelp->addAction(m_actions[QSL("Standard/About")]);
     m_menuHelp->addSeparator();
 #endif
 
-    ADD_ACTION("Help/InfoAboutApp", m_menuHelp, QIcon::fromTheme(QSL("help-contents")), tr("Information about application"), SLOT(showInfoAboutApp()), "");
-    ADD_ACTION("Help/ConfigInfo", m_menuHelp, QIcon(), tr("Configuration Information"), SLOT(showConfigInfo()), "");
-    ADD_ACTION("Help/ReportIssue", m_menuHelp, QIcon(), tr("Report &Issue"), SLOT(reportIssue()), "");
+    ADD_ACTION("Help/InfoAboutApp", m_menuHelp, QIcon::fromTheme(QSL("help-contents")), tr("Информация о приложении"), SLOT(showInfoAboutApp()), "");
+    ADD_ACTION("Help/ConfigInfo", m_menuHelp, QIcon(), tr("Информация о конфигурации"), SLOT(showConfigInfo()), "");
+    ADD_ACTION("Help/ReportIssue", m_menuHelp, QIcon(), tr("Сообщить об ошибке"), SLOT(reportIssue()), "");
 
     m_actions[QSL("Help/InfoAboutApp")]->setShortcut(QKeySequence(QKeySequence::HelpContents));
 
@@ -609,7 +609,7 @@ void MainMenu::init()
     m_menuBookmarks->setMainWindow(m_window);
 
     // Other actions
-    action = new QAction(QIcon::fromTheme(QSL("user-trash")), tr("Restore &Closed Tab"), this);
+    action = new QAction(QIcon::fromTheme(QSL("user-trash")), tr("Восстановить закрытые вкладки"), this);
     action->setShortcut(QKeySequence(QSL("Ctrl+Shift+T")));
     connect(action, &QAction::triggered, this, &MainMenu::restoreClosedTab);
     m_actions[QSL("Other/RestoreClosedTab")] = action;

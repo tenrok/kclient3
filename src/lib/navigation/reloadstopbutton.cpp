@@ -54,11 +54,11 @@ void ReloadStopButton::showReloadButton()
 void ReloadStopButton::updateButton()
 {
     if (m_loadInProgress) {
-        setToolTip(tr("Stop"));
+        setToolTip(tr("Остановить"));
         setObjectName(QSL("navigation-button-stop"));
     }
     else {
-        setToolTip(tr("Reload"));
+        setToolTip(tr("Обновить"));
         setObjectName(QSL("navigation-button-reload"));
     }
 

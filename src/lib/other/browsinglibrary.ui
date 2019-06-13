@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Library</string>
+   <string>Библиотека</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
@@ -61,7 +61,7 @@
       <item>
        <widget class="QPushButton" name="importExport">
         <property name="text">
-         <string>Import and Export</string>
+         <string>Импорт и экспорт</string>
         </property>
        </widget>
       </item>
@@ -81,7 +81,7 @@
       <item>
        <widget class="QLineEdit" name="searchLine">
         <property name="placeholderText">
-         <string>Search...</string>
+         <string>Поиск...</string>
         </property>
        </widget>
       </item>

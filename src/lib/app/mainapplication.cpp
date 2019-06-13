@@ -107,7 +107,7 @@ MainApplication::MainApplication(int &argc, char** argv)
     , m_webProfile(nullptr)
     , m_autoSaver(nullptr)
 #if defined(Q_OS_WIN) && !defined(Q_OS_OS2)
-    , m_registerQAppAssociation(0)
+    , m_registerQAppAssociation(nullptr)
 #endif
 {
     setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -421,7 +421,7 @@ BrowserWindow* MainApplication::getWindow() const
         return m_lastActiveWindow.data();
     }
 
-    return m_windows.isEmpty() ? 0 : m_windows.at(0);
+    return m_windows.isEmpty() ? nullptr : m_windows.at(0);
 }
 
 BrowserWindow* MainApplication::createWindow(Qz::BrowserWindowType type, const QUrl &startUrl)
@@ -488,7 +488,7 @@ void MainApplication::destroyRestoreManager()
     }
 
     delete m_restoreManager;
-    m_restoreManager = 0;
+    m_restoreManager = nullptr;
 }
 
 void MainApplication::reloadSettings()
@@ -1068,10 +1068,10 @@ void MainApplication::checkDefaultWebBrowser()
     if (!associationManager()->isDefaultForAllCapabilities()) {
         CheckBoxDialog dialog(QMessageBox::Yes | QMessageBox::No, getWindow());
         dialog.setDefaultButton(QMessageBox::Yes);
-        dialog.setText(tr("KClient is not currently your default browser. Would you like to make it your default browser?"));
-        dialog.setCheckBoxText(tr("Always perform this check when starting KClient."));
+        dialog.setText(tr("KClient не является браузером по-умолчанию. Хотите сделать его браузером по-умолчанию?"));
+        dialog.setCheckBoxText(tr("Всегда выполнять эту проверку при запуске KClient."));
         dialog.setDefaultCheckState(Qt::Checked);
-        dialog.setWindowTitle(tr("Default Browser"));
+        dialog.setWindowTitle(tr("Браузер по-умолчанию"));
         dialog.setIcon(QMessageBox::Warning);
 
         if (dialog.exec() == QMessageBox::Yes) {
@@ -1192,9 +1192,9 @@ void MainApplication::createJumpList()
     // Tasks
     QWinJumpListCategory *tasks = jumpList->tasks();
     tasks->setVisible(true);
-    tasks->addLink(IconProvider::newTabIcon(), tr("Open new tab"), applicationFilePath(), {QSL("--new-tab")});
-    tasks->addLink(IconProvider::newWindowIcon(), tr("Open new window"), applicationFilePath(), {QSL("--new-window")});
-    tasks->addLink(IconProvider::privateBrowsingIcon(), tr("Open new private window"), applicationFilePath(), {QSL("--private-browsing")});
+    tasks->addLink(IconProvider::newTabIcon(), tr("Открыть новую вкладку"), applicationFilePath(), {QSL("--new-tab")});
+    tasks->addLink(IconProvider::newWindowIcon(), tr("Открыть новое окно"), applicationFilePath(), {QSL("--new-window")});
+    tasks->addLink(IconProvider::privateBrowsingIcon(), tr("Открыть новое приватное окно"), applicationFilePath(), {QSL("--private-browsing")});
 #endif
 }
 

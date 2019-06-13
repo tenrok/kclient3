@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Site Info</string>
+   <string>Информация о сайте</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="3" column="0">
@@ -44,12 +44,12 @@
     <widget class="HorizontalListWidget" name="listWidget">
      <item>
       <property name="text">
-       <string>General</string>
+       <string>Основная</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Media</string>
+       <string>Медиа</string>
       </property>
      </item>
     </widget>
@@ -81,7 +81,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Site address:</string>
+            <string>Адрес сайта:</string>
            </property>
           </widget>
          </item>
@@ -110,7 +110,7 @@
          <item row="1" column="0">
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>Encoding:</string>
+            <string>Кодировка:</string>
            </property>
           </widget>
          </item>
@@ -129,7 +129,7 @@
        <item row="1" column="0" colspan="4">
         <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>Meta tags of site:</string>
+          <string>Мета тэги сайта:</string>
          </property>
         </widget>
        </item>
@@ -143,12 +143,12 @@
          </attribute>
          <column>
           <property name="text">
-           <string>Tag</string>
+           <string>Тэг</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Value</string>
+           <string>Значение</string>
           </property>
          </column>
         </widget>
@@ -162,7 +162,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>&lt;b&gt;Security information&lt;/b&gt;</string>
+          <string>&lt;b&gt;Информация о безопасности&lt;/b&gt;</string>
          </property>
         </widget>
        </item>
@@ -232,12 +232,12 @@
              </attribute>
              <column>
               <property name="text">
-               <string>Image</string>
+               <string>Изображение</string>
               </property>
              </column>
              <column>
               <property name="text">
-               <string>Image address</string>
+               <string>Адрес изображения</string>
               </property>
              </column>
             </widget>
@@ -262,7 +262,7 @@
               </size>
              </property>
              <property name="text">
-              <string>&lt;b&gt;Preview&lt;/b&gt;</string>
+              <string>&lt;b&gt;Предпросмотр&lt;/b&gt;</string>
              </property>
             </widget>
            </item>

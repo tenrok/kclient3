@@ -123,9 +123,9 @@ void SessionManager::renameSession(QString sessionFilePath, SessionFlags flags)
     }
 
     bool ok;
-    const QString suggestedName = QFileInfo(sessionFilePath).completeBaseName() + (flags.testFlag(CloneSession) ? tr("_cloned") : tr("_renamed"));
-    QString newName = QInputDialog::getText(mApp->activeWindow(), (flags.testFlag(CloneSession) ? tr("Clone Session") : tr("Rename Session")),
-                                            tr("Please enter a new name:"), QLineEdit::Normal,
+    const QString suggestedName = QFileInfo(sessionFilePath).completeBaseName() + (flags.testFlag(CloneSession) ? tr("_клонированная") : tr("_переименованная"));
+    QString newName = QInputDialog::getText(mApp->activeWindow(), (flags.testFlag(CloneSession) ? tr("Клонировать сессию") : tr("Переименовать сессию")),
+                                            tr("Пожалуйста, укажите новое имя:"), QLineEdit::Normal,
                                             suggestedName, &ok);
 
     if (!ok)
@@ -133,19 +133,19 @@ void SessionManager::renameSession(QString sessionFilePath, SessionFlags flags)
 
     const QString newSessionPath = QString("%1/%2.dat").arg(DataPaths::path(DataPaths::Sessions)).arg(newName);
     if (QFile::exists(newSessionPath)) {
-        QMessageBox::information(mApp->activeWindow(), tr("Error!"), tr("The session file \"%1\" exists. Please enter another name.").arg(newName));
+        QMessageBox::information(mApp->activeWindow(), tr("Ошибка!"), tr("Файл сессии \"%1\" уже существует. Пожалуйста, укажите другое имя.").arg(newName));
         renameSession(sessionFilePath, flags);
         return;
     }
 
     if (flags.testFlag(CloneSession)) {
         if (!QFile::copy(sessionFilePath, newSessionPath)) {
-            QMessageBox::information(mApp->activeWindow(), tr("Error!"), tr("An error occurred when cloning session file."));
+            QMessageBox::information(mApp->activeWindow(), tr("Ошибка!"), tr("An error occurred when cloning session file."));
             return;
         }
     } else {
         if (!QFile::rename(sessionFilePath, newSessionPath)) {
-            QMessageBox::information(mApp->activeWindow(), tr("Error!"), tr("An error occurred when renaming session file."));
+            QMessageBox::information(mApp->activeWindow(), tr("Ошибка!"), tr("An error occurred when renaming session file."));
             return;
         }
         if (isActive(sessionFilePath)) {
@@ -158,7 +158,7 @@ void SessionManager::renameSession(QString sessionFilePath, SessionFlags flags)
 void SessionManager::saveSession()
 {
     bool ok;
-    QString sessionName = QInputDialog::getText(mApp->activeWindow(), tr("Save Session"),
+    QString sessionName = QInputDialog::getText(mApp->activeWindow(), tr("Сохранение сессии"),
                                          tr("Please enter a name to save session:"), QLineEdit::Normal,
                                          tr("Saved Session (%1)").arg(QDateTime::currentDateTime().toString("dd MMM yyyy HH-mm-ss")), &ok);
 
@@ -167,7 +167,7 @@ void SessionManager::saveSession()
 
     const QString filePath = QString("%1/%2.dat").arg(DataPaths::path(DataPaths::Sessions)).arg(sessionName);
     if (QFile::exists(filePath)) {
-        QMessageBox::information(mApp->activeWindow(), tr("Error!"), tr("The session file \"%1\" exists. Please enter another name.").arg(sessionName));
+        QMessageBox::information(mApp->activeWindow(), tr("Ошибка!"), tr("Файл сессии \"%1\" уже существует. Пожалуйста, укажите другое имя.").arg(sessionName));
         saveSession();
         return;
     }
@@ -196,7 +196,7 @@ void SessionManager::cloneSession(const QString &filePath)
 
 void SessionManager::deleteSession(const QString &filePath)
 {
-    QMessageBox::StandardButton result = QMessageBox::information(mApp->activeWindow(), tr("Delete Session"), tr("Are you sure you want to delete session '%1'?")
+    QMessageBox::StandardButton result = QMessageBox::information(mApp->activeWindow(), tr("Удаление сессии"), tr("Вы уверены, что хотите удалить сессию '%1'?")
                                                                   .arg(QFileInfo(filePath).completeBaseName()), QMessageBox::Yes | QMessageBox::No);
     if (result == QMessageBox::Yes) {
         QFile::remove(filePath);
@@ -206,7 +206,7 @@ void SessionManager::deleteSession(const QString &filePath)
 void SessionManager::newSession()
 {
     bool ok;
-    QString sessionName = QInputDialog::getText(mApp->activeWindow(), tr("New Session"),
+    QString sessionName = QInputDialog::getText(mApp->activeWindow(), tr("Новая сессия"),
                                          tr("Please enter a name to create new session:"), QLineEdit::Normal,
                                          tr("New Session (%1)").arg(QDateTime::currentDateTime().toString("dd MMM yyyy HH-mm-ss")), &ok);
 
@@ -215,7 +215,7 @@ void SessionManager::newSession()
 
     const QString filePath = QString("%1/%2.dat").arg(DataPaths::path(DataPaths::Sessions)).arg(sessionName);
     if (QFile::exists(filePath)) {
-        QMessageBox::information(mApp->activeWindow(), tr("Error!"), tr("The session file \"%1\" exists. Please enter another name.").arg(sessionName));
+        QMessageBox::information(mApp->activeWindow(), tr("Ошибка!"), tr("Файл сессии \"%1\" уже существует. Пожалуйста, укажите другое имя.").arg(sessionName));
         newSession();
         return;
     }

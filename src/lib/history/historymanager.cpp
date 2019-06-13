@@ -75,8 +75,8 @@ QByteArray HistoryManager::saveState()
 
 void HistoryManager::clearHistory()
 {
-    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Confirmation"),
-                                         tr("Are you sure you want to delete all history?"), QMessageBox::Yes | QMessageBox::No);
+    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Подтверждение"),
+                                         tr("Вы действительно хотите стереть всю историю?"), QMessageBox::Yes | QMessageBox::No);
     if (button != QMessageBox::Yes) {
         return;
     }
@@ -142,16 +142,16 @@ void HistoryManager::openUrlInNewPrivateWindow(const QUrl &url)
 void HistoryManager::createContextMenu(const QPoint &pos)
 {
     QMenu menu;
-    QAction* actNewTab = menu.addAction(IconProvider::newTabIcon(), tr("Open in new tab"));
-    QAction* actNewWindow = menu.addAction(IconProvider::newWindowIcon(), tr("Open in new window"));
-    QAction* actNewPrivateWindow = menu.addAction(IconProvider::privateBrowsingIcon(), tr("Open in new private window"));
+    QAction* actNewTab = menu.addAction(IconProvider::newTabIcon(), tr("Открыть в новой вкладке"));
+    QAction* actNewWindow = menu.addAction(IconProvider::newWindowIcon(), tr("Открыть в новом окне"));
+    QAction* actNewPrivateWindow = menu.addAction(IconProvider::privateBrowsingIcon(), tr("Открыть в новом приватном окне"));
 
     menu.addSeparator();
-    QAction* actCopyUrl = menu.addAction(tr("Copy url"), this, &HistoryManager::copyUrl);
-    QAction* actCopyTitle = menu.addAction(tr("Copy title"), this, &HistoryManager::copyTitle);
+    QAction* actCopyUrl = menu.addAction(tr("Копировать ссылку"), this, &HistoryManager::copyUrl);
+    QAction* actCopyTitle = menu.addAction(tr("Копировать заголовок"), this, &HistoryManager::copyTitle);
 
     menu.addSeparator();
-    QAction* actDelete = menu.addAction(QIcon::fromTheme(QSL("edit-delete")), tr("Delete"));
+    QAction* actDelete = menu.addAction(QIcon::fromTheme(QSL("edit-delete")), tr("Удалить"));
 
     connect(actNewTab, SIGNAL(triggered()), this, SLOT(openUrlInNewTab()));
     connect(actNewWindow, SIGNAL(triggered()), this, SLOT(openUrlInNewWindow()));

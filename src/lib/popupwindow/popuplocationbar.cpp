@@ -27,7 +27,7 @@
 class KCLIENT_EXPORT PopupSiteIcon : public QWidget
 {
 public:
-    explicit PopupSiteIcon(QWidget* parent = 0) : QWidget(parent) { }
+    explicit PopupSiteIcon(QWidget* parent = nullptr) : QWidget(parent) { }
     void setIcon(const QIcon &icon) {
         m_icon = QIcon(icon.pixmap(16));
         update();
@@ -44,7 +44,7 @@ private:
 
 PopupLocationBar::PopupLocationBar(QWidget* parent)
     : LineEdit(parent)
-    , m_view(0)
+    , m_view(nullptr)
 {
     m_siteIcon = new PopupSiteIcon(this);
     m_siteIcon->setIcon(IconProvider::emptyWebIcon());

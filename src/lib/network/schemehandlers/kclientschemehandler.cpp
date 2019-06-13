@@ -151,11 +151,11 @@ QString KClientSchemeReply::startPage()
     sPage.append(QzTools::readAllFileContents(":html/start.html"));
     sPage.replace(QLatin1String("%ABOUT-IMG%"), QSL("qrc:icons/other/startpage.svg"));
 
-    sPage.replace(QLatin1String("%TITLE%"), tr("Start Page"));
-    sPage.replace(QLatin1String("%BUTTON-LABEL%"), tr("Search on Web"));
-    sPage.replace(QLatin1String("%SEARCH-BY%"), tr("Search results provided by DuckDuckGo"));
+    sPage.replace(QLatin1String("%TITLE%"), tr("Стартовая страница"));
+    sPage.replace(QLatin1String("%BUTTON-LABEL%"), tr("Найти"));
+    sPage.replace(QLatin1String("%SEARCH-BY%"), tr("Результаты поиска предоставлены DuckDuckGo"));
     sPage.replace(QLatin1String("%WWW%"), Qz::WIKIADDRESS);
-    sPage.replace(QLatin1String("%ABOUT-KCLIENT%"), tr("About KClient"));
+    sPage.replace(QLatin1String("%ABOUT-KCLIENT%"), tr("О KClient"));
     sPage.replace(QLatin1String("%PRIVATE-BROWSING%"), mApp->isPrivate() ? tr("<h1>Private Browsing</h1>") : QString());
     sPage = QzTools::applyDirectionToPage(sPage);
 
@@ -171,20 +171,20 @@ QString KClientSchemeReply::aboutPage()
         aPage.replace(QLatin1String("%ABOUT-IMG%"), QSL("qrc:icons/other/about.svg"));
         aPage.replace(QLatin1String("%COPYRIGHT-INCLUDE%"), QzTools::readAllFileContents(":html/copyright").toHtmlEscaped());
 
-        aPage.replace(QLatin1String("%TITLE%"), tr("About KClient"));
-        aPage.replace(QLatin1String("%ABOUT-KCLIENT%"), tr("About KClient"));
-        aPage.replace(QLatin1String("%INFORMATIONS-ABOUT-VERSION%"), tr("Information about version"));
-        aPage.replace(QLatin1String("%COPYRIGHT%"), tr("Copyright"));
+        aPage.replace(QLatin1String("%TITLE%"), tr("О KClient"));
+        aPage.replace(QLatin1String("%ABOUT-KCLIENT%"), tr("О KClient"));
+        aPage.replace(QLatin1String("%INFORMATIONS-ABOUT-VERSION%"), tr("Информация о версии"));
+        aPage.replace(QLatin1String("%COPYRIGHT%"), tr("Авторское право"));
 
         aPage.replace(QLatin1String("%VERSION-INFO%"),
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Version"),
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Версия"),
 #ifdef KCLIENT_GIT_REVISION
                               QString("%1 (%2)").arg(Qz::VERSION, KCLIENT_GIT_REVISION)));
 #else
                               Qz::VERSION));
 #endif
 
-        aPage.replace(QLatin1String("%MAIN-DEVELOPER%"), tr("Main developer"));
+        aPage.replace(QLatin1String("%MAIN-DEVELOPER%"), tr("Основной разработчик"));
         aPage.replace(QLatin1String("%MAIN-DEVELOPER-TEXT%"), authorString(Qz::AUTHOR, "nowrep@gmail.com"));
         aPage = QzTools::applyDirectionToPage(aPage);
     }
@@ -205,22 +205,22 @@ QString KClientSchemeReply::speeddialPage()
         dPage.replace(QLatin1String("%LOADING-IMG%"), QLatin1String("qrc:html/loading.gif"));
         dPage.replace(QLatin1String("%IMG_SETTINGS%"), QLatin1String("qrc:html/configure.svg"));
 
-        dPage.replace(QLatin1String("%SITE-TITLE%"), tr("Speed Dial"));
-        dPage.replace(QLatin1String("%ADD-TITLE%"), tr("Add New Page"));
-        dPage.replace(QLatin1String("%TITLE-EDIT%"), tr("Edit"));
-        dPage.replace(QLatin1String("%TITLE-REMOVE%"), tr("Remove"));
-        dPage.replace(QLatin1String("%TITLE-RELOAD%"), tr("Reload"));
+        dPage.replace(QLatin1String("%SITE-TITLE%"), tr("Страница быстрого доступа"));
+        dPage.replace(QLatin1String("%ADD-TITLE%"), tr("Добавить новую страницу"));
+        dPage.replace(QLatin1String("%TITLE-EDIT%"), tr("Править"));
+        dPage.replace(QLatin1String("%TITLE-REMOVE%"), tr("Удалить"));
+        dPage.replace(QLatin1String("%TITLE-RELOAD%"), tr("Обновить"));
         dPage.replace(QLatin1String("%TITLE-WARN%"), tr("Are you sure you want to remove this speed dial?"));
         dPage.replace(QLatin1String("%TITLE-WARN-REL%"), tr("Are you sure you want to reload all speed dials?"));
-        dPage.replace(QLatin1String("%TITLE-FETCHTITLE%"), tr("Load title from page"));
+        dPage.replace(QLatin1String("%TITLE-FETCHTITLE%"), tr("Загрузить заголовок со страницы"));
         dPage.replace(QLatin1String("%JAVASCRIPT-DISABLED%"), tr("SpeedDial requires enabled JavaScript."));
         dPage.replace(QLatin1String("%URL%"), tr("Url"));
-        dPage.replace(QLatin1String("%TITLE%"), tr("Title"));
-        dPage.replace(QLatin1String("%APPLY%"), tr("Apply"));
-        dPage.replace(QLatin1String("%CANCEL%"), tr("Cancel"));
-        dPage.replace(QLatin1String("%NEW-PAGE%"), tr("New Page"));
-        dPage.replace(QLatin1String("%SETTINGS-TITLE%"), tr("Speed Dial settings"));
-        dPage.replace(QLatin1String("%TXT_PLACEMENT%"), tr("Placement: "));
+        dPage.replace(QLatin1String("%TITLE%"), tr("Заголовок"));
+        dPage.replace(QLatin1String("%APPLY%"), tr("Применить"));
+        dPage.replace(QLatin1String("%CANCEL%"), tr("Отмена"));
+        dPage.replace(QLatin1String("%NEW-PAGE%"), tr("Новая страница"));
+        dPage.replace(QLatin1String("%SETTINGS-TITLE%"), tr("Настройки быстрого доступа"));
+        dPage.replace(QLatin1String("%TXT_PLACEMENT%"), tr("Размещение: "));
         dPage.replace(QLatin1String("%TXT_AUTO%"), tr("Auto"));
         dPage.replace(QLatin1String("%TXT_COVER%"), tr("Cover"));
         dPage.replace(QLatin1String("%TXT_FIT%"), tr("Fit"));

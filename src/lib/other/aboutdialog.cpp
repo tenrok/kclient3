@@ -47,14 +47,14 @@ void AboutDialog::showAbout()
 {
     QString aboutHtml;
     aboutHtml += "<div style='margin:0px 20px;'>";
-    aboutHtml += tr("<p><b>Application version %1</b><br/>").arg(
+    aboutHtml += tr("<p><b>Версия приложения %1</b><br/>").arg(
 #ifdef KCLIENT_GIT_REVISION
                        QString("%1 (%2)").arg(Qz::VERSION, KCLIENT_GIT_REVISION)
 #else
                        Qz::VERSION
 #endif
                    );
-    aboutHtml += tr("<b>QtWebEngine version %1</b></p>").arg(qVersion());
+    aboutHtml += tr("<b>Версия QtWebEngine %1</b></p>").arg(qVersion());
     aboutHtml += QString("<p>&copy; %1 %2<br/>").arg(Qz::COPYRIGHT, Qz::AUTHOR);
     aboutHtml += QString("<a href=%1>%1</a></p>").arg(Qz::WWWADDRESS);
     aboutHtml += "<p>" + mApp->userAgentManager()->defaultUserAgent() + "</p>";

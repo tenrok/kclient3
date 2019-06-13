@@ -70,12 +70,12 @@ LocationCompleterView::LocationCompleterView()
 
     ToolButton *searchSettingsButton = new ToolButton(this);
     searchSettingsButton->setIcon(IconProvider::settingsIcon());
-    searchSettingsButton->setToolTip(tr("Manage Search Engines"));
+    searchSettingsButton->setToolTip(tr("Управление поисковыми системами"));
     searchSettingsButton->setAutoRaise(true);
     searchSettingsButton->setIconSize(QSize(16, 16));
     connect(searchSettingsButton, &ToolButton::clicked, this, &LocationCompleterView::searchEnginesDialogRequested);
 
-    QLabel *searchLabel = new QLabel(tr("Search with:"));
+    QLabel *searchLabel = new QLabel(tr("Искать в:"));
     m_searchEnginesLayout = new QHBoxLayout();
 
     setupSearchEngines();

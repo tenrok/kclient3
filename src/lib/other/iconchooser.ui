@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Choose icon...</string>
+   <string>Выбор иконки...</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>From file</string>
+      <string>Из файла</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="bottomMargin">
@@ -26,7 +26,7 @@
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Image (.png, .jpg, .jpeg, .gif)</string>
+         <string>Изображение (.png, .jpg, .jpeg, .gif)</string>
         </property>
        </widget>
       </item>
@@ -39,7 +39,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Choose file...</string>
+         <string>Выберите файл...</string>
         </property>
        </widget>
       </item>
@@ -49,7 +49,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string>From database</string>
+      <string>Из базы</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="bottomMargin">
@@ -58,7 +58,7 @@
       <item>
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Site Url:</string>
+         <string>Ссылка сайта:</string>
         </property>
        </widget>
       </item>

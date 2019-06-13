@@ -29,7 +29,7 @@ DatabasePasswordBackend::DatabasePasswordBackend()
 
 QString DatabasePasswordBackend::name() const
 {
-    return AutoFill::tr("Database (plaintext)");
+    return AutoFill::tr("База данных (текст)");
 }
 
 QVector<PasswordEntry> DatabasePasswordBackend::getEntries(const QUrl &url)

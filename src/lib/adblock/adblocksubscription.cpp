@@ -171,7 +171,7 @@ void AdBlockSubscription::subscriptionDownloaded()
     m_reply = 0;
 
     if (error) {
-        emit subscriptionError(tr("Cannot load subscription!"));
+        emit subscriptionError(tr("Невозможно загрузить подписку!"));
         return;
     }
 
@@ -284,7 +284,7 @@ AdBlockSubscription::~AdBlockSubscription()
 // AdBlockCustomList
 
 AdBlockCustomList::AdBlockCustomList(QObject* parent)
-    : AdBlockSubscription(tr("Custom Rules"), parent)
+    : AdBlockSubscription(tr("Пользовательские правила"), parent)
 {
     setFilePath(DataPaths::currentProfilePath() + QLatin1String("/adblock/customlist.txt"));
 }

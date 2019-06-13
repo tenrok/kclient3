@@ -79,7 +79,7 @@ CookieManager::CookieManager(QWidget *parent)
     ui->filter3rdParty->hide();
 #endif
 
-    ui->search->setPlaceholderText(tr("Search"));
+    ui->search->setPlaceholderText(tr("Поиск"));
     ui->cookieTree->setDefaultItemShowMode(TreeWidget::ItemsCollapsed);
     ui->cookieTree->sortItems(0, Qt::AscendingOrder);
     ui->cookieTree->header()->setDefaultSectionSize(220);
@@ -167,10 +167,10 @@ void CookieManager::currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem
     ui->value->setText(cookie.value());
     ui->server->setText(cookie.domain());
     ui->path->setText(cookie.path());
-    cookie.isSecure() ? ui->secure->setText(tr("Secure only")) : ui->secure->setText(tr("All connections"));
+    cookie.isSecure() ? ui->secure->setText(tr("Только безопасные")) : ui->secure->setText(tr("Все соединения"));
     cookie.isSessionCookie() ? ui->expiration->setText(tr("Session cookie")) : ui->expiration->setText(QDateTime(cookie.expirationDate()).toString("hh:mm:ss dddd d. MMMM yyyy"));
 
-    ui->removeOne->setText(tr("Remove cookie"));
+    ui->removeOne->setText(tr("Удалить cookie"));
 }
 
 void CookieManager::addWhitelist()

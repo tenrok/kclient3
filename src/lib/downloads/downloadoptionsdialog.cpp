@@ -46,7 +46,7 @@ DownloadOptionsDialog::DownloadOptionsDialog(const QString &fileName, QWebEngine
         ui->iconLabel->setPixmap(fileIcon.pixmap(22));
     }
 
-    setWindowTitle(tr("Opening %1").arg(fileName));
+    setWindowTitle(tr("Открытие %1").arg(fileName));
 
     ui->buttonBox->setFocus();
 

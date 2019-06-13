@@ -24,8 +24,8 @@ DownloadsButton::DownloadsButton(QObject *parent)
     , m_manager(mApp->downloadManager())
 {
     setIcon(QIcon::fromTheme(QSL("edit-download"), QIcon(QSL(":icons/menu/download.svg"))));
-    setTitle(tr("Downloads"));
-    setToolTip(tr("Open Download Manager"));
+    setTitle(tr("Загрузки"));
+    setToolTip(tr("Открыть менеджер загрузок"));
 
     connect(this, &AbstractButtonInterface::clicked, this, &DownloadsButton::clicked);
     connect(m_manager, &DownloadManager::downloadsCountChanged, this, &DownloadsButton::updateState);
@@ -40,7 +40,7 @@ QString DownloadsButton::id() const
 
 QString DownloadsButton::name() const
 {
-    return tr("Downloads");
+    return tr("Загрузки");
 }
 
 void DownloadsButton::updateState()

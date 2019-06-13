@@ -67,7 +67,7 @@ AutoFillManager::AutoFillManager(QWidget* parent)
     menu->addAction(tr("Import Passwords from File..."), this, &AutoFillManager::importPasswords);
     menu->addAction(tr("Export Passwords to File..."), this, &AutoFillManager::exportPasswords);
     ui->importExport->setMenu(menu);
-    ui->search->setPlaceholderText(tr("Search"));
+    ui->search->setPlaceholderText(tr("Поиск"));
 
     // Password backends
     ui->currentBackend->setText(QString("<b>%1</b>").arg(m_passwordManager->activeBackend()->name()));
@@ -176,7 +176,7 @@ void AutoFillManager::showPasswords()
 
     m_passwordsShown = true;
 
-    int result = QMessageBox::question(this, tr("Show Passwords"), tr("Are you sure that you want to show all passwords?"),
+    int result = QMessageBox::question(this, tr("Показать пароли"), tr("Вы действительно хотите увидеть все пароли?"),
                                        QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
     if (result != QMessageBox::Yes) {
         return;
@@ -191,7 +191,7 @@ void AutoFillManager::showPasswords()
         item->setText(2, item->data(0, Qt::UserRole + 10).value<PasswordEntry>().password);
     }
 
-    ui->showPasswords->setText(tr("Hide Passwords"));
+    ui->showPasswords->setText(tr("Скрыть пароли"));
 }
 
 void AutoFillManager::copyPassword()
@@ -229,8 +229,8 @@ void AutoFillManager::removePass()
 
 void AutoFillManager::removeAllPass()
 {
-    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Confirmation"),
-                                         tr("Are you sure you want to delete all passwords on your computer?"), QMessageBox::Yes | QMessageBox::No);
+    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Подтверждение"),
+                                         tr("Вы уверены, что хотите удалить все пароли на данном компьютере?"), QMessageBox::Yes | QMessageBox::No);
     if (button != QMessageBox::Yes) {
         return;
     }
@@ -249,7 +249,7 @@ void AutoFillManager::editPass()
     PasswordEntry entry = curItem->data(0, Qt::UserRole + 10).value<PasswordEntry>();
 
     bool ok;
-    QString text = QInputDialog::getText(this, tr("Edit password"), tr("Change password:"), QLineEdit::Normal, entry.password, &ok);
+    QString text = QInputDialog::getText(this, tr("Редактировать пароль"), tr("Изменить пароль:"), QLineEdit::Normal, entry.password, &ok);
 
     if (ok && !text.isEmpty() && text != entry.password) {
         QByteArray oldPass = "=" + PasswordManager::urlEncodePassword(entry.password);
@@ -369,10 +369,10 @@ void AutoFillManager::passwordContextMenu(const QPoint &pos)
 {
     QMenu *menu = new QMenu;
     menu->setAttribute(Qt::WA_DeleteOnClose);
-    menu->addAction(tr("Copy Username"), this, &AutoFillManager::copyUsername);
-    menu->addAction(tr("Copy Password"), this, &AutoFillManager::copyPassword);
+    menu->addAction(tr("Копировать имя пользователя"), this, &AutoFillManager::copyUsername);
+    menu->addAction(tr("Копировать пароль"), this, &AutoFillManager::copyPassword);
     menu->addSeparator();
-    menu->addAction(tr("Edit Password"), this, &AutoFillManager::editPass);
+    menu->addAction(tr("Редактировать пароль"), this, &AutoFillManager::editPass);
     menu->popup(ui->treePass->viewport()->mapToGlobal(pos));
 }
 

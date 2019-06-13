@@ -256,7 +256,7 @@ void WebSearchBar::contextMenuEvent(QContextMenuEvent* event)
     menu->setAttribute(Qt::WA_DeleteOnClose);
 
     menu->addSeparator();
-    QAction* act = menu->addAction(tr("Show suggestions"));
+    QAction* act = menu->addAction(tr("Показать предложения"));
     act->setCheckable(true);
     act->setChecked(qzSettings->showWSBSearchSuggestions);
     connect(act, &QAction::triggered, this, &WebSearchBar::enableSearchSuggestions);

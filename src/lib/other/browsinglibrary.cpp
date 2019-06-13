@@ -52,14 +52,14 @@ BrowsingLibrary::BrowsingLibrary(BrowserWindow* window, QWidget* parent)
     bookmarksIcon.addFile(QSL(":/icons/other/bigstar.svg"), QSize(), QIcon::Normal);
     bookmarksIcon.addFile(QSL(":/icons/other/bigstar-selected.svg"), QSize(), QIcon::Selected);
 
-    ui->tabs->AddTab(m_historyManager, historyIcon, tr("History"));
-    ui->tabs->AddTab(m_bookmarksManager, bookmarksIcon, tr("Bookmarks"));
+    ui->tabs->AddTab(m_historyManager, historyIcon, tr("История"));
+    ui->tabs->AddTab(m_bookmarksManager, bookmarksIcon, tr("Закладки"));
     ui->tabs->SetMode(FancyTabWidget::Mode_LargeSidebar);
     ui->tabs->setFocus();
 
     QMenu* m = new QMenu(this);
-    m->addAction(tr("Import Bookmarks..."), this, &BrowsingLibrary::importBookmarks);
-    m->addAction(tr("Export Bookmarks..."), this, &BrowsingLibrary::exportBookmarks);
+    m->addAction(tr("Импорт закладок..."), this, &BrowsingLibrary::importBookmarks);
+    m->addAction(tr("Экспорт закладок..."), this, &BrowsingLibrary::exportBookmarks);
     ui->importExport->setMenu(m);
 
     connect(ui->tabs, &FancyTabWidget::CurrentChanged, ui->searchLine, &QLineEdit::clear);

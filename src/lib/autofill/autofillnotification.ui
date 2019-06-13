@@ -66,7 +66,7 @@
      <item>
       <widget class="QPushButton" name="update">
        <property name="text">
-        <string>Update</string>
+        <string>Обновить</string>
        </property>
       </widget>
      </item>
@@ -82,7 +82,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>Remember</string>
+        <string>Запомнить</string>
        </property>
       </widget>
      </item>
@@ -98,7 +98,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>Never For This Site</string>
+        <string>Никогда для этого сайта</string>
        </property>
       </widget>
      </item>
@@ -114,7 +114,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>Not Now</string>
+        <string>Не сейчас</string>
        </property>
       </widget>
      </item>

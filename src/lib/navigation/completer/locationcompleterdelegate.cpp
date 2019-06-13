@@ -160,7 +160,7 @@ void LocationCompleterDelegate::paint(QPainter* painter, const QStyleOptionViewI
             if (searchEngineName.isEmpty()) {
                 searchEngineName = LocationBar::searchEngine().name;
             }
-            link = tr("Search with %1").arg(searchEngineName);
+            link = tr("Искать в %1").arg(searchEngineName);
         }
     }
 

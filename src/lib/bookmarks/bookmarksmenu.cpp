@@ -28,7 +28,7 @@
 
 BookmarksMenu::BookmarksMenu(QWidget* parent)
     : Menu(parent)
-    , m_window(0)
+    , m_window(nullptr)
     , m_changed(true)
 {
     init();
@@ -162,11 +162,11 @@ void BookmarksMenu::openBookmarkInNewWindow(BookmarkItem* item)
 
 void BookmarksMenu::init()
 {
-    setTitle(tr("&Bookmarks"));
+    setTitle(tr("Закладки"));
 
-    addAction(tr("Bookmark &This Page"), this, &BookmarksMenu::bookmarkPage)->setShortcut(QKeySequence("Ctrl+D"));
-    addAction(tr("Bookmark &All Tabs"), this, &BookmarksMenu::bookmarkAllTabs);
-    addAction(QIcon::fromTheme("bookmarks-organize"), tr("Organize &Bookmarks"), this, &BookmarksMenu::showBookmarksManager)->setShortcut(QKeySequence("Ctrl+Shift+O"));
+    addAction(tr("Добавить в закладки"), this, &BookmarksMenu::bookmarkPage)->setShortcut(QKeySequence("Ctrl+D"));
+    addAction(tr("Закладки для всех вкладок"), this, &BookmarksMenu::bookmarkAllTabs);
+    addAction(QIcon::fromTheme("bookmarks-organize"), tr("Управление закладками"), this, &BookmarksMenu::showBookmarksManager)->setShortcut(QKeySequence("Ctrl+Shift+O"));
     addSeparator();
 
     connect(this, SIGNAL(aboutToShow()), this, SLOT(aboutToShow()));

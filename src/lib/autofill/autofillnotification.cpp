@@ -38,21 +38,21 @@ AutoFillNotification::AutoFillNotification(const QUrl &url, const PageFormData &
     QString userPart;
 
     if (!url.host().isEmpty()) {
-        hostPart = tr("on %1").arg(url.host());
+        hostPart = tr("на %1").arg(url.host());
     }
 
     if (!m_formData.username.isEmpty()) {
-        userPart = tr("for <b>%1</b>").arg(m_formData.username);
+        userPart = tr("для <b>%1</b>").arg(m_formData.username);
     }
 
     if (m_updateData.isValid()) {
-        ui->label->setText(tr("Do you want KClient to update saved password %1?").arg(userPart));
+        ui->label->setText(tr("Вы хотите, чтобы KClient обновил сохранённый пароль %1?").arg(userPart));
 
         ui->remember->setVisible(false);
         ui->never->setVisible(false);
     }
     else {
-        ui->label->setText(tr("Do you want KClient to remember the password %1 %2?").arg(userPart, hostPart));
+        ui->label->setText(tr("Вы хотите, чтобы KClient запомнил пароль %1 %2?").arg(userPart, hostPart));
 
         ui->update->setVisible(false);
     }

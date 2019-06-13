@@ -110,12 +110,12 @@ void BookmarksImportDialog::nextPage()
         }
 
         if (m_importer->error()) {
-            QMessageBox::critical(this, tr("Error!"), m_importer->errorString());
+            QMessageBox::critical(this, tr("Ошибка!"), m_importer->errorString());
             return;
         }
 
         if (!m_importedFolder || m_importedFolder->children().isEmpty()) {
-            QMessageBox::warning(this, tr("Error!"), tr("No bookmarks were found."));
+            QMessageBox::warning(this, tr("Ошибка!"), tr("No bookmarks were found."));
             return;
         }
 

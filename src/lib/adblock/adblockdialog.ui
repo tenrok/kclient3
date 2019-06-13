@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>AdBlock Configuration</string>
+   <string>Настройка AdBlock</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QCheckBox" name="adblockCheckBox">
      <property name="text">
-      <string>Enable AdBlock</string>
+      <string>Включить AdBlock</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -29,7 +29,7 @@
      <item>
       <widget class="QLineEdit" name="search">
        <property name="placeholderText">
-        <string>Search...</string>
+        <string>Поиск...</string>
        </property>
       </widget>
      </item>
@@ -74,7 +74,7 @@
         <item>
          <widget class="QPushButton" name="buttonOptions">
           <property name="text">
-           <string>Options</string>
+           <string>Опции</string>
           </property>
           <property name="icon">
            <iconset resource="../data/icons.qrc">

@@ -69,18 +69,18 @@ void BookmarksToolbar::contextMenuRequested(const QPoint &pos)
     m_clickedBookmark = button ? button->bookmark() : 0;
 
     QMenu menu;
-    QAction* actNewTab = menu.addAction(IconProvider::newTabIcon(), tr("Open in new tab"));
-    QAction* actNewWindow = menu.addAction(IconProvider::newWindowIcon(), tr("Open in new window"));
-    QAction* actNewPrivateWindow = menu.addAction(IconProvider::privateBrowsingIcon(), tr("Open in new private window"));
+    QAction* actNewTab = menu.addAction(IconProvider::newTabIcon(), tr("Открыть в новой вкладке"));
+    QAction* actNewWindow = menu.addAction(IconProvider::newWindowIcon(), tr("Открыть в новом окне"));
+    QAction* actNewPrivateWindow = menu.addAction(IconProvider::privateBrowsingIcon(), tr("Открыть в новом приватном окне"));
     menu.addSeparator();
-    QAction* actEdit = menu.addAction(tr("Edit"));
-    QAction* actDelete = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
+    QAction* actEdit = menu.addAction(tr("Правка"));
+    QAction* actDelete = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Удалить"));
     menu.addSeparator();
-    m_actShowOnlyIcons = menu.addAction(tr("Show Only Icons"));
+    m_actShowOnlyIcons = menu.addAction(tr("Показать только иконки"));
     m_actShowOnlyIcons->setCheckable(true);
     m_actShowOnlyIcons->setChecked(m_bookmarks->showOnlyIconsInToolbar());
     connect(m_actShowOnlyIcons, &QAction::toggled, m_bookmarks, &Bookmarks::setShowOnlyIconsInToolbar);
-    m_actShowOnlyText = menu.addAction(tr("Show Only Text"));
+    m_actShowOnlyText = menu.addAction(tr("Показать только текст"));
     m_actShowOnlyText->setCheckable(true);
     m_actShowOnlyText->setChecked(m_bookmarks->showOnlyTextInToolbar());
     connect(m_actShowOnlyText, &QAction::toggled, m_bookmarks, &Bookmarks::setShowOnlyTextInToolbar);

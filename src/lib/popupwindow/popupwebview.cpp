@@ -97,7 +97,7 @@ void PopupWebView::_contextMenuEvent(QContextMenuEvent *event)
 
     if (WebInspector::isEnabled()) {
         m_menu->addSeparator();
-        m_menu->addAction(tr("Inspect Element"), this, &PopupWebView::inspectElement);
+        m_menu->addAction(tr("Исследовать элемент"), this, &PopupWebView::inspectElement);
     }
 
     if (!m_menu->isEmpty()) {

@@ -96,7 +96,7 @@ void UserAgentDialog::addSite()
     QString site;
     QString userAgent;
 
-    if (showEditDialog(tr("Add new site"), &site, &userAgent)) {
+    if (showEditDialog(tr("Добавить новый сайт"), &site, &userAgent)) {
         QTableWidgetItem* siteItem = new QTableWidgetItem(site);
         QTableWidgetItem* userAgentItem = new QTableWidgetItem(userAgent);
 
@@ -213,7 +213,7 @@ bool UserAgentDialog::showEditDialog(const QString &title, QString* rSite, QStri
     connect(box, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
     connect(box, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
 
-    layout->addRow(new QLabel(tr("Site domain: ")), editSite);
+    layout->addRow(new QLabel(tr("Домен: ")), editSite);
     layout->addRow(new QLabel(tr("User Agent: ")), editAgent);
     layout->addRow(box);
 

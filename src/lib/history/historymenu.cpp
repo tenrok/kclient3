@@ -132,7 +132,7 @@ void HistoryMenu::aboutToShowMostVisited()
     }
 
     if (m_menuMostVisited->isEmpty()) {
-        m_menuMostVisited->addAction(tr("Empty"))->setEnabled(false);
+        m_menuMostVisited->addAction(tr("Пусто"))->setEnabled(false);
     }
 }
 
@@ -154,12 +154,12 @@ void HistoryMenu::aboutToShowClosedTabs()
     }
 
     if (m_menuClosedTabs->isEmpty()) {
-        m_menuClosedTabs->addAction(tr("Empty"))->setEnabled(false);
+        m_menuClosedTabs->addAction(tr("Пусто"))->setEnabled(false);
     }
     else {
         m_menuClosedTabs->addSeparator();
-        m_menuClosedTabs->addAction(tr("Restore All Closed Tabs"), tabWidget, &TabWidget::restoreAllClosedTabs);
-        m_menuClosedTabs->addAction(QIcon::fromTheme(QSL("edit-clear")), tr("Clear list"), tabWidget, &TabWidget::clearClosedTabsList);
+        m_menuClosedTabs->addAction(tr("Восстановить все закрытые вкладки"), tabWidget, &TabWidget::restoreAllClosedTabs);
+        m_menuClosedTabs->addAction(QIcon::fromTheme(QSL("edit-clear")), tr("Очистить список"), tabWidget, &TabWidget::clearClosedTabsList);
     }
 }
 
@@ -183,11 +183,11 @@ void HistoryMenu::aboutToShowClosedWindows()
     }
 
     if (m_menuClosedWindows->isEmpty()) {
-        m_menuClosedWindows->addAction(tr("Empty"))->setEnabled(false);
+        m_menuClosedWindows->addAction(tr("Пусто"))->setEnabled(false);
     } else {
         m_menuClosedWindows->addSeparator();
-        m_menuClosedWindows->addAction(tr("Restore All Closed Windows"), manager, &ClosedWindowsManager::restoreAllClosedWindows);
-        m_menuClosedWindows->addAction(QIcon::fromTheme(QSL("edit-clear")), tr("Clear list"), manager, &ClosedWindowsManager::clearClosedWindows);
+        m_menuClosedWindows->addAction(tr("Восстановить все закрытые окна"), manager, &ClosedWindowsManager::restoreAllClosedWindows);
+        m_menuClosedWindows->addAction(QIcon::fromTheme(QSL("edit-clear")), tr("Очистить список"), manager, &ClosedWindowsManager::clearClosedWindows);
     }
 }
 
@@ -233,18 +233,18 @@ void HistoryMenu::openUrlInNewWindow(const QUrl &url)
 
 void HistoryMenu::init()
 {
-    setTitle(tr("Hi&story"));
+    setTitle(tr("История"));
 
-    QAction* act = addAction(IconProvider::standardIcon(QStyle::SP_ArrowBack), tr("&Back"), this, &HistoryMenu::goBack);
+    QAction* act = addAction(IconProvider::standardIcon(QStyle::SP_ArrowBack), tr("Назад"), this, &HistoryMenu::goBack);
     act->setShortcut(QzTools::actionShortcut(QKeySequence::Back, Qt::ALT + Qt::Key_Left, QKeySequence::Forward, Qt::ALT + Qt::Key_Right));
 
-    act = addAction(IconProvider::standardIcon(QStyle::SP_ArrowForward), tr("&Forward"), this, &HistoryMenu::goForward);
+    act = addAction(IconProvider::standardIcon(QStyle::SP_ArrowForward), tr("Вперёд"), this, &HistoryMenu::goForward);
     act->setShortcut(QzTools::actionShortcut(QKeySequence::Forward, Qt::ALT + Qt::Key_Right, QKeySequence::Back, Qt::ALT + Qt::Key_Left));
 
-    act = addAction(QIcon::fromTheme("go-home"), tr("&Home"), this, &HistoryMenu::goHome);
+    act = addAction(QIcon::fromTheme("go-home"), tr("Домой"), this, &HistoryMenu::goHome);
     act->setShortcut(QKeySequence(Qt::ALT + Qt::Key_Home));
 
-    act = addAction(QIcon::fromTheme("deep-history", QIcon(":/icons/menu/history.svg")), tr("Show &All History"), this, &HistoryMenu::showHistoryManager);
+    act = addAction(QIcon::fromTheme("deep-history", QIcon(":/icons/menu/history.svg")), tr("Показать всю историю"), this, &HistoryMenu::showHistoryManager);
     act->setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_H));
 
     addSeparator();
@@ -252,13 +252,13 @@ void HistoryMenu::init()
     connect(this, SIGNAL(aboutToShow()), this, SLOT(aboutToShow()));
     connect(this, SIGNAL(aboutToHide()), this, SLOT(aboutToHide()));
 
-    m_menuMostVisited = new Menu(tr("Most Visited"), this);
+    m_menuMostVisited = new Menu(tr("Часто посещаемые"), this);
     connect(m_menuMostVisited, &QMenu::aboutToShow, this, &HistoryMenu::aboutToShowMostVisited);
 
-    m_menuClosedTabs = new Menu(tr("Closed Tabs"));
+    m_menuClosedTabs = new Menu(tr("Закрытые вкладки"));
     connect(m_menuClosedTabs, &QMenu::aboutToShow, this, &HistoryMenu::aboutToShowClosedTabs);
 
-    m_menuClosedWindows = new Menu(tr("Closed Windows"));
+    m_menuClosedWindows = new Menu(tr("Закрытые окна"));
     connect(m_menuClosedWindows, &QMenu::aboutToShow, this, &HistoryMenu::aboutToShowClosedWindows);
 
     addMenu(m_menuMostVisited);

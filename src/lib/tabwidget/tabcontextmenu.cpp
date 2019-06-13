@@ -60,7 +60,7 @@ static bool canCloseTabs(const QString &settingsKey, const QString &title, const
         dialog.setDefaultButton(QMessageBox::No);
         dialog.setWindowTitle(title);
         dialog.setText(description);
-        dialog.setCheckBoxText(TabBar::tr("Don't ask again"));
+        dialog.setCheckBoxText(TabBar::tr("Не спрашивать снова"));
         dialog.setIcon(QMessageBox::Question);
 
         if (dialog.exec() != QMessageBox::Yes) {
@@ -77,7 +77,7 @@ static bool canCloseTabs(const QString &settingsKey, const QString &title, const
 
 void TabContextMenu::closeAllButCurrent()
 {
-    if (canCloseTabs(QLatin1String("AskOnClosingAllButCurrent"), tr("Close Tabs"), tr("Do you really want to close other tabs?"))) {
+    if (canCloseTabs(QLatin1String("AskOnClosingAllButCurrent"), tr("Закрыть вкладки"), tr("Вы действительно хотите закрыть другие вкладки?"))) {
         emit closeAllButCurrent(m_clickedTab);
     }
 }
@@ -88,7 +88,7 @@ void TabContextMenu::closeToRight()
             ? tr("Do you really want to close all tabs to the right?")
             : tr("Do you really want to close all tabs to the bottom?");
 
-    if (canCloseTabs(QLatin1String("AskOnClosingToRight"), tr("Close Tabs"), label)) {
+    if (canCloseTabs(QLatin1String("AskOnClosingToRight"), tr("Закрыть вкладки"), label)) {
         emit closeToRight(m_clickedTab);
     }
 }
@@ -99,7 +99,7 @@ void TabContextMenu::closeToLeft()
             ? tr("Do you really want to close all tabs to the left?")
             : tr("Do you really want to close all tabs to the top?");
 
-    if (canCloseTabs(QLatin1String("AskOnClosingToLeft"), tr("Close Tabs"), label)) {
+    if (canCloseTabs(QLatin1String("AskOnClosingToLeft"), tr("Закрыть вкладки"), label)) {
         emit closeToLeft(m_clickedTab);
     }
 }
@@ -114,46 +114,46 @@ void TabContextMenu::init()
         }
 
         if (m_window->weView(m_clickedTab)->isLoading()) {
-            addAction(QIcon::fromTheme(QSL("process-stop")), tr("&Stop Tab"), this, SLOT(stopTab()));
+            addAction(QIcon::fromTheme(QSL("process-stop")), tr("Остановить вкладку"), this, SLOT(stopTab()));
         }
         else {
-            addAction(QIcon::fromTheme(QSL("view-refresh")), tr("&Reload Tab"), this, SLOT(reloadTab()));
+            addAction(QIcon::fromTheme(QSL("view-refresh")), tr("Обновить вкладку"), this, SLOT(reloadTab()));
         }
 
-        addAction(QIcon::fromTheme("tab-duplicate"), tr("&Duplicate Tab"), this, SLOT(duplicateTab()));
+        addAction(QIcon::fromTheme("tab-duplicate"), tr("Дублировать вкладку"), this, SLOT(duplicateTab()));
 
         if (m_options & ShowDetachTabAction && (mApp->windowCount() > 1 || tabWidget->count() > 1)) {
-            addAction(QIcon::fromTheme("tab-detach"), tr("D&etach Tab"), this, SLOT(detachTab()));
+            addAction(QIcon::fromTheme("tab-detach"), tr("Открепить вкладку"), this, SLOT(detachTab()));
         }
 
-        addAction(webTab->isPinned() ? tr("Un&pin Tab") : tr("&Pin Tab"), this, &TabContextMenu::pinTab);
-        addAction(webTab->isMuted() ? tr("Un&mute Tab") : tr("&Mute Tab"), this, &TabContextMenu::muteTab);
+        addAction(webTab->isPinned() ? tr("Отменить фиксацию вкладки") : tr("Зафиксировать вкладку"), this, &TabContextMenu::pinTab);
+        addAction(webTab->isMuted() ? tr("Включить звук на вкладке") : tr("Выключить звук на вкладке"), this, &TabContextMenu::muteTab);
 
         if (!webTab->isRestored()) {
-            addAction(tr("Load Tab"), this, SLOT(loadTab()));
+            addAction(tr("Загрузить вкладку"), this, SLOT(loadTab()));
         } else {
-            addAction(tr("Unload Tab"), this, SLOT(unloadTab()));
+            addAction(tr("Выгрузить вкладку"), this, SLOT(unloadTab()));
         }
 
         addSeparator();
-        addAction(tr("Re&load All Tabs"), tabWidget, &TabWidget::reloadAllTabs);
-        addAction(tr("Bookmark &All Tabs"), m_window, &BrowserWindow::bookmarkAllTabs);
+        addAction(tr("Обновить все вкладки"), tabWidget, &TabWidget::reloadAllTabs);
+        addAction(tr("Закладки для всех вкладок"), m_window, &BrowserWindow::bookmarkAllTabs);
         addSeparator();
 
         if (m_options & ShowCloseOtherTabsActions) {
-            addAction(tr("Close Ot&her Tabs"), this, SLOT(closeAllButCurrent()));
-            addAction(m_options & HorizontalTabs ? tr("Close Tabs To The Right") : tr("Close Tabs To The Bottom"), this, SLOT(closeToRight()));
-            addAction(m_options & HorizontalTabs ? tr("Close Tabs To The Left") : tr("Close Tabs To The Top"), this, SLOT(closeToLeft()));
+            addAction(tr("Закрыть другие вкладки"), this, SLOT(closeAllButCurrent()));
+            addAction(m_options & HorizontalTabs ? tr("Закрыть вкладки справа") : tr("Закрыть вкладки снизу"), this, SLOT(closeToRight()));
+            addAction(m_options & HorizontalTabs ? tr("Закрыть вкладки слева") : tr("Закрыть вкладки сверху"), this, SLOT(closeToLeft()));
             addSeparator();
         }
 
         addAction(m_window->action(QSL("Other/RestoreClosedTab")));
-        addAction(QIcon::fromTheme("window-close"), tr("Cl&ose Tab"), this, &TabContextMenu::closeTab);
+        addAction(QIcon::fromTheme("window-close"), tr("Закрыть вкладку"), this, &TabContextMenu::closeTab);
     } else {
-        addAction(IconProvider::newTabIcon(), tr("&New tab"), m_window, &BrowserWindow::addTab);
+        addAction(IconProvider::newTabIcon(), tr("Новая вкладка"), m_window, &BrowserWindow::addTab);
         addSeparator();
-        addAction(tr("Reloa&d All Tabs"), tabWidget, &TabWidget::reloadAllTabs);
-        addAction(tr("Bookmark &All Tabs"), m_window, &BrowserWindow::bookmarkAllTabs);
+        addAction(tr("Обновить все вкладки"), tabWidget, &TabWidget::reloadAllTabs);
+        addAction(tr("Закладки для всех вкладок"), m_window, &BrowserWindow::bookmarkAllTabs);
         addSeparator();
         addAction(m_window->action(QSL("Other/RestoreClosedTab")));
     }

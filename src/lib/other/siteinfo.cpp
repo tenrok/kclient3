@@ -40,7 +40,7 @@
 SiteInfo::SiteInfo(WebView *view)
     : QDialog(view)
     , ui(new Ui::SiteInfo)
-    , m_certWidget(0)
+    , m_certWidget(nullptr)
     , m_view(view)
     , m_imageReply(Q_NULLPTR)
     , m_baseUrl(view->url())
@@ -64,9 +64,9 @@ SiteInfo::SiteInfo(WebView *view)
     ui->siteAddress->setText(m_view->url().toString());
 
     if (m_view->url().scheme() == QL1S("https"))
-        ui->securityLabel->setText(tr("<b>Connection is Encrypted.</b>"));
+        ui->securityLabel->setText(tr("<b>Соединение зашифровано.</b>"));
     else
-        ui->securityLabel->setText(tr("<b>Connection Not Encrypted.</b>"));
+        ui->securityLabel->setText(tr("<b>Соединение не зашифровано.</b>"));
 
     m_view->page()->runJavaScript(QSL("document.charset"), WebPage::SafeJsWorld, [this](const QVariant &res) {
         ui->encodingLabel->setText(res.toString());
@@ -153,10 +153,10 @@ void SiteInfo::imagesCustomContextMenuRequested(const QPoint &p)
     }
 
     QMenu menu;
-    menu.addAction(QIcon::fromTheme("edit-copy"), tr("Copy Image Location"), this, SLOT(copyActionData()))->setData(item->text(1));
+    menu.addAction(QIcon::fromTheme("edit-copy"), tr("Копировать расположение изображения"), this, SLOT(copyActionData()))->setData(item->text(1));
     menu.addAction(tr("Copy Image Name"), this, SLOT(copyActionData()))->setData(item->text(0));
     menu.addSeparator();
-    menu.addAction(QIcon::fromTheme("document-save"), tr("Save Image to Disk"), this, SLOT(saveImage()));
+    menu.addAction(QIcon::fromTheme("document-save"), tr("Сохранить изображение на диск"), this, SLOT(saveImage()));
     menu.exec(ui->treeImages->viewport()->mapToGlobal(p));
 }
 
@@ -183,7 +183,7 @@ void SiteInfo::saveImage()
         return;
 
     if (!pixmapItem || pixmapItem->pixmap().isNull()) {
-        QMessageBox::warning(this, tr("Error!"), tr("This preview is not available!"));
+        QMessageBox::warning(this, tr("Ошибка!"), tr("Этот предпросмотр не доступен!"));
         return;
     }
 
@@ -194,7 +194,7 @@ void SiteInfo::saveImage()
         imageFileName.append(QL1S(".png"));
     }
 
-    QString filePath = QzTools::getSaveFileName("SiteInfo-DownloadImage", this, tr("Save image..."),
+    QString filePath = QzTools::getSaveFileName("SiteInfo-DownloadImage", this, tr("Сохранить изображение..."),
                                                 QDir::homePath() + QDir::separator() + imageFileName,
                                                 QSL("*.png"));
     if (filePath.isEmpty()) {
@@ -202,7 +202,7 @@ void SiteInfo::saveImage()
     }
 
     if (!pixmapItem->pixmap().save(filePath, "PNG")) {
-        QMessageBox::critical(this, tr("Error!"), tr("Cannot write to file!"));
+        QMessageBox::critical(this, tr("Ошибка!"), tr("Невозможно записать в файл!"));
         return;
     }
 }
@@ -212,7 +212,7 @@ void SiteInfo::showLoadingText()
     delete ui->mediaPreview->scene();
     QGraphicsScene* scene = new QGraphicsScene(ui->mediaPreview);
 
-    scene->addText(tr("Loading..."));
+    scene->addText(tr("Загружаю..."));
 
     ui->mediaPreview->setScene(scene);
 }
@@ -225,7 +225,7 @@ void SiteInfo::showPixmap(QPixmap pixmap)
     QGraphicsScene* scene = new QGraphicsScene(ui->mediaPreview);
 
     if (pixmap.isNull())
-        scene->addText(tr("Preview not available"));
+        scene->addText(tr("Предпросмотр недоступен"));
     else
         scene->addPixmap(pixmap);
 

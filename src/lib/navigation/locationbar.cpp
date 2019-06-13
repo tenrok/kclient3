@@ -156,9 +156,9 @@ void LocationBar::setText(const QString &text)
 void LocationBar::updatePlaceHolderText()
 {
     if (qzSettings->searchFromAddressBar) {
-        setPlaceholderText(tr("Enter address or search with %1").arg(searchEngine().name));
+        setPlaceholderText(tr("Введите адрес или используйте поиск с %1").arg(searchEngine().name));
     } else
-        setPlaceholderText(tr("Enter address"));
+        setPlaceholderText(tr("Введите адрес"));
 }
 
 void LocationBar::showCompletion(const QString &completion, bool completeDomain)

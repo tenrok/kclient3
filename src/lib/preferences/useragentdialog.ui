@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>User Agent Manager</string>
+   <string>Управление User Agent</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QCheckBox" name="changeGlobal">
      <property name="text">
-      <string>Change global User Agent</string>
+      <string>Изменить User Agent</string>
      </property>
     </widget>
    </item>
@@ -45,7 +45,7 @@
      <item>
       <widget class="QCheckBox" name="changePerSite">
        <property name="text">
-        <string>Use different User Agents for specified sites</string>
+        <string>Использовать различные User Agents для разных сайтов</string>
        </property>
       </widget>
      </item>
@@ -89,7 +89,7 @@
           </attribute>
           <column>
            <property name="text">
-            <string>Site</string>
+            <string>Сайт</string>
            </property>
           </column>
           <column>
@@ -104,14 +104,14 @@
           <item>
            <widget class="QPushButton" name="add">
             <property name="text">
-             <string>Add</string>
+             <string>Добавить</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="remove">
             <property name="text">
-             <string>Remove</string>
+             <string>Удалить</string>
             </property>
            </widget>
           </item>
@@ -131,7 +131,7 @@
           <item>
            <widget class="QPushButton" name="edit">
             <property name="text">
-             <string>Edit</string>
+             <string>Редактировать</string>
             </property>
            </widget>
           </item>

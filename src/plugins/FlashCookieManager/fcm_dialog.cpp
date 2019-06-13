@@ -73,7 +73,7 @@ FCM_Dialog::FCM_Dialog(FCM_Plugin* manager, QWidget* parent)
 
     ui->labelNotification->setEnabled(ui->autoMode->isChecked());
 
-    ui->search->setPlaceholderText(tr("Search"));
+    ui->search->setPlaceholderText(tr("Поиск"));
     ui->flashCookieTree->setDefaultItemShowMode(TreeWidget::ItemsCollapsed);
     ui->flashCookieTree->sortItems(0, Qt::AscendingOrder);
     ui->flashCookieTree->header()->setDefaultSectionSize(220);

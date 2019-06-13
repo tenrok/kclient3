@@ -337,7 +337,7 @@ void BookmarksTools::openFolderInTabs(BrowserWindow* window, BookmarkItem* folde
     }
 
     if (showWarning) {
-        const auto button = QMessageBox::warning(window, Bookmarks::tr("Confirmation"),
+        const auto button = QMessageBox::warning(window, Bookmarks::tr("Подтверждение"),
                                                  Bookmarks::tr("Are you sure you want to open all bookmarks from '%1' folder in tabs?").arg(folder->title()),
                                                  QMessageBox::Yes | QMessageBox::No);
         if (button != QMessageBox::Yes) {
@@ -432,7 +432,7 @@ void BookmarksTools::addFolderContentsToMenu(QObject *receiver, Menu *menu, Book
     }
 
     if (menu->isEmpty()) {
-        menu->addAction(Bookmarks::tr("Empty"))->setDisabled(true);
+        menu->addAction(Bookmarks::tr("Пусто"))->setDisabled(true);
     }
 }
 

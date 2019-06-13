@@ -62,14 +62,14 @@ void SideBar::setWidget(QWidget* widget)
 
 void SideBar::showBookmarks()
 {
-    m_titleBar->setTitle(tr("Bookmarks"));
+    m_titleBar->setTitle(tr("Закладки"));
     BookmarksSidebar* bar = new BookmarksSidebar(m_window);
     setWidget(bar);
 }
 
 void SideBar::showHistory()
 {
-    m_titleBar->setTitle(tr("History"));
+    m_titleBar->setTitle(tr("История"));
     HistorySideBar* bar = new HistorySideBar(m_window);
     setWidget(bar);
 }
@@ -104,14 +104,14 @@ void SideBarManager::createMenu(QMenu* menu)
 
     QActionGroup *group = new QActionGroup(menu);
 
-    QAction* act = menu->addAction(SideBar::tr("Bookmarks"), this, &SideBarManager::slotShowSideBar);
+    QAction* act = menu->addAction(SideBar::tr("Закладки"), this, &SideBarManager::slotShowSideBar);
     act->setCheckable(true);
     act->setShortcut(QKeySequence("Ctrl+Shift+B"));
     act->setData("Bookmarks");
     act->setChecked(m_activeBar == QL1S("Bookmarks"));
     group->addAction(act);
 
-    act = menu->addAction(SideBar::tr("History"), this, &SideBarManager::slotShowSideBar);
+    act = menu->addAction(SideBar::tr("История"), this, &SideBarManager::slotShowSideBar);
     act->setCheckable(true);
     act->setShortcut(QKeySequence("Ctrl+H"));
     act->setData("History");

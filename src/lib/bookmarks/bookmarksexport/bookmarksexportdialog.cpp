@@ -26,7 +26,7 @@
 BookmarksExportDialog::BookmarksExportDialog(QWidget* parent)
     : QDialog(parent)
     , ui(new Ui::BookmarksExportDialog)
-    , m_currentExporter(0)
+    , m_currentExporter(nullptr)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     ui->setupUi(this);
@@ -61,7 +61,7 @@ void BookmarksExportDialog::exportBookmarks()
     bool ok = m_currentExporter->exportBookmarks(mApp->bookmarks()->rootItem());
 
     if (!ok) {
-        QMessageBox::critical(this, tr("Error!"), m_currentExporter->errorString());
+        QMessageBox::critical(this, tr("Ошибка!"), m_currentExporter->errorString());
     }
     else {
         close();

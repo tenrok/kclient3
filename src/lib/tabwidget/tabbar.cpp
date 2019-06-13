@@ -108,7 +108,7 @@ TabBar::TabBar(BrowserWindow* window, TabWidget* tabWidget)
 
     // ComboTabBar features
     setUsesScrollButtons(true);
-    setCloseButtonsToolTip(BrowserWindow::tr("Close Tab"));
+    setCloseButtonsToolTip(BrowserWindow::tr("Закрыть вкладку"));
     connect(this, &ComboTabBar::overFlowChanged, this, &TabBar::overflowChanged);
 
     tabMetrics()->init();

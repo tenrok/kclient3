@@ -145,9 +145,9 @@ QVariant BookmarksModel::headerData(int section, Qt::Orientation orientation, in
     if (orientation == Qt::Horizontal && role == Qt::DisplayRole) {
         switch (section) {
         case 0:
-            return tr("Title");
+            return tr("Заголовок");
         case 1:
-            return tr("Address");
+            return tr("Адрес");
         }
     }
 

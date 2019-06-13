@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Preferences</string>
+   <string>Настройки</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_5">
    <item row="0" column="0" rowspan="5">
@@ -57,67 +57,67 @@
      </property>
      <item>
       <property name="text">
-       <string>General</string>
+       <string>Общие</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Appearance</string>
+       <string>Внешний вид</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Tabs</string>
+       <string>Вкладки</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Browsing</string>
+       <string>Просмотр веб-страниц</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Fonts</string>
+       <string>Шрифты</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Keyboard Shortcuts</string>
+       <string>Сочетания клавиш</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Downloads</string>
+       <string>Загрузки</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Password Manager</string>
+       <string>Менеджер паролей</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Privacy</string>
+       <string>Конфиденциальность</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Notifications</string>
+       <string>Уведомления</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Extensions</string>
+       <string>Расширения</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Spell Check</string>
+       <string>Проверка орфографии</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Other</string>
+       <string>Прочее</string>
       </property>
      </item>
     </widget>
@@ -224,7 +224,7 @@
               <item>
                <widget class="QLabel" name="cannotDeleteActiveProfileLabel">
                 <property name="text">
-                 <string>Note: You cannot delete active profile.</string>
+                 <string>Примечание: Нельзя удалить активный профиль.</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -240,7 +240,7 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Create New</string>
+                 <string>Создать новый</string>
                 </property>
                </widget>
               </item>
@@ -256,7 +256,7 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Delete</string>
+                 <string>Удалить</string>
                 </property>
                </widget>
               </item>
@@ -282,7 +282,7 @@
            <item row="0" column="0" colspan="2">
             <widget class="QLabel" name="label_24">
              <property name="text">
-              <string>&lt;b&gt;Launching&lt;/b&gt;</string>
+              <string>&lt;b&gt;Запуск&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -292,7 +292,7 @@
            <item row="1" column="1">
             <widget class="QLabel" name="label_3">
              <property name="text">
-              <string>After launch: </string>
+              <string>После запуска: </string>
              </property>
             </widget>
            </item>
@@ -300,27 +300,27 @@
             <widget class="QComboBox" name="afterLaunch">
              <item>
               <property name="text">
-               <string>Open blank page</string>
+               <string>Открыть пустую страницу</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Open homepage</string>
+               <string>Открыть домашнюю страницу</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Open speed dial</string>
+               <string>Открыть страницу быстрого доступа</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Restore session</string>
+               <string>Восстановить сессию</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Select session</string>
+               <string>Выбрать сессию</string>
               </property>
              </item>
             </widget>
@@ -328,7 +328,7 @@
            <item row="2" column="1">
             <widget class="QLabel" name="label">
              <property name="text">
-              <string>Homepage: </string>
+              <string>Домашняя страница: </string>
              </property>
             </widget>
            </item>
@@ -340,7 +340,7 @@
              <item>
               <widget class="MacToolButton" name="useCurrentBut">
                <property name="text">
-                <string>Use current</string>
+                <string>Использовать текущую</string>
                </property>
               </widget>
              </item>
@@ -349,7 +349,7 @@
            <item row="3" column="1">
             <widget class="QLabel" name="label_2">
              <property name="text">
-              <string>On new tab: </string>
+              <string>В новой вкладке: </string>
              </property>
             </widget>
            </item>
@@ -357,22 +357,22 @@
             <widget class="QComboBox" name="newTab">
              <item>
               <property name="text">
-               <string>Open blank tab</string>
+               <string>Открыть пустую вкладку</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Open homepage</string>
+               <string>Открыть домашнюю страницу</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Open speed dial</string>
+               <string>Открыть страницу быстрого доступа</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Open other page...</string>
+               <string>Открыть другую страницу...</string>
               </property>
              </item>
             </widget>
@@ -380,28 +380,28 @@
            <item row="9" column="0" colspan="2">
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>&lt;b&gt;Profiles&lt;/b&gt;</string>
+              <string>&lt;b&gt;Профили&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
            <item row="11" column="1">
             <widget class="QLabel" name="label_5">
              <property name="text">
-              <string>Startup profile:</string>
+              <string>Профиль по-умолчанию:</string>
              </property>
             </widget>
            </item>
            <item row="6" column="1" colspan="2">
             <widget class="QCheckBox" name="checkUpdates">
              <property name="text">
-              <string>Check for updates on start</string>
+              <string>Проверять обновления при запуске</string>
              </property>
             </widget>
            </item>
            <item row="10" column="1">
             <widget class="QLabel" name="label_45">
              <property name="text">
-              <string>Active profile:</string>
+              <string>Активный профиль:</string>
              </property>
             </widget>
            </item>
@@ -415,7 +415,7 @@
            <item row="5" column="1" colspan="2">
             <widget class="QCheckBox" name="dontLoadTabsUntilSelected">
              <property name="text">
-              <string>Don't load tabs until selected</string>
+              <string>Не загружать вкладки до выбранной</string>
              </property>
             </widget>
            </item>
@@ -437,7 +437,7 @@
              <item>
               <widget class="QCheckBox" name="checkDefaultBrowser">
                <property name="text">
-                <string>Check to see if KClient is the default browser on startup</string>
+                <string>При запуске проверять, является ли KClient браузером по-умолчанию</string>
                </property>
                <property name="checked">
                 <bool>false</bool>
@@ -447,7 +447,7 @@
              <item>
               <widget class="QPushButton" name="checkNowDefaultBrowser">
                <property name="text">
-                <string>Check Now</string>
+                <string>Проверить сейчас</string>
                </property>
               </widget>
              </item>
@@ -477,7 +477,7 @@
              </property>
              <widget class="QWidget" name="tab_5">
               <attribute name="title">
-               <string>Themes</string>
+               <string>Темы</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_22">
                <property name="leftMargin">
@@ -499,7 +499,7 @@
              </widget>
              <widget class="QWidget" name="tab_4">
               <attribute name="title">
-               <string>Advanced options</string>
+               <string>Расширенные настройки</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_16">
                <item row="1" column="1">
@@ -507,28 +507,28 @@
                  <item row="0" column="0">
                   <widget class="QCheckBox" name="showStatusbar">
                    <property name="text">
-                    <string>Show StatusBar on start</string>
+                    <string>Показывать строку состояния при запуске</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QCheckBox" name="showBookmarksToolbar">
                    <property name="text">
-                    <string>Show Bookmarks ToolBar on start</string>
+                    <string>Показывать панель закладок при запуске</string>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="0">
                   <widget class="QCheckBox" name="showNavigationToolbar">
                    <property name="text">
-                    <string>Show Navigation ToolBar on start</string>
+                    <string>Показывать панель навигации при запуске</string>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="0">
                   <widget class="QCheckBox" name="instantBookmarksToolbar">
                    <property name="text">
-                    <string>Enable instant Bookmarks ToolBar</string>
+                    <string>Включить мгновенную панель закладок</string>
                    </property>
                   </widget>
                  </item>
@@ -550,7 +550,7 @@
                <item row="0" column="0" colspan="2">
                 <widget class="QLabel" name="label_18">
                  <property name="text">
-                  <string>&lt;b&gt;Browser Window&lt;/b&gt;</string>
+                  <string>&lt;b&gt;Окно браузера&lt;/b&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -598,76 +598,76 @@
              </property>
              <widget class="QWidget" name="tabsBehaviourPage">
               <attribute name="title">
-               <string>Tabs behaviour</string>
+               <string>Настройка вкладок</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_2">
                <item>
                 <widget class="QCheckBox" name="hideTabsOnTab">
                  <property name="text">
-                  <string>Hide tabs when there is only one tab</string>
+                  <string>Скрывать панель вкладок, когда открыта только одна вкладка</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="activateLastTab">
                  <property name="text">
-                  <string>Activate last tab when closing active tab</string>
+                  <string>После закрытия текущей вкладки переходить на последнюю посещённую</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="openNewTabAfterActive">
                  <property name="text">
-                  <string>Open new tabs after active tab</string>
+                  <string>Открыть новую вкладку после текущей</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="openNewEmptyTabAfterActive">
                  <property name="text">
-                  <string>Open new empty tabs after active tab</string>
+                  <string>Открывать новую пустую вкладку после текущей</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="openPopupsInTabs">
                  <property name="text">
-                  <string>Open popup windows in tabs</string>
+                  <string>Открывать всплывающие окна во вкладках</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="alwaysSwitchTabsWithWheel">
                  <property name="text">
-                  <string>Always switch between tabs with mouse wheel</string>
+                  <string>Переключаться между вкладками колесом мыши</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="switchToNewTabs">
                  <property name="text">
-                  <string>Automatically switch to newly opened tab</string>
+                  <string>Переключаться на открываемую вкладку</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="dontCloseOnLastTab">
                  <property name="text">
-                  <string>Don't close window upon closing last tab</string>
+                  <string>Не закрывать браузер при закрытии последней вкладки</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="askWhenClosingMultipleTabs">
                  <property name="text">
-                  <string>Ask when closing multiple tabs</string>
+                  <string>Предупреждать при закрытии нескольких вкладок</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="showClosedTabsButton">
                  <property name="text">
-                  <string>Show closed tabs button</string>
+                  <string>Показать кнопку "Закрытых вкладок"</string>
                  </property>
                 </widget>
                </item>
@@ -676,7 +676,7 @@
                  <item>
                   <widget class="QLabel" name="label_65">
                    <property name="text">
-                    <string>Show close buttons on inactive tabs:</string>
+                    <string>Показывать кнопку закрытия на неактивных вкладках:</string>
                    </property>
                   </widget>
                  </item>
@@ -684,17 +684,17 @@
                   <widget class="QComboBox" name="showCloseOnInactive">
                    <item>
                     <property name="text">
-                     <string>Automatic</string>
+                     <string>Автоматичекски</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>Always</string>
+                     <string>Всегда</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>Never</string>
+                     <string>Никогда</string>
                     </property>
                    </item>
                   </widget>
@@ -734,7 +734,7 @@
              </widget>
              <widget class="QWidget" name="addressBarBehaviourPage">
               <attribute name="title">
-               <string>Address Bar behaviour</string>
+               <string>Настройка панели адреса</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_3">
                <item>
@@ -742,7 +742,7 @@
                  <item>
                   <widget class="QLabel" name="label_59">
                    <property name="text">
-                    <string>Suggest when typing into address bar:</string>
+                    <string>Автодополнять из:</string>
                    </property>
                   </widget>
                  </item>
@@ -756,22 +756,22 @@
                    </property>
                    <item>
                     <property name="text">
-                     <string>History and Bookmarks</string>
+                     <string>История и закладки</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>History</string>
+                     <string>История</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>Bookmarks</string>
+                     <string>Закладки</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>Nothing</string>
+                     <string>Ничего</string>
                     </property>
                    </item>
                   </widget>
@@ -797,59 +797,59 @@
                <item>
                 <widget class="QCheckBox" name="useInlineCompletion">
                  <property name="text">
-                  <string>Enable inline suggestions</string>
+                  <string>Включить встроенные предложения</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="completionShowSwitchTab">
                  <property name="toolTip">
-                  <string>Press &quot;Shift&quot; to not switch the tab but load the url in the current tab</string>
+                  <string>Нажмите &quot;Shift&quot;, чтобы открыть ссылку в текущей вкладке</string>
                  </property>
                  <property name="text">
-                  <string>Propose to switch tab if completed url is already loaded</string>
+                  <string>Переходить на вкладку, если ссылка полностью загружена</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="alwaysShowGoIcon">
                  <property name="text">
-                  <string>Always show go icon</string>
+                  <string>Всегда показывать значок Перейти</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="selectAllOnFocus">
                  <property name="text">
-                  <string>Select all text by double clicking in address bar</string>
+                  <string>Выделять весь текст при двойном клике в адресной строке</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="selectAllOnClick">
                  <property name="text">
-                  <string>Select all text by clicking in address bar</string>
+                  <string>Выделять весь текст при клике в панели адреса</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="searchFromAddressBar">
                  <property name="text">
-                  <string>Enable automatic searching from the address bar</string>
+                  <string>Включить автоматический поиск из адресной строки</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="searchWithDefaultEngine">
                  <property name="text">
-                  <string>Search with Default Engine</string>
+                  <string>Искать поисковой системой по-умолчанию</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="showABSearchSuggestions">
                  <property name="text">
-                  <string>Show search suggestions</string>
+                  <string>Показывать найденные предложения</string>
                  </property>
                 </widget>
                </item>
@@ -872,7 +872,7 @@
                <item>
                 <widget class="QCheckBox" name="showLoadingInAddressBar">
                  <property name="text">
-                  <string>Show loading progress in address bar</string>
+                  <string>Показывать прогресс загрузки в адресной строке</string>
                  </property>
                 </widget>
                </item>
@@ -905,17 +905,17 @@
                    <widget class="QComboBox" name="progressStyleSelector">
                     <item>
                      <property name="text">
-                      <string>Fill</string>
+                      <string>Заполнять</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>Bottom</string>
+                      <string>Внизу</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>Top</string>
+                      <string>Вверху</string>
                      </property>
                     </item>
                    </widget>
@@ -923,7 +923,7 @@
                   <item>
                    <widget class="QCheckBox" name="checkBoxCustomProgressColor">
                     <property name="text">
-                     <string>Custom color:</string>
+                     <string>Пользовательский цвет:</string>
                     </property>
                    </widget>
                   </item>
@@ -939,7 +939,7 @@
                      <item>
                       <widget class="MacToolButton" name="customColorToolButton">
                        <property name="toolTip">
-                        <string>Select color</string>
+                        <string>Выбрать цвет</string>
                        </property>
                        <property name="text">
                         <string>...</string>
@@ -949,7 +949,7 @@
                      <item>
                       <widget class="MacToolButton" name="resetProgressBarcolor">
                        <property name="text">
-                        <string>Reset</string>
+                        <string>Восстановить</string>
                        </property>
                       </widget>
                      </item>
@@ -1000,7 +1000,7 @@
              </property>
              <widget class="QWidget" name="tab">
               <attribute name="title">
-               <string>Web Configuration</string>
+               <string>Просмотр веб-страниц</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_18">
                <item row="0" column="0">
@@ -1008,77 +1008,77 @@
                  <item>
                   <widget class="QCheckBox" name="allowPlugins">
                    <property name="text">
-                    <string>Allow Pepper Plugins (Flash plugin)</string>
+                    <string>Разрешить плагины Pepper (Flash плагин)</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="allowJavaScript">
                    <property name="text">
-                    <string>Allow JavaScript</string>
+                    <string>Использовать JavaScript</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="linksInFocusChain">
                    <property name="text">
-                    <string>Include links in focus chain</string>
+                    <string>Включать ссылки в последовательность фокуса</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="xssAuditing">
                    <property name="text">
-                    <string extracomment="try to detect possible XSS attacks when executing javascript">Enable XSS Auditing</string>
+                    <string extracomment="try to detect possible XSS attacks when executing javascript">Включить XSS аудит</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="printEBackground">
                    <property name="text">
-                    <string extracomment="when you are printing page (on printer), it determine whether to also print background (color, image) of html elements">Print element background</string>
+                    <string extracomment="when you are printing page (on printer), it determine whether to also print background (color, image) of html elements">Печатать фон элемента</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="animateScrolling">
                    <property name="text">
-                    <string>Animated scrolling</string>
+                    <string>Плавная прокрутка</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="spatialNavigation">
                    <property name="text">
-                    <string>Enable spatial navigation</string>
+                    <string>Включить пространственную навигацию</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="useNativeScrollbars">
                    <property name="text">
-                    <string>Use native scrollbars</string>
+                    <string>Использовать собственные полосы прокрутки</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="disableVideoAutoPlay">
                    <property name="text">
-                    <string>Disable automatic playing of videos</string>
+                    <string>Отключить автоматическое воспроизведение видео</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="webRTCPublicIpOnly">
                    <property name="text">
-                    <string>Prevent WebRTC from leaking local IP address</string>
+                    <string>Предотвратить WebRTC утечки локального IP-адреса</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QCheckBox" name="dnsPrefetch">
                    <property name="text">
-                    <string>Enable DNS prefetching</string>
+                    <string>Включить предварительную выборку DNS</string>
                    </property>
                   </widget>
                  </item>
@@ -1095,7 +1095,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>Mouse wheel scrolls</string>
+                    <string>Прокручивать с помощью колёсика мыши</string>
                    </property>
                   </widget>
                  </item>
@@ -1115,7 +1115,7 @@
                  <item>
                   <widget class="QLabel" name="label_26">
                    <property name="text">
-                    <string>lines on page</string>
+                    <string>строк на страницу</string>
                    </property>
                   </widget>
                  </item>
@@ -1126,7 +1126,7 @@
                  <item>
                   <widget class="QLabel" name="label_44">
                    <property name="text">
-                    <string>Default zoom on pages: </string>
+                    <string>Масштаб страницы по-умолчанию: </string>
                    </property>
                   </widget>
                  </item>
@@ -1165,7 +1165,7 @@
              </widget>
              <widget class="QWidget" name="tab_2">
               <attribute name="title">
-               <string>Local Storage</string>
+               <string>Локальное хранилище</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_19">
                <item row="0" column="0" colspan="2">
@@ -1173,7 +1173,7 @@
                  <item row="0" column="0" colspan="3">
                   <widget class="QCheckBox" name="allowCache">
                    <property name="text">
-                    <string>Allow storing network cache on disk</string>
+                    <string>Сохранять кэш</string>
                    </property>
                   </widget>
                  </item>
@@ -1196,21 +1196,21 @@
                  <item row="1" column="1" colspan="3">
                   <widget class="QCheckBox" name="removeCache">
                    <property name="text">
-                    <string>Delete cache on close</string>
+                    <string>Очистить кэш после закрытия</string>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="1">
                   <widget class="QLabel" name="maxCacheLabel">
                    <property name="text">
-                    <string>Maximum:</string>
+                    <string>Максимум:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="2">
                   <widget class="QSpinBox" name="cacheMB">
                    <property name="suffix">
-                    <string> MB</string>
+                    <string> МБ</string>
                    </property>
                    <property name="minimum">
                     <number>1</number>
@@ -1226,7 +1226,7 @@
                  <item row="3" column="1">
                   <widget class="QLabel" name="storeCacheLabel">
                    <property name="text">
-                    <string>Store cache in:</string>
+                    <string>Хранить кэш в:</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1254,14 +1254,14 @@
                  <item row="0" column="0" colspan="3">
                   <widget class="QCheckBox" name="saveHistory">
                    <property name="text">
-                    <string>Allow saving history</string>
+                    <string>Помнить историю посещений</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
                   <widget class="QCheckBox" name="deleteHistoryOnClose">
                    <property name="text">
-                    <string>Delete history on close</string>
+                    <string>Очищать историю при закрытии</string>
                    </property>
                   </widget>
                  </item>
@@ -1284,14 +1284,14 @@
                  <item row="2" column="0" colspan="3">
                   <widget class="QCheckBox" name="html5storage">
                    <property name="text">
-                    <string>Allow local storage of HTML5 web content</string>
+                    <string>Разрешить локальное хранение HTML5 контента</string>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="1">
                   <widget class="QCheckBox" name="deleteHtml5storageOnClose">
                    <property name="text">
-                    <string>Delete locally stored HTML5 web content on close</string>
+                    <string>Удалять локальные данные HTML5 при закрытии</string>
                    </property>
                   </widget>
                  </item>
@@ -1317,7 +1317,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>Delete now</string>
+                    <string>Удалить сейчас</string>
                    </property>
                   </widget>
                  </item>
@@ -1356,7 +1356,7 @@
              </widget>
              <widget class="QWidget" name="tab_3">
               <attribute name="title">
-               <string>Proxy Configuration</string>
+               <string>Настройки прокси</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_8">
                <item row="5" column="0">
@@ -1375,7 +1375,7 @@
                <item row="1" column="0" colspan="2">
                 <widget class="QRadioButton" name="systemProxy">
                  <property name="text">
-                  <string>System proxy configuration</string>
+                  <string>Системные настройки прокси</string>
                  </property>
                 </widget>
                </item>
@@ -1398,7 +1398,7 @@
                <item row="2" column="0" colspan="2">
                 <widget class="QRadioButton" name="manualProxy">
                  <property name="text">
-                  <string>Manual configuration</string>
+                  <string>Ручные настройки</string>
                  </property>
                 </widget>
                </item>
@@ -1424,7 +1424,7 @@
                  <item>
                   <widget class="QLabel" name="label_37">
                    <property name="text">
-                    <string>Port:</string>
+                    <string>Порт:</string>
                    </property>
                   </widget>
                  </item>
@@ -1445,7 +1445,7 @@
                  <item>
                   <widget class="QLabel" name="label_38">
                    <property name="text">
-                    <string>Username:</string>
+                    <string>Имя пользователя:</string>
                    </property>
                   </widget>
                  </item>
@@ -1455,7 +1455,7 @@
                  <item>
                   <widget class="QLabel" name="label_39">
                    <property name="text">
-                    <string>Password:</string>
+                    <string>Пароль:</string>
                    </property>
                   </widget>
                  </item>
@@ -1484,7 +1484,7 @@
                <item row="0" column="0" colspan="2">
                 <widget class="QRadioButton" name="noProxy">
                  <property name="text">
-                  <string>No proxy</string>
+                  <string>Без прокси</string>
                  </property>
                 </widget>
                </item>
@@ -1499,7 +1499,7 @@
            <item row="0" column="0" rowspan="2" colspan="3">
             <widget class="QLabel" name="label_27">
              <property name="text">
-              <string>&lt;b&gt;Font Families&lt;/b&gt;</string>
+              <string>&lt;b&gt;Семейства шрифтов&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -1512,14 +1512,14 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>Standard</string>
+              <string>Стандартный</string>
              </property>
             </widget>
            </item>
            <item row="4" column="1">
             <widget class="QLabel" name="label_28">
              <property name="text">
-              <string>Fixed</string>
+              <string>Фиксированный</string>
              </property>
             </widget>
            </item>
@@ -1529,7 +1529,7 @@
            <item row="5" column="1">
             <widget class="QLabel" name="label_29">
              <property name="text">
-              <string>Serif</string>
+              <string>С засечками</string>
              </property>
             </widget>
            </item>
@@ -1539,7 +1539,7 @@
            <item row="6" column="1">
             <widget class="QLabel" name="label_30">
              <property name="text">
-              <string>Sans Serif</string>
+              <string>Без засечек</string>
              </property>
             </widget>
            </item>
@@ -1549,7 +1549,7 @@
            <item row="7" column="1">
             <widget class="QLabel" name="label_31">
              <property name="text">
-              <string>Cursive</string>
+              <string>Курсив</string>
              </property>
             </widget>
            </item>
@@ -1601,14 +1601,14 @@
            <item row="8" column="1">
             <widget class="QLabel" name="label_34">
              <property name="text">
-              <string>Fantasy</string>
+              <string>Моноширинный</string>
              </property>
             </widget>
            </item>
            <item row="9" column="0" colspan="3">
             <widget class="QLabel" name="label_35">
              <property name="text">
-              <string>&lt;b&gt;Font Sizes&lt;/b&gt;</string>
+              <string>&lt;b&gt;Размеры шрифта&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -1617,14 +1617,14 @@
              <item row="1" column="0">
               <widget class="QLabel" name="label_33">
                <property name="text">
-                <string>Fixed Font Size</string>
+                <string>Фиксированный размер шрифта</string>
                </property>
               </widget>
              </item>
              <item row="0" column="0">
               <widget class="QLabel" name="label_32">
                <property name="text">
-                <string>Default Font Size</string>
+                <string>Размер шрифта по-умолчанию</string>
                </property>
               </widget>
              </item>
@@ -1651,14 +1651,14 @@
              <item row="2" column="0">
               <widget class="QLabel" name="label_46">
                <property name="text">
-                <string>Minimum Font Size</string>
+                <string>Минимальный размер шрифта</string>
                </property>
               </widget>
              </item>
              <item row="3" column="0">
               <widget class="QLabel" name="label_47">
                <property name="text">
-                <string>Minimum Logical Font Size</string>
+                <string>Минимальный логический размер шрифта</string>
                </property>
               </widget>
              </item>
@@ -1691,41 +1691,41 @@
            <item row="0" column="0">
             <widget class="QLabel" name="label_13">
              <property name="text">
-              <string>&lt;b&gt;Shortcuts&lt;/b&gt;</string>
+              <string>&lt;b&gt;Сочетания&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0" colspan="2">
             <widget class="QCheckBox" name="switchTabsAlt">
              <property name="text">
-              <string>Switch to tabs with Alt + number of tab</string>
+              <string>Переключаться на вкладку с Alt + номер вкладки</string>
              </property>
             </widget>
            </item>
            <item row="2" column="0" colspan="2">
             <widget class="QCheckBox" name="loadSpeedDialsCtrl">
              <property name="text">
-              <string>Load speed dials with Ctrl + number of speed dial</string>
+              <string>Загружать закладки быстрого доступа с Ctrl + номер вкладки</string>
              </property>
             </widget>
            </item>
            <item row="3" column="0" colspan="2">
             <widget class="QCheckBox" name="singleKeyShortcuts">
              <property name="toolTip">
-              <string>Existing shortcuts:&lt;br/&gt;&lt;b&gt;1&lt;/b&gt; - previous tab&lt;br/&gt;&lt;b&gt;2&lt;/b&gt; - next tab&lt;br/&gt;&lt;b&gt;/&lt;/b&gt; - search on page</string>
+              <string>Сочетания клавиш:&lt;br/&gt;&lt;b&gt;1&lt;/b&gt; - предыдущая вкладка&lt;br/&gt;&lt;b&gt;2&lt;/b&gt; - следующая вкладка&lt;br/&gt;&lt;b&gt;/&lt;/b&gt; - поиск на странице</string>
              </property>
              <property name="text">
-              <string>Use single key shortcuts</string>
+              <string>Использовать одинарные комбинации клавиш</string>
              </property>
             </widget>
            </item>
            <item row="4" column="0" colspan="2">
             <widget class="QCheckBox" name="closeAppWithCtrlQ">
              <property name="toolTip">
-              <string>If unchecked, prevents accidental exit from the application if the Ctrl-W shortcut was intended.</string>
+              <string>Если флажок снят, предотвращает случайный выход из приложения, если Ctrl-W ярлык был назначен.</string>
              </property>
              <property name="text">
-              <string>Close application with Ctrl-Q</string>
+              <string>Закрыть приложение с помощью Ctrl-Q</string>
              </property>
             </widget>
            </item>
@@ -1749,21 +1749,21 @@
            <item row="0" column="0" colspan="4">
             <widget class="QLabel" name="label_23">
              <property name="text">
-              <string>&lt;b&gt;Download Location&lt;/b&gt;</string>
+              <string>&lt;b&gt;Расположение загружаемых файлов&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
            <item row="3" column="1" colspan="2">
             <widget class="QRadioButton" name="askEverytime">
              <property name="text">
-              <string>Ask everytime for download location</string>
+              <string>Всегда выдавать запрос на сохранение файлов</string>
              </property>
             </widget>
            </item>
            <item row="4" column="1" colspan="2">
             <widget class="QRadioButton" name="useDefined">
              <property name="text">
-              <string>Use defined location: </string>
+              <string>Путь для сохранения файлов: </string>
              </property>
             </widget>
            </item>
@@ -1813,28 +1813,28 @@
            <item row="6" column="0" colspan="4">
             <widget class="QLabel" name="label_22">
              <property name="text">
-              <string>&lt;b&gt;Download Options&lt;/b&gt;</string>
+              <string>&lt;b&gt;Параметры загрузки&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
            <item row="7" column="1" colspan="3">
             <widget class="QCheckBox" name="closeDownManOnFinish">
              <property name="text">
-              <string>Close download manager when downloading finishes</string>
+              <string>Закрывать менеджер загрузок после завершения всех загрузок</string>
              </property>
             </widget>
            </item>
            <item row="10" column="0" colspan="4">
             <widget class="QLabel" name="label_51">
              <property name="text">
-              <string>&lt;b&gt;External download manager&lt;/b&gt;</string>
+              <string>&lt;b&gt;Внешний менеджер загрузок&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
            <item row="12" column="0" colspan="4">
             <widget class="QCheckBox" name="useExternalDownManager">
              <property name="text">
-              <string>Use external download manager</string>
+              <string>Использовать внешний менеджер загрузок</string>
              </property>
             </widget>
            </item>
@@ -1846,21 +1846,21 @@
              <item row="0" column="0">
               <widget class="QLabel" name="label_52">
                <property name="text">
-                <string>Executable:</string>
+                <string>Исполняемый файл:</string>
                </property>
               </widget>
              </item>
              <item row="1" column="0">
               <widget class="QLabel" name="label_53">
                <property name="text">
-                <string>Arguments:</string>
+                <string>Параметры запуска:</string>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
               <widget class="QLineEdit" name="externalDownArguments">
                <property name="placeholderText">
-                <string>Leave blank if unsure</string>
+                <string>Оставьте пустым, если не уверены</string>
                </property>
               </widget>
              </item>
@@ -1881,7 +1881,7 @@
              <item row="2" column="1">
               <widget class="QLabel" name="label_64">
                <property name="text">
-                <string>&lt;b&gt;%d&lt;/b&gt; will be replaced with URL to be downloaded</string>
+                <string>&lt;b&gt;%d&lt;/b&gt; будет заменён адресом для загрузки</string>
                </property>
               </widget>
              </item>
@@ -1907,14 +1907,14 @@
            <item row="0" column="0" colspan="2">
             <widget class="QLabel" name="label_20">
              <property name="text">
-              <string>&lt;b&gt;AutoFill options&lt;/b&gt;</string>
+              <string>&lt;b&gt;Автозаполнение&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1">
             <widget class="QCheckBox" name="allowPassManager">
              <property name="text">
-              <string>Allow saving passwords from sites</string>
+              <string>Сохранять пароли</string>
              </property>
             </widget>
            </item>
@@ -1965,7 +1965,7 @@
            <item row="2" column="1">
             <widget class="QCheckBox" name="autoCompletePasswords">
              <property name="text">
-              <string>Automatically complete passwords on sites</string>
+              <string>Автоматически заполнять пароли на сайтах</string>
              </property>
             </widget>
            </item>
@@ -1983,7 +1983,7 @@
            <item row="20" column="0" colspan="4">
             <widget class="QLabel" name="label_50">
              <property name="text">
-              <string>&lt;b&gt;Other&lt;/b&gt;</string>
+              <string>&lt;b&gt;Остальное&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -2009,7 +2009,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>JavaScript options</string>
+              <string>Параметры JavaScript</string>
              </property>
             </widget>
            </item>
@@ -2032,7 +2032,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>Cookies Manager</string>
+              <string>Менеджер Cookies</string>
              </property>
             </widget>
            </item>
@@ -2042,7 +2042,7 @@
               <bool>false</bool>
              </property>
              <property name="text">
-              <string>Manage JavaScript privacy options</string>
+              <string>Управление параметрыми конфидециальности JavaScript</string>
              </property>
             </widget>
            </item>
@@ -2065,14 +2065,14 @@
            <item row="19" column="0" colspan="3">
             <widget class="QLabel" name="label_63">
              <property name="text">
-              <string>Manage HTML5 permissions</string>
+              <string>Управление HTML5 разрешениями</string>
              </property>
             </widget>
            </item>
            <item row="12" column="0" colspan="3">
             <widget class="QLabel" name="label_19">
              <property name="text">
-              <string>Manage Cookies</string>
+              <string>Управление Cookies</string>
              </property>
             </widget>
            </item>
@@ -2092,7 +2092,7 @@
            <item row="18" column="0" colspan="4">
             <widget class="QLabel" name="label_62">
              <property name="text">
-              <string>&lt;b&gt;HTML5 Permissions&lt;/b&gt;</string>
+              <string>&lt;b&gt;HTML5&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -2105,14 +2105,14 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>HTML5 Permissions</string>
+              <string>HTML5 разрешения</string>
              </property>
             </widget>
            </item>
            <item row="22" column="1" colspan="3">
             <widget class="QCheckBox" name="doNotTrack">
              <property name="text">
-              <string>Send Do Not Track header to servers</string>
+              <string>Сообщать веб-сайтам, что я не хочу, чтобы за мной следили</string>
              </property>
             </widget>
            </item>
@@ -2138,7 +2138,7 @@
              <item>
               <widget class="QLabel" name="label_42">
                <property name="text">
-                <string>Expiration timeout:</string>
+                <string>Скрывать через:</string>
                </property>
               </widget>
              </item>
@@ -2151,7 +2151,7 @@
                 </sizepolicy>
                </property>
                <property name="suffix">
-                <string> seconds</string>
+                <string> секунд</string>
                </property>
               </widget>
              </item>
@@ -2173,7 +2173,7 @@
            <item row="0" column="0" colspan="4">
             <widget class="QLabel" name="label_41">
              <property name="text">
-              <string>&lt;b&gt;Notifications&lt;/b&gt;</string>
+              <string>&lt;b&gt;Уведомления&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -2196,14 +2196,14 @@
               <bool>false</bool>
              </property>
              <property name="text">
-              <string>Use Native System Notifications (Linux only)</string>
+              <string>Использовать системные уведомления (только для Linux)</string>
              </property>
             </widget>
            </item>
            <item row="3" column="1" colspan="3">
             <widget class="QRadioButton" name="doNotUseNotifications">
              <property name="text">
-              <string>Do not use Notifications</string>
+              <string>Без уведомлений</string>
              </property>
             </widget>
            </item>
@@ -2226,7 +2226,7 @@
            <item row="7" column="1" colspan="5">
             <widget class="QLabel" name="label_43">
              <property name="text">
-              <string>&lt;b&gt;Note: &lt;/b&gt;You can change position of OSD Notification by dragging it on the screen.</string>
+              <string>&lt;b&gt;Примечание: &lt;/b&gt;Вы можете изменить расположение экранных уведомлений, перетаскивая их по экрану.</string>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -2252,14 +2252,14 @@
            <item row="1" column="1" colspan="3">
             <widget class="QRadioButton" name="useOSDNotifications">
              <property name="text">
-              <string>Use OSD Notifications</string>
+              <string>Использовать экранные уведомления</string>
              </property>
             </widget>
            </item>
            <item row="2" column="5">
             <widget class="QPushButton" name="notificationPreview">
              <property name="text">
-              <string>Preview</string>
+              <string>Предварительный просмотр</string>
              </property>
             </widget>
            </item>
@@ -2324,7 +2324,7 @@
            <item row="7" column="1" colspan="6">
             <widget class="QLabel" name="label_40">
              <property name="text">
-              <string>For more information about Spell Check, please see &lt;a href=&quot;https://userbase.kde.org/KClient#Spell_Check&quot;&gt;wiki&lt;/a&gt;.</string>
+              <string>Дополнительную информацию о проверке орфографии Вы можете найти здесь &lt;a href=&quot;https://userbase.kde.org/KClient#Spell_Check&quot;&gt;wiki&lt;/a&gt;.</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -2366,21 +2366,21 @@
            <item row="0" column="0" colspan="7">
             <widget class="QLabel" name="label_10">
              <property name="text">
-              <string>&lt;b&gt;Spell Check options&lt;/b&gt;</string>
+              <string>&lt;b&gt;Опции проверки орфографии&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1" colspan="6">
             <widget class="QCheckBox" name="spellcheckEnabled">
              <property name="text">
-              <string>Enable Spell Check</string>
+              <string>Включить проверку орфографии</string>
              </property>
             </widget>
            </item>
            <item row="5" column="1" colspan="6">
             <widget class="QLabel" name="label_48">
              <property name="text">
-              <string>&lt;b&gt;Dictionary directories&lt;/b&gt;</string>
+              <string>&lt;b&gt;Папки словарей&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -2431,7 +2431,7 @@
            <item row="2" column="2">
             <widget class="QLabel" name="spellcheckNoLanguages">
              <property name="text">
-              <string>No languages found</string>
+              <string>Словари не найдены</string>
              </property>
             </widget>
            </item>
@@ -2449,14 +2449,14 @@
            <item row="9" column="0" colspan="4">
             <widget class="QLabel" name="label_66">
              <property name="text">
-              <string>&lt;b&gt;Manage search engines&lt;/b&gt;</string>
+              <string>&lt;b&gt;Управление поисковыми системами&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
            <item row="13" column="0" colspan="4">
             <widget class="QLabel" name="label_9">
              <property name="text">
-              <string>&lt;b&gt;User Style Sheet&lt;/b&gt;</string>
+              <string>&lt;b&gt;Пользовательские стили&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -2481,7 +2481,7 @@
              <item>
               <widget class="QPushButton" name="preferredLanguages">
                <property name="text">
-                <string>Languages</string>
+                <string>Языки</string>
                </property>
               </widget>
              </item>
@@ -2503,7 +2503,7 @@
            <item row="7" column="0" colspan="4">
             <widget class="QLabel" name="label_60">
              <property name="text">
-              <string>&lt;b&gt;Change browser identification&lt;/b&gt;</string>
+              <string>&lt;b&gt;Настройки идентификации&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -2528,7 +2528,7 @@
              <item>
               <widget class="QPushButton" name="protocolHandlers">
                <property name="text">
-                <string>Protocol Handlers Manager</string>
+                <string>Менеджер обработчиков проколов</string>
                </property>
               </widget>
              </item>
@@ -2568,7 +2568,7 @@
              <item>
               <widget class="QPushButton" name="searchEngines">
                <property name="text">
-                <string>Search Engines Manager</string>
+                <string>Управление поисковыми системами</string>
                </property>
               </widget>
              </item>
@@ -2616,7 +2616,7 @@
            <item row="14" column="0" colspan="4">
             <widget class="QLabel" name="label_15">
              <property name="text">
-              <string>Style Sheet automatically loaded with all websites: </string>
+              <string>Автоматически загружать стиль с веб-сайтов: </string>
              </property>
             </widget>
            </item>
@@ -2626,7 +2626,7 @@
            <item row="4" column="0" colspan="4">
             <widget class="QLabel" name="label_36">
              <property name="text">
-              <string>&lt;b&gt;Preferred language for web sites&lt;/b&gt;</string>
+              <string>&lt;b&gt;Предпочитаемый язык для веб-сайтов&lt;/b&gt;</string>
              </property>
             </widget>
            </item>
@@ -2651,7 +2651,7 @@
              <item>
               <widget class="QPushButton" name="uaManager">
                <property name="text">
-                <string>User Agent Manager</string>
+                <string>Управление User Agent</string>
                </property>
               </widget>
              </item>
@@ -2673,7 +2673,7 @@
            <item row="11" column="0" colspan="4">
             <widget class="QLabel" name="label_7">
              <property name="text">
-              <string>&lt;b&gt;Manage protocol handlers&lt;/b&gt;</string>
+              <string>&lt;b&gt;Управление обработчиками протоколов&lt;/b&gt;</string>
              </property>
             </widget>
            </item>

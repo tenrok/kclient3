@@ -255,7 +255,7 @@ void DatabaseEncryptedPasswordBackend::removeAll()
 
 QString DatabaseEncryptedPasswordBackend::name() const
 {
-    return AutoFill::tr("Database (encrypted)");
+    return AutoFill::tr("База данных (с шифрованием)");
 }
 
 bool DatabaseEncryptedPasswordBackend::hasSettings() const
@@ -544,12 +544,12 @@ void MasterPasswordDialog::accept()
     QByteArray currentPassField = AesInterface::passwordToHash(ui->currentPassword->text());
 
     if (m_backend->isMasterPasswordSetted() && !m_backend->isPasswordVerified(currentPassField)) {
-        QMessageBox::information(this, tr("Warning!"), tr("You entered a wrong password!"));
+        QMessageBox::information(this, tr("Внимание!"), tr("Вы ввели неправильный пароль!"));
         return;
     }
 
     if (ui->newPassword->text() != ui->confirmPassword->text()) {
-        QMessageBox::information(this, tr("Warning!"), tr("New/Confirm password fields do not match!"));
+        QMessageBox::information(this, tr("Внимание!"), tr("Пароли не совпадают!"));
         return;
     }
 
@@ -576,7 +576,7 @@ void MasterPasswordDialog::reject()
 
     if (m_backend->isActive() && !m_backend->isMasterPasswordSetted()) {
         // master password not set
-        QMessageBox::information(this, AutoFill::tr("Warning!"),
+        QMessageBox::information(this, AutoFill::tr("Внимание!"),
                                  AutoFill::tr("This backend needs a master password to be set! "
                                               "KClient just switches to its default backend"));
         // active default backend
@@ -598,7 +598,7 @@ void MasterPasswordDialog::showSetMasterPasswordPage()
 
 void MasterPasswordDialog::clearMasterPasswordAndConvert(bool forcedAskPass)
 {
-    if (QMessageBox::information(this, tr("Warning!"), tr("Are you sure you want to clear master password and decrypt data?"), QMessageBox::Yes | QMessageBox::No)
+    if (QMessageBox::information(this, tr("Внимание!"), tr("Вы уверены, что хотите очистить мастер-пароль и расшифровать данные?"), QMessageBox::Yes | QMessageBox::No)
         == QMessageBox::No) {
         reject();
         return;
@@ -641,7 +641,7 @@ void MasterPasswordDialog::clearMasterPasswordAndConvert(bool forcedAskPass)
             mApp->autoFill()->passwordManager()->switchBackend(QSL("database"));
         }
         else {
-            QMessageBox::information(this, tr("Warning!"), tr("Some data has not been decrypted. The master password was not cleared!"));
+            QMessageBox::information(this, tr("Внимание!"), tr("Some data has not been decrypted. The master password was not cleared!"));
             mApp->autoFill()->passwordManager()->switchBackend(QSL("database"));
         }
     }
@@ -667,7 +667,7 @@ AskMasterPassword::AskMasterPassword(DatabaseEncryptedPasswordBackend* backend, 
     , m_backend(backend)
 {
     setWindowModality(Qt::ApplicationModal);
-    setWindowTitle(AutoFill::tr("Enter Master Password"));
+    setWindowTitle(AutoFill::tr("Введите мастер-пароль"));
 
     QVBoxLayout* verticalLayout = new QVBoxLayout(this);
     QLabel* label = new QLabel(this);
@@ -677,7 +677,7 @@ AskMasterPassword::AskMasterPassword(DatabaseEncryptedPasswordBackend* backend, 
     m_buttonBox = new QDialogButtonBox(this);
     m_buttonBox->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
     m_labelWarning = new QLabel(this);
-    m_labelWarning->setText(AutoFill::tr("Entered password is wrong!"));
+    m_labelWarning->setText(AutoFill::tr("Введённый пароль неправильный!"));
     QPalette pal = m_labelWarning->palette();
     pal.setBrush(QPalette::WindowText, Qt::red);
     m_labelWarning->setPalette(pal);

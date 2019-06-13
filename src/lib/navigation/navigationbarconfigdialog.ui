@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Configure Toolbar</string>
+   <string>Настройка панели</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="horizontalSpacing">
@@ -59,7 +59,7 @@
    <item row="3" column="0" colspan="2">
     <widget class="QCheckBox" name="showSearchBar">
      <property name="text">
-      <string>Show search bar</string>
+      <string>Показывать строку поиска</string>
      </property>
     </widget>
    </item>
@@ -79,14 +79,14 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Available items:</string>
+      <string>Доступные элементы:</string>
      </property>
     </widget>
    </item>
    <item row="0" column="1">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Current items:</string>
+      <string>Текущие элементы:</string>
      </property>
     </widget>
    </item>

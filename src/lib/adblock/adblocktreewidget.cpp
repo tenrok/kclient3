@@ -77,9 +77,9 @@ void AdBlockTreeWidget::contextMenuRequested(const QPoint &pos)
     }
 
     QMenu menu;
-    menu.addAction(tr("Add Rule"), this, &AdBlockTreeWidget::addRule);
+    menu.addAction(tr("Добавить правило"), this, &AdBlockTreeWidget::addRule);
     menu.addSeparator();
-    QAction* deleteAction = menu.addAction(tr("Remove Rule"), this, &AdBlockTreeWidget::removeRule);
+    QAction* deleteAction = menu.addAction(tr("Удалить правило"), this, &AdBlockTreeWidget::removeRule);
 
     if (!item->parent()) {
         deleteAction->setDisabled(true);
@@ -138,7 +138,7 @@ void AdBlockTreeWidget::addRule()
         return;
     }
 
-    QString newRule = QInputDialog::getText(this, tr("Add Custom Rule"), tr("Please write your rule here:"));
+    QString newRule = QInputDialog::getText(this, tr("Добавление пользовательского правила"), tr("Пожалуйста, напишите своё правило здесь:"));
     if (newRule.isEmpty()) {
         return;
     }
@@ -176,7 +176,7 @@ void AdBlockTreeWidget::subscriptionUpdated()
     refresh();
 
     m_itemChangingBlock = true;
-    m_topItem->setText(0, tr("%1 (recently updated)").arg(m_subscription->title()));
+    m_topItem->setText(0, tr("%1 (недавно обновлена)").arg(m_subscription->title()));
     m_itemChangingBlock = false;
 }
 
@@ -185,7 +185,7 @@ void AdBlockTreeWidget::subscriptionError(const QString &message)
     refresh();
 
     m_itemChangingBlock = true;
-    m_topItem->setText(0, tr("%1 (Error: %2)").arg(m_subscription->title(), message));
+    m_topItem->setText(0, tr("%1 (Ошибка: %2)").arg(m_subscription->title(), message));
     m_itemChangingBlock = false;
 }
 

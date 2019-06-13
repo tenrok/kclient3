@@ -392,7 +392,7 @@ void BrowserWindow::setupUi()
     m_progressBar = new ProgressBar(m_statusBar);
     m_ipLabel = new QLabel(this);
     m_ipLabel->setObjectName(QSL("statusbar-ip-label"));
-    m_ipLabel->setToolTip(tr("IP Address of current page"));
+    m_ipLabel->setToolTip(tr("IP-адрес текущей страницы"));
 
     m_statusBar->addPermanentWidget(m_progressBar);
     m_statusBar->addPermanentWidget(m_ipLabel);
@@ -732,7 +732,7 @@ void BrowserWindow::setWindowTitle(const QString &t)
     QString title = t;
 
     if (mApp->isPrivate()) {
-        title.append(tr(" (Private Browsing)"));
+        title.append(tr(" (Режим приватного просмотра)"));
     }
 
     QMainWindow::setWindowTitle(title);
@@ -1045,22 +1045,22 @@ void BrowserWindow::createToolbarsMenu(QMenu* menu)
     QAction* action;
 
 #ifndef Q_OS_MACOS
-    action = menu->addAction(tr("&Menu Bar"), this, &BrowserWindow::toggleShowMenubar);
+    action = menu->addAction(tr("Панель меню"), this, &BrowserWindow::toggleShowMenubar);
     action->setCheckable(true);
     action->setChecked(menuBar()->isVisible());
 #endif
 
-    action = menu->addAction(tr("&Navigation Toolbar"), this, &BrowserWindow::toggleShowNavigationToolbar);
+    action = menu->addAction(tr("Панель навигации"), this, &BrowserWindow::toggleShowNavigationToolbar);
     action->setCheckable(true);
     action->setChecked(m_navigationToolbar->isVisible());
 
-    action = menu->addAction(tr("&Bookmarks Toolbar"), this, &BrowserWindow::toggleShowBookmarksToolbar);
+    action = menu->addAction(tr("Панель закладок"), this, &BrowserWindow::toggleShowBookmarksToolbar);
     action->setCheckable(true);
     action->setChecked(Settings().value(QSL("Browser-View-Settings/showBookmarksToolbar")).toBool());
 
     menu->addSeparator();
 
-    action = menu->addAction(tr("&Tabs on Top"), this, SLOT(toggleTabsOnTop(bool)));
+    action = menu->addAction(tr("Вкладки сверху"), this, SLOT(toggleTabsOnTop(bool)));
     action->setCheckable(true);
     action->setChecked(qzSettings->tabsOnTop);
 
@@ -1114,7 +1114,7 @@ void BrowserWindow::createEncodingMenu(QMenu* menu)
     createEncodingSubMenu(QSL("Windows"), windowsCodecs, menu);
     createEncodingSubMenu(QSL("Iscii"), isciiCodecs, menu);
     createEncodingSubMenu(QSL("IBM"), ibmCodecs, menu);
-    createEncodingSubMenu(tr("Other"), otherCodecs, menu);
+    createEncodingSubMenu(tr("Прочее"), otherCodecs, menu);
 }
 
 void BrowserWindow::removeActions(const QList<QAction *> &actions)
@@ -1153,12 +1153,12 @@ void BrowserWindow::searchOnPage()
 
 void BrowserWindow::openFile()
 {
-    const QString fileTypes = QSL("%1(*.html *.htm *.shtml *.shtm *.xhtml);;"
-                                      "%2(*.png *.jpg *.jpeg *.bmp *.gif *.svg *.tiff);;"
-                                      "%3(*.txt);;"
-                                      "%4(*.*)").arg(tr("HTML files"), tr("Image files"), tr("Text files"), tr("All files"));
+    const QString fileTypes = QSL("%1 (*.html *.htm *.shtml *.shtm *.xhtml);;"
+                                      "%2 (*.png *.jpg *.jpeg *.bmp *.gif *.svg *.tiff);;"
+                                      "%3 (*.txt);;"
+                                      "%4 (*.*)").arg(tr("HTML-файлы"), tr("Файлы изображений"), tr("Текстовые файлы"), tr("Все файлы"));
 
-    const QString filePath = QzTools::getOpenFileName(QSL("MainWindow-openFile"), this, tr("Open file..."), QDir::homePath(), fileTypes);
+    const QString filePath = QzTools::getOpenFileName(QSL("MainWindow-openFile"), this, tr("Открытие файла..."), QDir::homePath(), fileTypes);
 
     if (!filePath.isEmpty()) {
         loadAddress(QUrl::fromLocalFile(filePath));
@@ -1501,8 +1501,8 @@ void BrowserWindow::closeEvent(QCloseEvent* event)
         //~ singular There is still %n open tab and your session won't be stored.\nAre you sure you want to close this window?
         //~ plural There are still %n open tabs and your session won't be stored.\nAre you sure you want to close this window?
         dialog.setText(tr("There are still %n open tabs and your session won't be stored.\nAre you sure you want to close this window?", "", m_tabWidget->count()));
-        dialog.setCheckBoxText(tr("Don't ask again"));
-        dialog.setWindowTitle(tr("There are still open tabs"));
+        dialog.setCheckBoxText(tr("Больше не спрашивать"));
+        dialog.setWindowTitle(tr("Есть открытые вкладки"));
         dialog.setIcon(QMessageBox::Warning);
 
         if (dialog.exec() != QMessageBox::Yes) {

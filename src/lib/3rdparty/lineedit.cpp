@@ -99,27 +99,27 @@ void LineEdit::init()
     connect(m_leftWidget, &SideWidget::sizeHintChanged, this, &LineEdit::updateTextMargins);
     connect(m_rightWidget, &SideWidget::sizeHintChanged, this, &LineEdit::updateTextMargins);
 
-    QAction* undoAction = new QAction(QIcon::fromTheme(QSL("edit-undo")), tr("&Undo"), this);
+    QAction* undoAction = new QAction(QIcon::fromTheme(QSL("edit-undo")), tr("Отменить"), this);
     undoAction->setShortcut(QKeySequence(QSL("Ctrl+Z")));
     undoAction->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(undoAction, &QAction::triggered, this, &QLineEdit::undo);
 
-    QAction* redoAction = new QAction(QIcon::fromTheme(QSL("edit-redo")), tr("&Redo"), this);
+    QAction* redoAction = new QAction(QIcon::fromTheme(QSL("edit-redo")), tr("Повторить"), this);
     redoAction->setShortcut(QKeySequence(QSL("Ctrl+Shift+Z")));
     redoAction->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(redoAction, &QAction::triggered, this, &QLineEdit::redo);
 
-    QAction* cutAction = new QAction(QIcon::fromTheme(QSL("edit-cut")), tr("Cu&t"), this);
+    QAction* cutAction = new QAction(QIcon::fromTheme(QSL("edit-cut")), tr("Вырезать"), this);
     cutAction->setShortcut(QKeySequence(QSL("Ctrl+X")));
     cutAction->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(cutAction, &QAction::triggered, this, &QLineEdit::cut);
 
-    QAction* copyAction = new QAction(QIcon::fromTheme(QSL("edit-copy")), tr("&Copy"), this);
+    QAction* copyAction = new QAction(QIcon::fromTheme(QSL("edit-copy")), tr("Копировать"), this);
     copyAction->setShortcut(QKeySequence(QSL("Ctrl+C")));
     copyAction->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(copyAction, &QAction::triggered, this, &QLineEdit::copy);
 
-    QAction* pasteAction = new QAction(QIcon::fromTheme(QSL("edit-paste")), tr("&Paste"), this);
+    QAction* pasteAction = new QAction(QIcon::fromTheme(QSL("edit-paste")), tr("Вставить"), this);
     pasteAction->setShortcut(QKeySequence(QSL("Ctrl+V")));
     pasteAction->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(pasteAction, &QAction::triggered, this, &QLineEdit::paste);
@@ -128,13 +128,13 @@ void LineEdit::init()
     pasteAndGoAction->setShortcut(QKeySequence(QSL("Ctrl+Shift+V")));
     pasteAndGoAction->setShortcutContext(Qt::WidgetWithChildrenShortcut);
 
-    QAction* deleteAction = new QAction(QIcon::fromTheme(QSL("edit-delete")), tr("Delete"), this);
+    QAction* deleteAction = new QAction(QIcon::fromTheme(QSL("edit-delete")), tr("Удалить"), this);
     connect(deleteAction, &QAction::triggered, this, &LineEdit::slotDelete);
 
-    QAction* clearAllAction = new QAction(QIcon::fromTheme(QSL("edit-clear")), tr("Clear All"), this);
+    QAction* clearAllAction = new QAction(QIcon::fromTheme(QSL("edit-clear")), tr("Очистить всё"), this);
     connect(clearAllAction, &QAction::triggered, this, &QLineEdit::clear);
 
-    QAction* selectAllAction = new QAction(QIcon::fromTheme(QSL("edit-select-all")), tr("Select All"), this);
+    QAction* selectAllAction = new QAction(QIcon::fromTheme(QSL("edit-select-all")), tr("Выделить всё"), this);
     selectAllAction->setShortcut(QKeySequence(QSL("Ctrl+A")));
     selectAllAction->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(selectAllAction, &QAction::triggered, this, &QLineEdit::selectAll);

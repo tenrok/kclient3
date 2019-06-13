@@ -45,7 +45,7 @@
       </size>
      </property>
      <property name="placeholderText">
-      <string>Find...</string>
+      <string>Найти...</string>
      </property>
      <property name="clearButtonEnabled">
       <bool>true</bool>
@@ -55,10 +55,10 @@
    <item>
     <widget class="QToolButton" name="next">
      <property name="toolTip">
-      <string>Find the next match for the current search phrase</string>
+      <string>Найти следующее совпадение для текущей поисковой фразы</string>
      </property>
      <property name="text">
-      <string>&amp;Next</string>
+      <string>&amp;Следущее</string>
      </property>
      <property name="icon">
       <iconset theme="go-down-search"/>
@@ -71,10 +71,10 @@
    <item>
     <widget class="QToolButton" name="previous">
      <property name="toolTip">
-      <string>Find the previous match for the current search phrase</string>
+      <string>Найти предыдущее совпадение для текущей поисковой фразы</string>
      </property>
      <property name="text">
-      <string>&amp;Previous</string>
+      <string>&amp;Предыдущее</string>
      </property>
      <property name="icon">
       <iconset theme="go-up-search"/>
@@ -87,7 +87,7 @@
    <item>
     <widget class="QToolButton" name="caseSensitive">
      <property name="text">
-      <string>&amp;Match Case</string>
+      <string>&amp;Учитывать регистр</string>
      </property>
      <property name="checkable">
       <bool>true</bool>
