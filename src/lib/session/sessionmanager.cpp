@@ -159,8 +159,8 @@ void SessionManager::saveSession()
 {
     bool ok;
     QString sessionName = QInputDialog::getText(mApp->activeWindow(), tr("Сохранение сессии"),
-                                         tr("Please enter a name to save session:"), QLineEdit::Normal,
-                                         tr("Saved Session (%1)").arg(QDateTime::currentDateTime().toString("dd MMM yyyy HH-mm-ss")), &ok);
+                                         tr("Пожалуйста, укажите имя для сохранения сессии:"), QLineEdit::Normal,
+                                         tr("Сохранённая сессия (%1)").arg(QDateTime::currentDateTime().toString("dd MMM yyyy HH-mm-ss")), &ok);
 
     if (!ok)
         return;
@@ -177,7 +177,8 @@ void SessionManager::saveSession()
 
 void SessionManager::replaceSession(const QString &filePath)
 {
-    QMessageBox::StandardButton result = QMessageBox::information(mApp->activeWindow(), tr("Restore Backup"), tr("Are you sure you want to replace current session?"),
+    QMessageBox::StandardButton result = QMessageBox::information(mApp->activeWindow(), tr("Восстановление резервной копии"),
+                                                                  tr("Вы уверены, что хотите заменить текущую сессию?"),
                                                                   QMessageBox::Yes | QMessageBox::No);
     if (result == QMessageBox::Yes) {
         openSession(filePath, ReplaceSession);
@@ -196,7 +197,8 @@ void SessionManager::cloneSession(const QString &filePath)
 
 void SessionManager::deleteSession(const QString &filePath)
 {
-    QMessageBox::StandardButton result = QMessageBox::information(mApp->activeWindow(), tr("Удаление сессии"), tr("Вы уверены, что хотите удалить сессию '%1'?")
+    QMessageBox::StandardButton result = QMessageBox::information(mApp->activeWindow(), tr("Удаление сессии"),
+                                                                  tr("Вы уверены, что хотите удалить сессию '%1'?")
                                                                   .arg(QFileInfo(filePath).completeBaseName()), QMessageBox::Yes | QMessageBox::No);
     if (result == QMessageBox::Yes) {
         QFile::remove(filePath);
@@ -207,8 +209,8 @@ void SessionManager::newSession()
 {
     bool ok;
     QString sessionName = QInputDialog::getText(mApp->activeWindow(), tr("Новая сессия"),
-                                         tr("Please enter a name to create new session:"), QLineEdit::Normal,
-                                         tr("New Session (%1)").arg(QDateTime::currentDateTime().toString("dd MMM yyyy HH-mm-ss")), &ok);
+                                         tr("Пожалуйста, укажите имя для создания новой сессии:"), QLineEdit::Normal,
+                                         tr("Новая сессия (%1)").arg(QDateTime::currentDateTime().toString("dd MMM yyyy HH-mm-ss")), &ok);
 
     if (!ok)
         return;
@@ -240,14 +242,14 @@ QList<SessionManager::SessionMetaData> SessionManager::sessionMetaData(bool with
 
     if (withBackups && QFile::exists(m_firstBackupSession)) {
         SessionMetaData data;
-        data.name = tr("Backup 1");
+        data.name = tr("Резервная копия 1");
         data.filePath = m_firstBackupSession;
         data.isBackup = true;
         out.append(data);
     }
     if (withBackups && QFile::exists(m_secondBackupSession)) {
         SessionMetaData data;
-        data.name = tr("Backup 2");
+        data.name = tr("Резервная копия 2");
         data.filePath = m_secondBackupSession;
         data.isBackup = true;
         out.append(data);
@@ -287,7 +289,7 @@ void SessionManager::fillSessionsMetaDataListIfNeeded()
         metaData.name = fileInfo.completeBaseName();
 
         if (fileInfo == QFileInfo(defaultSessionPath())) {
-            metaData.name = tr("Default Session");
+            metaData.name = tr("Сессия по-умолчанию");
             metaData.isDefault = true;
         } else if (fileNames.contains(fileInfo.completeBaseName())) {
             metaData.name = fileInfo.fileName();
@@ -390,7 +392,7 @@ QString SessionManager::askSessionFromUser()
     fillSessionsMetaDataListIfNeeded();
 
     QDialog dialog(mApp->getWindow(), Qt::WindowStaysOnTopHint);
-    QLabel label(tr("Please select the startup session:"), &dialog);
+    QLabel label(tr("Пожалуйста, выберите сессию, используемую при запуске:"), &dialog);
     QComboBox comboBox(&dialog);
     QDialogButtonBox buttonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
     connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
@@ -409,7 +411,7 @@ QString SessionManager::askSessionFromUser()
             comboBox.addItem(metaData.name, metaData.filePath);
         }
         else {
-            comboBox.insertItem(0, tr("%1 (last session)").arg(metaData.name), metaData.filePath);
+            comboBox.insertItem(0, tr("%1 (последняя сессия)").arg(metaData.name), metaData.filePath);
         }
     }
 

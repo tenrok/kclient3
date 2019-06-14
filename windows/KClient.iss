@@ -1,4 +1,4 @@
-; Dependencies
+п»ї; Dependencies
 #define use_msiproduct
 #define use_vc2013
 ;#define use_vc2015
@@ -85,10 +85,10 @@ Name: "compact"; Description: "{code:GetCompactInstallation}"
 Name: "custom"; Description: "{code:GetCustomInstallation}"; Flags: iscustom
 
 [Components]
-Name: "main"; Description: "Основные компоненты"; Types: full compact custom; Flags: fixed
-Name: "themes"; Description: "Темы"; Types: full;
-Name: "plugins"; Description: "Расширения"; Types: full;
-Name: "translations"; Description: "Переводы"; Types: full;
+Name: "main"; Description: "РћСЃРЅРѕРІРЅС‹Рµ РєРѕРјРїРѕРЅРµРЅС‚С‹"; Types: full compact custom; Flags: fixed
+Name: "themes"; Description: "РўРµРјС‹"; Types: full;
+Name: "plugins"; Description: "Р Р°СЃС€РёСЂРµРЅРёСЏ"; Types: full;
+Name: "translations"; Description: "РџРµСЂРµРІРѕРґС‹"; Types: full;
 
 [Files]
 Source: "{#KCLIENT_BIN_DIR}\plugins\*.dll"; DestDir: "{app}\{#AppVersion}\plugins"; Components: "plugins"; Flags: ignoreversion
@@ -136,7 +136,6 @@ Source: "{#QT_PLUGINS_DIR}\styles\*.dll"; DestDir: "{app}\{#AppVersion}\styles";
 Source: "{#KCLIENT_SRC_DIR}\themes\chrome\*"; DestDir: "{app}\{#AppVersion}\themes\chrome"; Components: "themes"; Flags: recursesubdirs
 Source: "{#KCLIENT_SRC_DIR}\themes\mac\*"; DestDir: "{app}\{#AppVersion}\themes\mac"; Components: "themes"; Flags: recursesubdirs
 Source: "{#KCLIENT_SRC_DIR}\themes\windows\*"; DestDir: "{app}\{#AppVersion}\themes\windows"; Components: "main"; Flags: recursesubdirs
-Source: "{#KCLIENT_BIN_DIR}\locale\*"; DestDir: "{app}\{#AppVersion}\locale"; Components: "translations"; Flags: recursesubdirs
 Source: "{#QT_DIR}\translations\qtwebengine_locales\*"; DestDir: "{app}\{#AppVersion}\translations\qtwebengine_locales"; Components: "translations";
 ; In some packages underline '_' is used and in some other packages dash '-' is used so we use wildcard
 Source: "{#QTWEBENGINE_DICTIONARIES_DIR}\doc\README*en*US.txt"; DestDir: "{app}\{#AppVersion}\qtwebengine_dictionaries\doc"; Components: "translations";

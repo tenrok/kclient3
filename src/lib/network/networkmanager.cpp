@@ -84,7 +84,7 @@ bool NetworkManager::certificateError(const QWebEngineCertificateError &error, Q
     if (m_ignoredSslErrors.contains(host) && m_ignoredSslErrors.value(host) == error.error())
         return true;
 
-    QString title = tr("SSL Certificate Error!");
+    QString title = tr("Ошибка SSL сертификата!");
     QString text1 = tr("The page you are trying to access has the following errors in the SSL certificate:");
     QString text2 = tr("Would you like to make an exception for this certificate?");
 
@@ -113,15 +113,15 @@ bool NetworkManager::certificateError(const QWebEngineCertificateError &error, Q
 void NetworkManager::authentication(const QUrl &url, QAuthenticator *auth, QWidget *parent)
 {
     QDialog* dialog = new QDialog(parent);
-    dialog->setWindowTitle(tr("Authorization required"));
+    dialog->setWindowTitle(tr("Требуется авторизация"));
 
     QFormLayout* formLa = new QFormLayout(dialog);
 
     QLabel* label = new QLabel(dialog);
     QLabel* userLab = new QLabel(dialog);
     QLabel* passLab = new QLabel(dialog);
-    userLab->setText(tr("Username: "));
-    passLab->setText(tr("Password: "));
+    userLab->setText(tr("Имя пользователя: "));
+    passLab->setText(tr("Пароль: "));
 
     QLineEdit* user = new QLineEdit(dialog);
     QLineEdit* pass = new QLineEdit(dialog);
@@ -206,8 +206,8 @@ void NetworkManager::proxyAuthentication(const QString &proxyHost, QAuthenticato
     QLabel* label = new QLabel(dialog);
     QLabel* userLab = new QLabel(dialog);
     QLabel* passLab = new QLabel(dialog);
-    userLab->setText(tr("Username: "));
-    passLab->setText(tr("Password: "));
+    userLab->setText(tr("Имя пользователя: "));
+    passLab->setText(tr("Пароль: "));
 
     QLineEdit* user = new QLineEdit(dialog);
     QLineEdit* pass = new QLineEdit(dialog);

@@ -49,7 +49,7 @@ SearchEnginesDialog::SearchEnginesDialog(QWidget* parent)
 
 void SearchEnginesDialog::addEngine()
 {
-    EditSearchEngine dialog(tr("Add Search Engine"), this);
+    EditSearchEngine dialog(tr("Добавить поисковую систему"), this);
     dialog.hideIconLabels();
 
     if (dialog.exec() != QDialog::Accepted) {
@@ -86,9 +86,9 @@ void SearchEnginesDialog::removeEngine()
 
     if (isDefaultEngine(item)) {
         SearchEngine en = getEngine(item);
-        QMessageBox::warning(this, tr("Remove Engine"),
-                             tr("You can't remove the default search engine.<br>"
-                                "Set a different engine as default before removing %1.").arg(en.name));
+        QMessageBox::warning(this, tr("Удаление поисковой системы"),
+                             tr("Вы не можете удалить поисковую систему по-умолчанию.<br>"
+                                "Установите другую систему по-умолчанию перед удалением %1.").arg(en.name));
     }
     else {
         delete item;
@@ -104,7 +104,7 @@ void SearchEnginesDialog::editEngine()
 
     SearchEngine engine = getEngine(item);
 
-    EditSearchEngine dialog(tr("Edit Search Engine"), this);
+    EditSearchEngine dialog(tr("Редактирование поисковой системы"), this);
 
     dialog.setName(engine.name);
     dialog.setUrl(engine.url);

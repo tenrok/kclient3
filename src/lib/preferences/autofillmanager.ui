@@ -22,7 +22,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Passwords are stored in:</string>
+        <string>Пароли сохранены в:</string>
        </property>
       </widget>
      </item>
@@ -32,14 +32,14 @@
      <item>
       <widget class="QPushButton" name="changeBackend">
        <property name="text">
-        <string>Change backend</string>
+        <string>Поменять сервер</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="backendOptions">
        <property name="text">
-        <string>Backend options</string>
+        <string>Настройки сервера</string>
        </property>
       </widget>
      </item>
@@ -68,7 +68,7 @@
      </property>
      <widget class="QWidget" name="tabPass">
       <attribute name="title">
-       <string>Passwords</string>
+       <string>Пароли</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
        <item row="2" column="0">
@@ -84,17 +84,17 @@
          </attribute>
          <column>
           <property name="text">
-           <string>Server</string>
+           <string>Сервер</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Username</string>
+           <string>Имя пользователя</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Password</string>
+           <string>Пароль</string>
           </property>
          </column>
         </widget>
@@ -110,7 +110,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Import and Export</string>
+            <string>Импорт и экспорт</string>
            </property>
           </widget>
          </item>
@@ -137,7 +137,7 @@
          <item>
           <widget class="QPushButton" name="showPasswords">
            <property name="text">
-            <string>Show Passwords</string>
+            <string>Показать пароли</string>
            </property>
           </widget>
          </item>
@@ -151,21 +151,21 @@
          <item>
           <widget class="QPushButton" name="editPass">
            <property name="text">
-            <string>Edit</string>
+            <string>Правка</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="removePass">
            <property name="text">
-            <string>Remove</string>
+            <string>Удалить</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="removeAllPass">
            <property name="text">
-            <string>Remove All</string>
+            <string>Удалить все</string>
            </property>
           </widget>
          </item>
@@ -198,7 +198,7 @@
          </property>
          <column>
           <property name="text">
-           <string>Server</string>
+           <string>Сервер</string>
           </property>
          </column>
         </widget>
@@ -208,14 +208,14 @@
          <item>
           <widget class="QPushButton" name="removeExcept">
            <property name="text">
-            <string>Remove</string>
+            <string>Удалить</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="removeAllExcept">
            <property name="text">
-            <string>Remove All</string>
+            <string>Удалить все</string>
            </property>
           </widget>
          </item>

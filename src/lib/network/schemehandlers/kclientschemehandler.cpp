@@ -156,7 +156,7 @@ QString KClientSchemeReply::startPage()
     sPage.replace(QLatin1String("%SEARCH-BY%"), tr("Результаты поиска предоставлены DuckDuckGo"));
     sPage.replace(QLatin1String("%WWW%"), Qz::WIKIADDRESS);
     sPage.replace(QLatin1String("%ABOUT-KCLIENT%"), tr("О KClient"));
-    sPage.replace(QLatin1String("%PRIVATE-BROWSING%"), mApp->isPrivate() ? tr("<h1>Private Browsing</h1>") : QString());
+    sPage.replace(QLatin1String("%PRIVATE-BROWSING%"), mApp->isPrivate() ? tr("<h1>Режим приватного просмотра</h1>") : QString());
     sPage = QzTools::applyDirectionToPage(sPage);
 
     return sPage;
@@ -174,7 +174,7 @@ QString KClientSchemeReply::aboutPage()
         aPage.replace(QLatin1String("%TITLE%"), tr("О KClient"));
         aPage.replace(QLatin1String("%ABOUT-KCLIENT%"), tr("О KClient"));
         aPage.replace(QLatin1String("%INFORMATIONS-ABOUT-VERSION%"), tr("Информация о версии"));
-        aPage.replace(QLatin1String("%COPYRIGHT%"), tr("Авторское право"));
+        aPage.replace(QLatin1String("%COPYRIGHT%"), tr("Авторские права"));
 
         aPage.replace(QLatin1String("%VERSION-INFO%"),
                       QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Версия"),
@@ -255,15 +255,15 @@ QString KClientSchemeReply::restorePage()
     if (rPage.isEmpty()) {
         rPage.append(QzTools::readAllFileContents(":html/restore.html"));
         rPage.replace(QLatin1String("%IMAGE%"), QzTools::pixmapToDataUrl(IconProvider::standardIcon(QStyle::SP_MessageBoxWarning).pixmap(45)).toString());
-        rPage.replace(QLatin1String("%TITLE%"), tr("Restore Session"));
+        rPage.replace(QLatin1String("%TITLE%"), tr("Восстановление сессии"));
         rPage.replace(QLatin1String("%OOPS%"), tr("Oops, KClient crashed."));
         rPage.replace(QLatin1String("%APOLOGIZE%"), tr("We apologize for this. Would you like to restore the last saved state?"));
         rPage.replace(QLatin1String("%TRY-REMOVING%"), tr("Try removing one or more tabs that you think cause troubles"));
         rPage.replace(QLatin1String("%START-NEW%"), tr("Or you can start completely new session"));
-        rPage.replace(QLatin1String("%WINDOW%"), tr("Window"));
-        rPage.replace(QLatin1String("%WINDOWS-AND-TABS%"), tr("Windows and Tabs"));
-        rPage.replace(QLatin1String("%BUTTON-START-NEW%"), tr("Start New Session"));
-        rPage.replace(QLatin1String("%BUTTON-RESTORE%"), tr("Restore"));
+        rPage.replace(QLatin1String("%WINDOW%"), tr("Окно"));
+        rPage.replace(QLatin1String("%WINDOWS-AND-TABS%"), tr("Окна и вкладки"));
+        rPage.replace(QLatin1String("%BUTTON-START-NEW%"), tr("Запустить новую сессию"));
+        rPage.replace(QLatin1String("%BUTTON-RESTORE%"), tr("Восстановить"));
         rPage.replace(QLatin1String("%JAVASCRIPT-DISABLED%"), tr("Requires enabled JavaScript."));
         rPage = QzTools::applyDirectionToPage(rPage);
     }
@@ -279,21 +279,21 @@ QString KClientSchemeReply::configPage()
         cPage.append(QzTools::readAllFileContents(":html/config.html"));
         cPage.replace(QLatin1String("%ABOUT-IMG%"), QSL("qrc:icons/other/about.svg"));
 
-        cPage.replace(QLatin1String("%TITLE%"), tr("Configuration Information"));
-        cPage.replace(QLatin1String("%CONFIG%"), tr("Configuration Information"));
-        cPage.replace(QLatin1String("%INFORMATIONS-ABOUT-VERSION%"), tr("Information about version"));
+        cPage.replace(QLatin1String("%TITLE%"), tr("Информация о конфигурации"));
+        cPage.replace(QLatin1String("%CONFIG%"), tr("Информация о конфигурации"));
+        cPage.replace(QLatin1String("%INFORMATIONS-ABOUT-VERSION%"), tr("Информация о версии"));
         cPage.replace(QLatin1String("%CONFIG-ABOUT%"), tr("This page contains information about KClient's current configuration - relevant for troubleshooting. Please include this information when submitting bug reports."));
         cPage.replace(QLatin1String("%BROWSER-IDENTIFICATION%"), tr("Browser Identification"));
-        cPage.replace(QLatin1String("%PATHS%"), tr("Paths"));
+        cPage.replace(QLatin1String("%PATHS%"), tr("Пути"));
         cPage.replace(QLatin1String("%BUILD-CONFIG%"), tr("Build Configuration"));
-        cPage.replace(QLatin1String("%PREFS%"), tr("Preferences"));
-        cPage.replace(QLatin1String("%OPTION%"), tr("Option"));
-        cPage.replace(QLatin1String("%VALUE%"), tr("Value"));
-        cPage.replace(QLatin1String("%PLUGINS%"), tr("Extensions"));
-        cPage.replace(QLatin1String("%PL-NAME%"), tr("Name"));
-        cPage.replace(QLatin1String("%PL-VER%"), tr("Version"));
-        cPage.replace(QLatin1String("%PL-AUTH%"), tr("Author"));
-        cPage.replace(QLatin1String("%PL-DESC%"), tr("Description"));
+        cPage.replace(QLatin1String("%PREFS%"), tr("Настройки"));
+        cPage.replace(QLatin1String("%OPTION%"), tr("Опция"));
+        cPage.replace(QLatin1String("%VALUE%"), tr("Значение"));
+        cPage.replace(QLatin1String("%PLUGINS%"), tr("Расширения"));
+        cPage.replace(QLatin1String("%PL-NAME%"), tr("Наименование"));
+        cPage.replace(QLatin1String("%PL-VER%"), tr("Версия"));
+        cPage.replace(QLatin1String("%PL-AUTH%"), tr("Автор"));
+        cPage.replace(QLatin1String("%PL-DESC%"), tr("Описание"));
 
         auto allPaths = [](DataPaths::Path type) {
             QString out;
@@ -308,46 +308,46 @@ QString KClientSchemeReply::configPage()
         };
 
         cPage.replace(QLatin1String("%VERSION-INFO%"),
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Application version"),
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Версия приложения"),
 #ifdef KCLIENT_GIT_REVISION
                               QString("%1 (%2)").arg(Qz::VERSION, KCLIENT_GIT_REVISION)
 #else
                               Qz::VERSION
 #endif
                                                           ) +
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Qt version"), qVersion()) +
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Platform"), QzTools::operatingSystemLong()));
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Версия Qt"), qVersion()) +
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Платформа"), QzTools::operatingSystemLong()));
 
         cPage.replace(QLatin1String("%PATHS-TEXT%"),
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Profile"), DataPaths::currentProfilePath()) +
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Settings"), DataPaths::currentProfilePath() + "/settings.ini") +
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Saved session"), SessionManager::defaultSessionPath()) +
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Data"), allPaths(DataPaths::AppData)) +
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Themes"), allPaths(DataPaths::Themes)) +
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Extensions"), allPaths(DataPaths::Plugins)));
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Профиль"), DataPaths::currentProfilePath()) +
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Настройки"), DataPaths::currentProfilePath() + "/settings.ini") +
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Сохранённая сесия"), SessionManager::defaultSessionPath()) +
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Данные"), allPaths(DataPaths::AppData)) +
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Темы"), allPaths(DataPaths::Themes)) +
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Расширения"), allPaths(DataPaths::Plugins)));
 
 #ifdef QT_DEBUG
         QString debugBuild = tr("<b>Enabled</b>");
 #else
-        QString debugBuild = tr("Disabled");
+        QString debugBuild = tr("Отключен");
 #endif
 
 #ifdef Q_OS_WIN
 #if defined(Q_OS_WIN) && defined(W7API)
-        QString w7APIEnabled = tr("<b>Enabled</b>");
+        QString w7APIEnabled = tr("<b>Включен</b>");
 #else
-        QString w7APIEnabled = tr("Disabled");
+        QString w7APIEnabled = tr("Отключен");
 #endif
 #endif
 
-        QString portableBuild = mApp->isPortable() ? tr("<b>Enabled</b>") : tr("Disabled");
+        QString portableBuild = mApp->isPortable() ? tr("<b>Включен</b>") : tr("Отключен");
 
         cPage.replace(QLatin1String("%BUILD-CONFIG-TEXT%"),
                       QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Debug build"), debugBuild) +
 #ifdef Q_OS_WIN
                       QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Windows 7 API"), w7APIEnabled) +
 #endif
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Portable build"), portableBuild));
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Портативная сборка"), portableBuild));
 
         cPage = QzTools::applyDirectionToPage(cPage);
     }
