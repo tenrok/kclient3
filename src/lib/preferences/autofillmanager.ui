@@ -22,7 +22,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Пароли сохранены в:</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Пароли хранятся в:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -32,14 +32,14 @@
      <item>
       <widget class="QPushButton" name="changeBackend">
        <property name="text">
-        <string>Поменять сервер</string>
+        <string>Изменить сервер</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="backendOptions">
        <property name="text">
-        <string>Настройки сервера</string>
+        <string>Параметры баз данных</string>
        </property>
       </widget>
      </item>
@@ -151,7 +151,7 @@
          <item>
           <widget class="QPushButton" name="editPass">
            <property name="text">
-            <string>Правка</string>
+            <string>Редактировать</string>
            </property>
           </widget>
          </item>
@@ -188,7 +188,7 @@
      </widget>
      <widget class="QWidget" name="tabExcept">
       <attribute name="title">
-       <string>Exceptions</string>
+       <string>Исключения</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>

@@ -577,8 +577,8 @@ void MasterPasswordDialog::reject()
     if (m_backend->isActive() && !m_backend->isMasterPasswordSetted()) {
         // master password not set
         QMessageBox::information(this, AutoFill::tr("Внимание!"),
-                                 AutoFill::tr("This backend needs a master password to be set! "
-                                              "KClient just switches to its default backend"));
+                                 AutoFill::tr("Этот back-end требует ввода мастер-пароля! "
+                                              "KClient переключится на back-end по-умолчанию"));
         // active default backend
         mApp->autoFill()->passwordManager()->switchBackend(QSL("database"));
         return;
@@ -671,7 +671,7 @@ AskMasterPassword::AskMasterPassword(DatabaseEncryptedPasswordBackend* backend, 
 
     QVBoxLayout* verticalLayout = new QVBoxLayout(this);
     QLabel* label = new QLabel(this);
-    label->setText(AutoFill::tr("Permission is required, please enter Master Password:"));
+    label->setText(AutoFill::tr("Требуется разрешение, пожалуйста, введите мастер-пароль:"));
     m_lineEdit = new QLineEdit(this);
     m_lineEdit->setEchoMode(QLineEdit::Password);
     m_buttonBox = new QDialogButtonBox(this);

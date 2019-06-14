@@ -33,13 +33,13 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Stored Cookies</string>
+       <string>Сохранённые Cookies</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Find: </string>
+          <string>Найти: </string>
          </property>
         </widget>
        </item>
@@ -49,7 +49,7 @@
        <item row="1" column="0" colspan="2">
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>These cookies are stored on your computer:</string>
+          <string>Эти файлы cookies хранятся на вашем компьютере:</string>
          </property>
         </widget>
        </item>
@@ -60,12 +60,12 @@
          </property>
          <column>
           <property name="text">
-           <string>Server</string>
+           <string>Сервер</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Cookie name</string>
+           <string>Имя</string>
           </property>
          </column>
         </widget>
@@ -103,7 +103,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>Name:</string>
+             <string>Имя:</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -113,42 +113,42 @@
           <item row="1" column="0">
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Value:</string>
+             <string>Значение:</string>
             </property>
            </widget>
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="label_5">
             <property name="text">
-             <string>Server:</string>
+             <string>Сервер:</string>
             </property>
            </widget>
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>Path:</string>
+             <string>Путь:</string>
             </property>
            </widget>
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>Secure:</string>
+             <string>Безопасность:</string>
             </property>
            </widget>
           </item>
           <item row="5" column="0">
            <widget class="QLabel" name="label_8">
             <property name="text">
-             <string>Expiration:</string>
+             <string>Срок действия:</string>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
            <widget class="SqueezeLabelV2" name="name">
             <property name="text">
-             <string>&lt;cookie not selected&gt;</string>
+             <string>&lt;cookie не выбран&gt;</string>
             </property>
             <property name="textInteractionFlags">
              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -158,7 +158,7 @@
           <item row="1" column="1">
            <widget class="SqueezeLabelV2" name="value">
             <property name="text">
-             <string>&lt;cookie not selected&gt;</string>
+             <string>&lt;cookie не выбран&gt;</string>
             </property>
             <property name="textInteractionFlags">
              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -168,7 +168,7 @@
           <item row="2" column="1">
            <widget class="SqueezeLabelV2" name="server">
             <property name="text">
-             <string>&lt;cookie not selected&gt;</string>
+             <string>&lt;cookie не выбран&gt;</string>
             </property>
             <property name="textInteractionFlags">
              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -178,7 +178,7 @@
           <item row="3" column="1">
            <widget class="QLabel" name="path">
             <property name="text">
-             <string>&lt;cookie not selected&gt;</string>
+             <string>&lt;cookie не выбран&gt;</string>
             </property>
             <property name="textInteractionFlags">
              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -188,7 +188,7 @@
           <item row="4" column="1">
            <widget class="SqueezeLabelV2" name="secure">
             <property name="text">
-             <string>&lt;cookie not selected&gt;</string>
+             <string>&lt;cookie не выбран&gt;</string>
             </property>
             <property name="textInteractionFlags">
              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -198,7 +198,7 @@
           <item row="5" column="1">
            <widget class="SqueezeLabelV2" name="expiration">
             <property name="text">
-             <string>&lt;cookie not selected&gt;</string>
+             <string>&lt;cookie не выбран&gt;</string>
             </property>
             <property name="textInteractionFlags">
              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -232,14 +232,14 @@
           <item>
            <widget class="QPushButton" name="removeAll">
             <property name="text">
-             <string>Remove all cookies</string>
+             <string>Удалить все cookies</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="removeOne">
             <property name="text">
-             <string>Remove cookies</string>
+             <string>Удалить cookies</string>
             </property>
            </widget>
           </item>
@@ -263,20 +263,20 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Cookie Filtering</string>
+       <string>Фильтр</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
         <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>&lt;b&gt;Cookie whitelist&lt;/b&gt;</string>
+          <string>&lt;b&gt;Список разрешённых cookie&lt;/b&gt;</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0" colspan="2">
         <widget class="QLabel" name="label_11">
          <property name="text">
-          <string>Cookies from these servers will ALWAYS be accepted (even if you have disabled saving cookies)</string>
+          <string>Cookies с этих серверов будут ВСЕГДА приниматься (даже если Вы отключили их сохранение)</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -301,14 +301,14 @@
          <item>
           <widget class="QPushButton" name="whiteAdd">
            <property name="text">
-            <string>Add</string>
+            <string>Добавить</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="whiteRemove">
            <property name="text">
-            <string>Remove</string>
+            <string>Удалить</string>
            </property>
           </widget>
          </item>
@@ -320,14 +320,14 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label_10">
          <property name="text">
-          <string>&lt;b&gt;Cookie blacklist&lt;/b&gt;</string>
+          <string>&lt;b&gt;Список запрещённых cookie&lt;/b&gt;</string>
          </property>
         </widget>
        </item>
        <item row="4" column="0" colspan="2">
         <widget class="QLabel" name="label_12">
          <property name="text">
-          <string>Cookies from these servers will NEVER be accepted</string>
+          <string>Cookies с этих серверов НИКОГДА не будут приниматься</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -355,14 +355,14 @@
          <item>
           <widget class="QPushButton" name="blackAdd">
            <property name="text">
-            <string>Add</string>
+            <string>Добавить</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="blackRemove">
            <property name="text">
-            <string>Remove</string>
+            <string>Удалить</string>
            </property>
           </widget>
          </item>
@@ -379,7 +379,7 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Settings</string>
+       <string>Настройки</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="1" column="0">
@@ -401,35 +401,35 @@
        <item row="4" column="1">
         <widget class="QCheckBox" name="filter3rdParty">
          <property name="text">
-          <string>Filter 3rd party cookies</string>
+          <string>Фильтровать cookies со сторонних сайтов</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0" colspan="3">
         <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>&lt;b&gt;Cookie Settings&lt;/b&gt;</string>
+          <string>&lt;b&gt;Настройки Cookie&lt;/b&gt;</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1" colspan="2">
         <widget class="QCheckBox" name="saveCookies">
          <property name="text">
-          <string>Allow storing of cookies</string>
+          <string>Сохранять cookies</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1" colspan="2">
         <widget class="QCheckBox" name="filterTracking">
          <property name="text">
-          <string>Filter tracking cookies</string>
+          <string>Фильтрация шпионских cookies</string>
          </property>
         </widget>
        </item>
        <item row="5" column="1" colspan="2">
         <widget class="QCheckBox" name="deleteCookiesOnClose">
          <property name="text">
-          <string>Delete cookies on close</string>
+          <string>Удалять cookies при закрытии</string>
          </property>
         </widget>
        </item>

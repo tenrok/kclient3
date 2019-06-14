@@ -104,8 +104,8 @@ CookieManager::CookieManager(QWidget *parent)
 
 void CookieManager::removeAll()
 {
-    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Confirmation"),
-                                         tr("Are you sure you want to delete all cookies on your computer?"), QMessageBox::Yes | QMessageBox::No);
+    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Подтверждение"),
+                                         tr("Вы точно хотите удалить все cookies?"), QMessageBox::Yes | QMessageBox::No);
     if (button != QMessageBox::Yes) {
         return;
     }
@@ -150,14 +150,14 @@ void CookieManager::currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem
     }
 
     if (current->text(1).isEmpty()) {
-        ui->name->setText(tr("<cookie not selected>"));
-        ui->value->setText(tr("<cookie not selected>"));
-        ui->server->setText(tr("<cookie not selected>"));
-        ui->path->setText(tr("<cookie not selected>"));
-        ui->secure->setText(tr("<cookie not selected>"));
-        ui->expiration->setText(tr("<cookie not selected>"));
+        ui->name->setText(tr("<cookie не выбран>"));
+        ui->value->setText(tr("<cookie не выбран>"));
+        ui->server->setText(tr("<cookie не выбран>"));
+        ui->path->setText(tr("<cookie не выбран>"));
+        ui->secure->setText(tr("<cookie не выбран>"));
+        ui->expiration->setText(tr("<cookie не выбран>"));
 
-        ui->removeOne->setText(tr("Remove cookies"));
+        ui->removeOne->setText(tr("Удалить cookies"));
         return;
     }
 
@@ -175,7 +175,7 @@ void CookieManager::currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem
 
 void CookieManager::addWhitelist()
 {
-    const QString server = QInputDialog::getText(this, tr("Add to whitelist"), tr("Server:"));
+    const QString server = QInputDialog::getText(this, tr("Добавить в белый список"), tr("Сервер:"));
 
     if (server.isEmpty()) {
         return;
@@ -198,7 +198,7 @@ void CookieManager::removeWhitelist()
 
 void CookieManager::addBlacklist()
 {
-    const QString server = QInputDialog::getText(this, tr("Add to blacklist"), tr("Server:"));
+    const QString server = QInputDialog::getText(this, tr("Добавить в чёрный список"), tr("Сервер:"));
     addBlacklist(server);
 }
 

@@ -42,7 +42,7 @@ AdBlockAddSubscriptionDialog::AdBlockAddSubscriptionDialog(QWidget* parent)
                          << Subscription(QSL("ABPindo (Indonesian)"), QSL("https://raw.githubusercontent.com/heradhis/indonesianadblockrules/master/subscriptions/abpindo.txt"))
                          << Subscription(QSL("Easylist China (Chinese)"), QSL("https://easylist-downloads.adblockplus.org/easylistchina.txt"))
                          << Subscription(QSL("Anti-Adblock Killer"), QSL("https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"))
-                         << Subscription(tr("Прочие..."), QString());
+                         << Subscription(tr("Другие..."), QString());
 
     foreach (const Subscription &subscription, m_knownSubscriptions) {
         ui->comboBox->addItem(subscription.title);

@@ -64,8 +64,8 @@ AutoFillManager::AutoFillManager(QWidget* parent)
     connect(ui->treePass, &TreeWidget::customContextMenuRequested, this, &AutoFillManager::passwordContextMenu);
 
     QMenu* menu = new QMenu(this);
-    menu->addAction(tr("Import Passwords from File..."), this, &AutoFillManager::importPasswords);
-    menu->addAction(tr("Export Passwords to File..."), this, &AutoFillManager::exportPasswords);
+    menu->addAction(tr("Импортировать пароли из файла..."), this, &AutoFillManager::importPasswords);
+    menu->addAction(tr("Экспортировать пароли в файл..."), this, &AutoFillManager::exportPasswords);
     ui->importExport->setMenu(menu);
     ui->search->setPlaceholderText(tr("Поиск"));
 
@@ -79,7 +79,7 @@ AutoFillManager::AutoFillManager(QWidget* parent)
 
 void AutoFillManager::loadPasswords()
 {
-    ui->showPasswords->setText(tr("Show Passwords"));
+    ui->showPasswords->setText(tr("Показать пароли"));
     m_passwordsShown = false;
 
     QVector<PasswordEntry> allEntries = mApp->autoFill()->getAllFormData();
@@ -127,11 +127,11 @@ void AutoFillManager::changePasswordBackend()
         items << i.value()->name();
     }
 
-    QString item = QInputDialog::getItem(this, tr("Change backend..."), tr("Change backend:"), items, current, false);
+    QString item = QInputDialog::getItem(this, tr("Изменить сервер..."), tr("Изменить сервер:"), items, current, false);
 
     // Switch backends
     if (!item.isEmpty()) {
-        PasswordBackend* backend = 0;
+        PasswordBackend* backend = nullptr;
 
         QHashIterator<QString, PasswordBackend*> i(backends);
         while (i.hasNext()) {
@@ -168,7 +168,7 @@ void AutoFillManager::showPasswords()
             item->setText(2, "*****");
         }
 
-        ui->showPasswords->setText(tr("Show Passwords"));
+        ui->showPasswords->setText(tr("Показать пароли"));
         m_passwordsShown = false;
 
         return;
@@ -298,7 +298,7 @@ void AutoFillManager::showExceptions()
 
 void AutoFillManager::importPasswords()
 {
-    m_fileName = QzTools::getOpenFileName("AutoFill-ImportPasswords", this, tr("Choose file..."), QDir::homePath() + "/passwords.xml", "*.xml");
+    m_fileName = QzTools::getOpenFileName("AutoFill-ImportPasswords", this, tr("Выберите файл..."), QDir::homePath() + "/passwords.xml", "*.xml");
 
     if (m_fileName.isEmpty()) {
         return;
@@ -309,7 +309,7 @@ void AutoFillManager::importPasswords()
 
 void AutoFillManager::exportPasswords()
 {
-    m_fileName = QzTools::getSaveFileName("AutoFill-ExportPasswords", this, tr("Choose file..."), QDir::homePath() + "/passwords.xml", "*.xml");
+    m_fileName = QzTools::getSaveFileName("AutoFill-ExportPasswords", this, tr("Выберите файл..."), QDir::homePath() + "/passwords.xml", "*.xml");
 
     if (m_fileName.isEmpty()) {
         return;
@@ -323,7 +323,7 @@ void AutoFillManager::slotImportPasswords()
     QFile file(m_fileName);
 
     if (!file.open(QFile::ReadOnly)) {
-        ui->importExportLabel->setText(tr("Cannot read file!"));
+        ui->importExportLabel->setText(tr("Невозможно прочитать файл!"));
         return;
     }
 
@@ -332,7 +332,7 @@ void AutoFillManager::slotImportPasswords()
     bool status = mApp->autoFill()->importPasswords(file.readAll());
     file.close();
 
-    ui->importExportLabel->setText(status ? tr("Successfully imported") : tr("Error while importing!"));
+    ui->importExportLabel->setText(status ? tr("Импорт завершён удачно") : tr("Ошибка при импорте!"));
     loadPasswords();
 
     QApplication::restoreOverrideCursor();
@@ -343,7 +343,7 @@ void AutoFillManager::slotExportPasswords()
     QFile file(m_fileName);
 
     if (!file.open(QFile::WriteOnly)) {
-        ui->importExportLabel->setText(tr("Cannot write to file!"));
+        ui->importExportLabel->setText(tr("Невозможно записать в файл!"));
         return;
     }
 
@@ -352,7 +352,7 @@ void AutoFillManager::slotExportPasswords()
     file.write(mApp->autoFill()->exportPasswords());
     file.close();
 
-    ui->importExportLabel->setText(tr("Successfully exported"));
+    ui->importExportLabel->setText(tr("Экспорт завершён удачно"));
 
     QApplication::restoreOverrideCursor();
 }

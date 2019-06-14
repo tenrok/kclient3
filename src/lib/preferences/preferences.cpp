@@ -220,7 +220,7 @@ Preferences::Preferences(BrowserWindow* window)
     connect(ui->startProfile, SIGNAL(currentIndexChanged(int)), this, SLOT(startProfileIndexChanged(int)));
     startProfileIndexChanged(ui->startProfile->currentIndex());
 
-    //APPEREANCE
+    // APPEREANCE
     settings.beginGroup("Browser-View-Settings");
     ui->showStatusbar->setChecked(settings.value("showStatusBar", true).toBool());
     // NOTE: instantBookmarksToolbar and showBookmarksToolbar cannot be both enabled at the same time
@@ -234,7 +234,7 @@ Preferences::Preferences(BrowserWindow* window)
     int currentSettingsPage = settings.value("settingsDialogPage", 0).toInt(0);
     settings.endGroup();
 
-    //TABS
+    // TABS
     settings.beginGroup("Browser-Tabs-Settings");
     ui->hideTabsOnTab->setChecked(settings.value("hideTabsWithOneTab", false).toBool());
     ui->activateLastTab->setChecked(settings.value("ActivateLastTabWhenClosingActual", true).toBool());
@@ -249,7 +249,7 @@ Preferences::Preferences(BrowserWindow* window)
     ui->showCloseOnInactive->setCurrentIndex(settings.value("showCloseOnInactiveTabs", 0).toInt());
     settings.endGroup();
 
-    //AddressBar
+    // AddressBar
     settings.beginGroup("AddressBar");
     ui->addressbarCompletion->setCurrentIndex(settings.value("showSuggestions", 0).toInt());
     ui->useInlineCompletion->setChecked(settings.value("useInlineCompletion", true).toBool());
@@ -301,7 +301,7 @@ Preferences::Preferences(BrowserWindow* window)
     ui->defaultZoomLevel->setCurrentIndex(settings.value("DefaultZoomLevel", WebView::zoomLevels().indexOf(100)).toInt());
     ui->closeAppWithCtrlQ->setChecked(settings.value("closeAppWithCtrlQ", true).toBool());
 
-    //Cache
+    // Cache
     ui->allowCache->setChecked(settings.value("AllowLocalCache", true).toBool());
     ui->removeCache->setChecked(settings.value("deleteCacheOnClose", false).toBool());
     ui->cacheMB->setValue(settings.value("LocalCacheSize", 50).toInt());
@@ -310,12 +310,12 @@ Preferences::Preferences(BrowserWindow* window)
     connect(ui->changeCachePath, &QAbstractButton::clicked, this, &Preferences::changeCachePathClicked);
     allowCacheChanged(ui->allowCache->isChecked());
 
-    //PASSWORD MANAGER
+    // PASSWORD MANAGER
     ui->allowPassManager->setChecked(settings.value("SavePasswordsOnSites", true).toBool());
     ui->autoCompletePasswords->setChecked(settings.value("AutoCompletePasswords", true).toBool());
 
-    //PRIVACY
-    //Web storage
+    // PRIVACY
+    // Web storage
     ui->saveHistory->setChecked(settings.value("allowHistory", true).toBool());
     ui->deleteHistoryOnClose->setChecked(settings.value("deleteHistoryOnClose", false).toBool());
     if (!ui->saveHistory->isChecked()) {
@@ -330,12 +330,12 @@ Preferences::Preferences(BrowserWindow* window)
     // Other
     ui->doNotTrack->setChecked(settings.value("DoNotTrack", true).toBool());
 
-    //CSS Style
+    // CSS Style
     ui->userStyleSheet->setText(settings.value("userStyleSheet", "").toString());
     connect(ui->chooseUserStylesheet, &QAbstractButton::clicked, this, &Preferences::chooseUserStyleClicked);
     settings.endGroup();
 
-    //DOWNLOADS
+    // DOWNLOADS
     settings.beginGroup("DownloadManager");
     ui->downLoc->setText(settings.value("defaultDownloadPath", "").toString());
     ui->closeDownManOnFinish->setChecked(settings.value("CloseManagerOnFinish", true).toBool());
@@ -351,7 +351,6 @@ Preferences::Preferences(BrowserWindow* window)
 
     connect(ui->useExternalDownManager, &QAbstractButton::toggled, this, &Preferences::useExternalDownManagerChanged);
 
-
     connect(ui->useDefined, &QAbstractButton::toggled, this, &Preferences::downLocChanged);
     connect(ui->downButt, &QAbstractButton::clicked, this, &Preferences::chooseDownPath);
     connect(ui->chooseExternalDown, &QAbstractButton::clicked, this, &Preferences::chooseExternalDownloadManager);
@@ -359,7 +358,7 @@ Preferences::Preferences(BrowserWindow* window)
     useExternalDownManagerChanged(ui->useExternalDownManager->isChecked());
     settings.endGroup();
 
-    //FONTS
+    // FONTS
     settings.beginGroup("Browser-Fonts");
     QWebEngineSettings* webSettings = mApp->webSettings();
     auto defaultFont = [&](QWebEngineSettings::FontFamily font) -> const QString {
@@ -387,14 +386,14 @@ Preferences::Preferences(BrowserWindow* window)
     ui->sizeMinimumLogical->setValue(settings.value("MinimumLogicalFontSize", webSettings->fontSize(QWebEngineSettings::MinimumLogicalFontSize)).toInt());
     settings.endGroup();
 
-    //KEYBOARD SHORTCUTS
+    // KEYBOARD SHORTCUTS
     settings.beginGroup("Shortcuts");
     ui->switchTabsAlt->setChecked(settings.value("useTabNumberShortcuts", true).toBool());
     ui->loadSpeedDialsCtrl->setChecked(settings.value("useSpeedDialNumberShortcuts", true).toBool());
     ui->singleKeyShortcuts->setChecked(settings.value("useSingleKeyShortcuts", false).toBool());
     settings.endGroup();
 
-    //NOTIFICATIONS
+    // NOTIFICATIONS
     ui->useNativeSystemNotifications->setEnabled(mApp->desktopNotifications()->supportsNativeNotifications());
 
     DesktopNotificationsFactory::Type notifyType;
@@ -418,7 +417,7 @@ Preferences::Preferences(BrowserWindow* window)
     m_notifPosition = settings.value("Position", QPoint(10, 10)).toPoint();
     settings.endGroup();
 
-    //SPELLCHECK
+    // SPELLCHECK
     settings.beginGroup(QSL("SpellCheck"));
     ui->spellcheckEnabled->setChecked(settings.value(QSL("Enabled"), false).toBool());
     const QStringList spellcheckLanguages = settings.value(QSL("Languages")).toStringList();
@@ -504,7 +503,7 @@ Preferences::Preferences(BrowserWindow* window)
     setManualProxyConfigurationEnabled(ui->manualProxy->isChecked());
     connect(ui->manualProxy, &QAbstractButton::toggled, this, &Preferences::setManualProxyConfigurationEnabled);
 
-    //CONNECTS
+    // CONNECTS
     connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &Preferences::buttonClicked);
     connect(ui->cookieManagerBut, &QAbstractButton::clicked, this, &Preferences::showCookieManager);
     connect(ui->html5permissions, &QAbstractButton::clicked, this, &Preferences::showHtml5Permissions);
@@ -539,7 +538,7 @@ Preferences::Preferences(BrowserWindow* window)
 
 void Preferences::chooseExternalDownloadManager()
 {
-    QString path = QzTools::getOpenFileName("Preferences-ExternalDownloadManager", this, tr("Choose executable location..."), QDir::homePath());
+    QString path = QzTools::getOpenFileName("Preferences-ExternalDownloadManager", this, tr("Выберите исполняемый файл..."), QDir::homePath());
     if (path.isEmpty()) {
         return;
     }
@@ -582,8 +581,8 @@ void Preferences::showNotificationPreview()
         }
 
         m_notification = new DesktopNotification(true);
-        m_notification.data()->setHeading(tr("OSD Notification"));
-        m_notification.data()->setText(tr("Drag it on the screen to place it where you want."));
+        m_notification.data()->setHeading(tr("Экранные уведомления"));
+        m_notification.data()->setText(tr("Перетащите уведомление в то место, где Вы хотите его разместить."));
         m_notification.data()->move(m_notifPosition);
         m_notification.data()->show();
     }
@@ -596,7 +595,7 @@ void Preferences::makeKClientDefault()
 {
 #if defined(Q_OS_WIN) && !defined(Q_OS_OS2)
     disconnect(ui->checkNowDefaultBrowser, SIGNAL(clicked()), this, SLOT(makeKClientDefault()));
-    ui->checkNowDefaultBrowser->setText(tr("Default"));
+    ui->checkNowDefaultBrowser->setText(tr("По-умолчанию"));
     ui->checkNowDefaultBrowser->setEnabled(false);
 
     if (!mApp->associationManager()->showNativeDefaultAppSettingsUi())
@@ -632,7 +631,7 @@ void Preferences::useActualNewTab()
 
 void Preferences::chooseDownPath()
 {
-    QString userFileName = QzTools::getExistingDirectory("Preferences-ChooseDownPath", this, tr("Choose download location..."), QDir::homePath());
+    QString userFileName = QzTools::getExistingDirectory("Preferences-ChooseDownPath", this, tr("Выберите папку для загрузок..."), QDir::homePath());
     if (userFileName.isEmpty()) {
         return;
     }
@@ -646,7 +645,7 @@ void Preferences::chooseDownPath()
 
 void Preferences::chooseUserStyleClicked()
 {
-    QString file = QzTools::getOpenFileName("Preferences-UserStyle", this, tr("Choose stylesheet location..."), QDir::homePath(), "*.css");
+    QString file = QzTools::getOpenFileName("Preferences-UserStyle", this, tr("Укажите местоположение таблицы стилей..."), QDir::homePath(), "*.css");
     if (file.isEmpty()) {
         return;
     }
@@ -657,7 +656,7 @@ void Preferences::deleteHtml5storage()
 {
     ClearPrivateData::clearLocalStorage();
 
-    ui->deleteHtml5storage->setText(tr("Deleted"));
+    ui->deleteHtml5storage->setText(tr("Удалено"));
     ui->deleteHtml5storage->setEnabled(false);
 }
 
@@ -753,7 +752,7 @@ void Preferences::afterLaunchChanged(int value)
 
 void Preferences::changeCachePathClicked()
 {
-    QString path = QzTools::getExistingDirectory("Preferences-CachePath", this, tr("Choose cache path..."), ui->cachePath->text());
+    QString path = QzTools::getExistingDirectory("Preferences-CachePath", this, tr("Выберите папку кэша..."), ui->cachePath->text());
     if (path.isEmpty()) {
         return;
     }
@@ -811,7 +810,7 @@ void Preferences::deleteProfile()
 {
     QString name = ui->startProfile->currentText();
     QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Подтверждение"),
-                                         tr("Are you sure you want to permanently delete \"%1\" profile? This action cannot be undone!").arg(name), QMessageBox::Yes | QMessageBox::No);
+                                         tr("Вы точно хотите удалить профиль \"%1\"? Это действие необратимо!").arg(name), QMessageBox::Yes | QMessageBox::No);
     if (button != QMessageBox::Yes) {
         return;
     }
@@ -842,7 +841,7 @@ void Preferences::closeEvent(QCloseEvent* event)
 void Preferences::saveSettings()
 {
     Settings settings;
-    //GENERAL URLs
+    // GENERAL URLs
     QUrl homepage = QUrl::fromUserInput(ui->homepage->text());
 
     settings.beginGroup("Web-URL-Settings");
@@ -871,14 +870,14 @@ void Preferences::saveSettings()
     }
 
     settings.endGroup();
-    //PROFILES
+    // PROFILES
     /*
      *
      *
      *
      */
 
-    //WINDOW
+    // WINDOW
     settings.beginGroup("Browser-View-Settings");
     settings.setValue("showStatusBar", ui->showStatusbar->isChecked());
     settings.setValue("instantBookmarksToolbar", ui->instantBookmarksToolbar->isChecked());
@@ -886,7 +885,7 @@ void Preferences::saveSettings()
     settings.setValue("showNavigationToolbar", ui->showNavigationToolbar->isChecked());
     settings.endGroup();
 
-    //TABS
+    // TABS
     settings.beginGroup("Browser-Tabs-Settings");
     settings.setValue("hideTabsWithOneTab", ui->hideTabsOnTab->isChecked());
     settings.setValue("ActivateLastTabWhenClosingActual", ui->activateLastTab->isChecked());
@@ -901,7 +900,7 @@ void Preferences::saveSettings()
     settings.setValue("showCloseOnInactiveTabs", ui->showCloseOnInactive->currentIndex());
     settings.endGroup();
 
-    //DOWNLOADS
+    // DOWNLOADS
     settings.beginGroup("DownloadManager");
     if (ui->askEverytime->isChecked()) {
         settings.setValue("defaultDownloadPath", "");
@@ -916,7 +915,7 @@ void Preferences::saveSettings()
 
     settings.endGroup();
 
-    //FONTS
+    // FONTS
     settings.beginGroup("Browser-Fonts");
     settings.setValue("StandardFont", ui->fontStandard->currentFont().family());
     settings.setValue("CursiveFont", ui->fontCursive->currentFont().family());
@@ -931,14 +930,14 @@ void Preferences::saveSettings()
     settings.setValue("MinimumLogicalFontSize", ui->sizeMinimumLogical->value());
     settings.endGroup();
 
-    //KEYBOARD SHORTCUTS
+    // KEYBOARD SHORTCUTS
     settings.beginGroup("Shortcuts");
     settings.setValue("useTabNumberShortcuts", ui->switchTabsAlt->isChecked());
     settings.setValue("useSpeedDialNumberShortcuts", ui->loadSpeedDialsCtrl->isChecked());
     settings.setValue("useSingleKeyShortcuts", ui->singleKeyShortcuts->isChecked());
     settings.endGroup();
 
-    //BROWSING
+    // BROWSING
     settings.beginGroup("Web-Browser-Settings");
     settings.setValue("allowPlugins", ui->allowPlugins->isChecked());
     settings.setValue("allowJavaScript", ui->allowJavaScript->isChecked());
@@ -961,27 +960,27 @@ void Preferences::saveSettings()
 #ifdef Q_OS_WIN
     settings.setValue("CheckDefaultBrowser", ui->checkDefaultBrowser->isChecked());
 #endif
-    //Cache
+    // Cache
     settings.setValue("AllowLocalCache", ui->allowCache->isChecked());
     settings.setValue("deleteCacheOnClose", ui->removeCache->isChecked());
     settings.setValue("LocalCacheSize", ui->cacheMB->value());
     settings.setValue("CachePath", ui->cachePath->text());
-    //CSS Style
+    // CSS Style
     settings.setValue("userStyleSheet", ui->userStyleSheet->text());
 
-    //PASSWORD MANAGER
+    // PASSWORD MANAGER
     settings.setValue("SavePasswordsOnSites", ui->allowPassManager->isChecked());
     settings.setValue("AutoCompletePasswords", ui->autoCompletePasswords->isChecked());
 
-    //PRIVACY
-    //Web storage
+    // PRIVACY
+    // Web storage
     settings.setValue("allowHistory", ui->saveHistory->isChecked());
     settings.setValue("deleteHistoryOnClose", ui->deleteHistoryOnClose->isChecked());
     settings.setValue("HTML5StorageEnabled", ui->html5storage->isChecked());
     settings.setValue("deleteHTML5StorageOnClose", ui->deleteHtml5storageOnClose->isChecked());
     settings.endGroup();
 
-    //NOTIFICATIONS
+    // NOTIFICATIONS
     settings.beginGroup("Notifications");
     settings.setValue("Timeout", ui->notificationTimeout->value() * 1000);
     settings.setValue("Enabled", !ui->doNotUseNotifications->isChecked());
@@ -989,7 +988,7 @@ void Preferences::saveSettings()
     settings.setValue("Position", m_notification.data() ? m_notification.data()->pos() : m_notifPosition);
     settings.endGroup();
 
-    //SPELLCHECK
+    // SPELLCHECK
     settings.beginGroup(QSL("SpellCheck"));
     settings.setValue("Enabled", ui->spellcheckEnabled->isChecked());
     QStringList languages;
@@ -1002,8 +1001,8 @@ void Preferences::saveSettings()
     settings.setValue("Languages", languages);
     settings.endGroup();
 
-    //OTHER
-    //AddressBar
+    // OTHER
+    // AddressBar
     settings.beginGroup("AddressBar");
     settings.setValue("showSuggestions", ui->addressbarCompletion->currentIndex());
     settings.setValue("useInlineCompletion", ui->useInlineCompletion->isChecked());
@@ -1023,7 +1022,7 @@ void Preferences::saveSettings()
     settings.setValue("showSearchSuggestions", ui->showABSearchSuggestions->isChecked());
     settings.endGroup();
 
-    //Proxy Configuration
+    // Proxy Configuration
     int proxyType;
     if (ui->noProxy->isChecked()) {
         proxyType = 0;
