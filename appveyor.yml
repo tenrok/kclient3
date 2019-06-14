@@ -58,6 +58,7 @@ build_script:
   - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "NMake Makefiles JOM" ..
   - call %MAKETOOL%
   - call %MAKETOOL% install
+  - if not exist "%APP_DIR%\build\bin" (mkdir "%APP_DIR%\build\bin")
   - cd "%APP_DIR%\build"
   - echo "Generating NMake Makefiles JOM using CMake..."
   - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DOPENSSL_ROOT_DIR=%OPENSSL_DIR% -G "NMake Makefiles JOM" ..
@@ -66,7 +67,7 @@ build_script:
 
 after_build:
   # Prepare dependencies
-  - echo [Paths] > %APP_DIR%\build\bin\qt.conf && echo Plugins="." >> %APP_DIR%\build\bin\qt.conf
+  - echo [Paths]> %APP_DIR%\build\bin\qt.conf && echo Plugins=".">> %APP_DIR%\build\bin\qt.conf
   - copy %APP_DIR%\COPYING %APP_DIR%\build\bin\COPYRIGHT.txt
   - if not exist "%APP_DIR%\windows\dependencies" (mkdir "%APP_DIR%\windows\dependencies")
   - cd "%APP_DIR%\windows\dependencies"

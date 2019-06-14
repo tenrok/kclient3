@@ -87,7 +87,7 @@ PopupWindow::PopupWindow(PopupWebView* view)
     menuFile->addAction(QIcon::fromTheme("window-close"), tr("Закрыть"), this, &QWidget::close)->setShortcut(QKeySequence("Ctrl+W"));
     m_menuBar->addMenu(menuFile);
 
-    m_menuEdit = new QMenu(tr("Edit"));
+    m_menuEdit = new QMenu(tr("Правка"));
     m_menuEdit->addAction(m_view->pageAction(QWebEnginePage::Undo));
     m_menuEdit->addAction(m_view->pageAction(QWebEnginePage::Redo));
     m_menuEdit->addSeparator();
@@ -99,7 +99,7 @@ PopupWindow::PopupWindow(PopupWebView* view)
     m_menuEdit->addAction(QIcon::fromTheme("edit-find"), tr("Найти"), this, &PopupWindow::searchOnPage)->setShortcut(QKeySequence("Ctrl+F"));
     m_menuBar->addMenu(m_menuEdit);
 
-    m_menuView = new QMenu(tr("View"));
+    m_menuView = new QMenu(tr("Вид"));
     m_actionStop = m_menuView->addAction(QIcon::fromTheme(QSL("process-stop")), tr("Остановить"), m_view, &QWebEngineView::stop);
     m_actionStop->setShortcut(QKeySequence("Esc"));
     m_actionReload = m_menuView->addAction(QIcon::fromTheme(QSL("view-refresh")), tr("Обновить"), m_view, &QWebEngineView::reload);

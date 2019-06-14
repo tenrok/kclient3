@@ -107,7 +107,7 @@ void DesktopNotificationsFactory::nativeNotificationPreview()
 
     m_notifType = DesktopNative;
     const QPixmap icon = mApp->getWindow()->windowIcon().pixmap(64);
-    showNotification(icon, QObject::tr("Native System Notification"), tr("Preview"));
+    showNotification(icon, QObject::tr("Native System Notification"), tr("Предпросмотр"));
     m_notifType = type;
 }
 

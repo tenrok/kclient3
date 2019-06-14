@@ -96,7 +96,7 @@ AcceptLanguage::AcceptLanguage(QWidget* parent)
         QString label;
 
         if (loc.language() == QLocale::C) {
-            label = tr("Personal [%1]").arg(code);
+            label = tr("Личный [%1]").arg(code);
         }
         else {
             label = QString("%1/%2 [%3]").arg(loc.languageToString(loc.language()), loc.countryToString(loc.country()), code);
@@ -157,7 +157,7 @@ void AcceptLanguage::addLanguage()
     }
 
     if (!acceptLangUi.ownDefinition->text().isEmpty()) {
-        QString title = tr("Personal [%1]").arg(acceptLangUi.ownDefinition->text());
+        QString title = tr("Личный [%1]").arg(acceptLangUi.ownDefinition->text());
         ui->listWidget->addItem(title);
     }
     else {

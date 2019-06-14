@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add Language</string>
+   <string>Добавить язык</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Choose preferred language for web sites</string>
+      <string>Выберите предпочитаемый язкык для веб сайтов</string>
      </property>
     </widget>
    </item>
@@ -29,7 +29,7 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Personal definition:</string>
+        <string>Личное определение:</string>
        </property>
       </widget>
      </item>
