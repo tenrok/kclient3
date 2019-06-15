@@ -32,7 +32,7 @@
      <item>
       <widget class="QPushButton" name="remove">
        <property name="text">
-        <string>Remove</string>
+        <string>Удалить</string>
        </property>
       </widget>
      </item>
@@ -61,12 +61,12 @@
      </property>
      <column>
       <property name="text">
-       <string>Site</string>
+       <string>Сайт</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Behaviour</string>
+       <string>Поведение</string>
       </property>
      </column>
     </widget>
@@ -76,7 +76,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Permission for:</string>
+        <string>Разрешения для:</string>
        </property>
       </widget>
      </item>
@@ -84,32 +84,32 @@
       <widget class="QComboBox" name="feature">
        <item>
         <property name="text">
-         <string>Notifications</string>
+         <string>Уведомления</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Geolocation</string>
+         <string>Геолокация</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Microphone</string>
+         <string>Микрофон</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Camera</string>
+         <string>Камера</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Microphone and Camera</string>
+         <string>Микрофон и камера</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Hide Pointer</string>
+         <string>Скрытие указателя</string>
         </property>
        </item>
       </widget>

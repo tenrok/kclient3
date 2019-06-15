@@ -754,7 +754,7 @@ void WebView::createPageContextMenu(QMenu* menu)
     if (url().toString() == QL1S("kclient:speeddial")) {
         menu->addSeparator();
         menu->addAction(QIcon::fromTheme("list-add"), tr("Добавить новую страницу"), this, &WebView::addSpeedDial);
-        menu->addAction(IconProvider::settingsIcon(), tr("Настройка быстрого доступа"), this, &WebView::configureSpeedDial);
+        menu->addAction(IconProvider::settingsIcon(), tr("Настройка страницы быстрого доступа"), this, &WebView::configureSpeedDial);
         menu->addSeparator();
         menu->addAction(QIcon::fromTheme(QSL("view-refresh")), tr("Обновить все эскизы"), this, &WebView::reloadAllSpeedDials);
         return;
@@ -906,7 +906,7 @@ void WebView::createMediaContextMenu(QMenu *menu, const WebHitTestResult &hitTes
     bool muted = hitTest.mediaMuted();
 
     menu->addSeparator();
-    menu->addAction(paused ? tr("&Play") : tr("&Pause"), this, &WebView::toggleMediaPause)->setIcon(QIcon::fromTheme(paused ? "media-playback-start" : "media-playback-pause"));
+    menu->addAction(paused ? tr("Играть") : tr("Пауза"), this, &WebView::toggleMediaPause)->setIcon(QIcon::fromTheme(paused ? "media-playback-start" : "media-playback-pause"));
     menu->addAction(muted ? tr("Un&mute") : tr("&Mute"), this, &WebView::toggleMediaMute)->setIcon(QIcon::fromTheme(muted ? "audio-volume-muted" : "audio-volume-high"));
     menu->addSeparator();
     menu->addAction(QIcon::fromTheme("edit-copy"), tr("&Copy Media Address"), this, &WebView::copyLinkToClipboard)->setData(hitTest.mediaUrl());

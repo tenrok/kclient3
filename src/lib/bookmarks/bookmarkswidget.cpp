@@ -109,11 +109,11 @@ void BookmarksWidget::init()
     const SpeedDial::Page page = m_speedDial->pageForUrl(m_view->url());
     if (page.url.isEmpty()) {
         ui->speeddialButton->setFlat(true);
-        ui->speeddialButton->setText(tr("Добавить в быстрый набор"));
+        ui->speeddialButton->setText(tr("Добавить на страницу быстрого доступа"));
     }
     else {
         ui->speeddialButton->setFlat(false);
-        ui->speeddialButton->setText(tr("Удалить из быстрого набора"));
+        ui->speeddialButton->setText(tr("Удалить со страницы быстрого доступа"));
     }
 
     // Init Bookmarks button

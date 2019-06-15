@@ -210,10 +210,10 @@ QString KClientSchemeReply::speeddialPage()
         dPage.replace(QLatin1String("%TITLE-EDIT%"), tr("Править"));
         dPage.replace(QLatin1String("%TITLE-REMOVE%"), tr("Удалить"));
         dPage.replace(QLatin1String("%TITLE-RELOAD%"), tr("Обновить"));
-        dPage.replace(QLatin1String("%TITLE-WARN%"), tr("Вы уверены, что хотите удалить этот быстрый набор?"));
-        dPage.replace(QLatin1String("%TITLE-WARN-REL%"), tr("Вы уверены, что хотите обновить все быстрые наборы?"));
+        dPage.replace(QLatin1String("%TITLE-WARN%"), tr("Вы точно хотите удалить эту страницу со страницы быстрого доступа?"));
+        dPage.replace(QLatin1String("%TITLE-WARN-REL%"), tr("Вы точно хотите обновить все эскизы на странице быстрого доступа?"));
         dPage.replace(QLatin1String("%TITLE-FETCHTITLE%"), tr("Загрузить заголовок со страницы"));
-        dPage.replace(QLatin1String("%JAVASCRIPT-DISABLED%"), tr("Быстрый набор требует JavaScript."));
+        dPage.replace(QLatin1String("%JAVASCRIPT-DISABLED%"), tr("Странице быстрого доступа требуется JavaScript."));
         dPage.replace(QLatin1String("%URL%"), tr("Url"));
         dPage.replace(QLatin1String("%TITLE%"), tr("Заголовок"));
         dPage.replace(QLatin1String("%APPLY%"), tr("Применить"));
@@ -230,7 +230,7 @@ QString KClientSchemeReply::speeddialPage()
         dPage.replace(QLatin1String("%TXT_SELECTIMAGE%"), tr("Щёлкните для выбора изображения"));
         dPage.replace(QLatin1String("%TXT_NRROWS%"), tr("Максимум страниц в строке:"));
         dPage.replace(QLatin1String("%TXT_SDSIZE%"), tr("Изменить размер страниц:"));
-        dPage.replace(QLatin1String("%TXT_CNTRDLS%"), tr("Center speed dials"));
+        dPage.replace(QLatin1String("%TXT_CNTRDLS%"), tr("Разместить в центре"));
         dPage = QzTools::applyDirectionToPage(dPage);
     }
 

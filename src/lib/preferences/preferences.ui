@@ -684,7 +684,7 @@
                   <widget class="QComboBox" name="showCloseOnInactive">
                    <item>
                     <property name="text">
-                     <string>Автоматичекски</string>
+                     <string>Автоматически</string>
                     </property>
                    </item>
                    <item>

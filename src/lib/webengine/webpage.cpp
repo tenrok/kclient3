@@ -627,7 +627,7 @@ void WebPage::javaScriptAlert(const QUrl &securityOrigin, const QString &msg)
     }
 
     if (!kEnableJsNonBlockDialogs) {
-        QString title = tr("JavaScript alert");
+        QString title = tr("JavaScript предупреждение");
         if (!url().host().isEmpty()) {
             title.append(QString(" - %1").arg(url().host()));
         }

@@ -40,21 +40,21 @@
    <item>
     <widget class="QCheckBox" name="remember">
      <property name="text">
-      <string>Remember</string>
+      <string>Запомнить</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QPushButton" name="allow">
      <property name="text">
-      <string>Allow</string>
+      <string>Разрешить</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QPushButton" name="deny">
      <property name="text">
-      <string>Deny</string>
+      <string>Запретить</string>
      </property>
     </widget>
    </item>
