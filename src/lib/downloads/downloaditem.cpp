@@ -68,7 +68,7 @@ DownloadItem::DownloadItem(QListWidgetItem *item, QWebEngineDownloadItem* downlo
 
     ui->button->setPixmap(QIcon::fromTheme(QSL("process-stop")).pixmap(20, 20));
     ui->fileName->setText(m_fileName);
-    ui->downloadInfo->setText(tr("Remaining time unavailable"));
+    ui->downloadInfo->setText(tr("Оставшееся время недоступно"));
 
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(customContextMenuRequested(QPoint)));
@@ -122,15 +122,15 @@ void DownloadItem::finished()
     switch (m_download->state()) {
     case QWebEngineDownloadItem::DownloadCompleted:
         success = true;
-        ui->downloadInfo->setText(tr("Done - %1 (%2)").arg(host, QDateTime::currentDateTime().toString(Qt::DefaultLocaleShortDate)));
+        ui->downloadInfo->setText(tr("Готово - %1 (%2)").arg(host, QDateTime::currentDateTime().toString(Qt::DefaultLocaleShortDate)));
         break;
 
     case QWebEngineDownloadItem::DownloadInterrupted:
-        ui->downloadInfo->setText(tr("Error - %1").arg(host));
+        ui->downloadInfo->setText(tr("Ошибка - %1").arg(host));
         break;
 
     case QWebEngineDownloadItem::DownloadCancelled:
-        ui->downloadInfo->setText(tr("Cancelled - %1").arg(host));
+        ui->downloadInfo->setText(tr("Отменено - %1").arg(host));
         break;
 
     default:
@@ -177,28 +177,28 @@ int DownloadItem::progress()
 
 bool DownloadItem::isCancelled()
 {
-    return ui->downloadInfo->text().startsWith(tr("Cancelled"));
+    return ui->downloadInfo->text().startsWith(tr("Отменено"));
 }
 
 QString DownloadItem::remaingTimeToString(QTime time)
 {
     if (time < QTime(0, 0, 10)) {
-        return tr("few seconds");
+        return tr("несколько секунд");
     }
     else if (time < QTime(0, 1)) {
         //~ singular %n second
         //~ plural %n seconds
-        return tr("%n seconds", "", time.second());
+        return tr("%n секунд", "", time.second());
     }
     else if (time < QTime(1, 0)) {
         //~ singular %n minute
         //~ plural %n minutes
-        return tr("%n minutes", "", time.minute());
+        return tr("%n минут", "", time.minute());
     }
     else {
         //~ singular %n hour
         //~ plural %n hours
-        return tr("%n hours", "", time.hour());
+        return tr("%n часов", "", time.hour());
     }
 }
 
@@ -210,16 +210,16 @@ QString DownloadItem::currentSpeedToString(double speed)
 
     speed /= 1024; // kB
     if (speed < 1000) {
-        return QString::number(speed, 'f', 0) + QLatin1String(" ") + tr("kB/s");
+        return QString::number(speed, 'f', 0) + QLatin1String(" ") + tr("КБ/с");
     }
 
     speed /= 1024; //MB
     if (speed < 1000) {
-        return QString::number(speed, 'f', 2) + QLatin1String(" ") + tr("MB/s");
+        return QString::number(speed, 'f', 2) + QLatin1String(" ") + tr("МБ/с");
     }
 
     speed /= 1024; //GB
-    return QString::number(speed, 'f', 2) + QLatin1String(" ") + tr("GB/s");
+    return QString::number(speed, 'f', 2) + QLatin1String(" ") + tr("ГБ/с");
 }
 
 void DownloadItem::updateDownloadInfo(double currSpeed, qint64 received, qint64 total)
@@ -243,11 +243,11 @@ void DownloadItem::updateDownloadInfo(double currSpeed, qint64 received, qint64 
     QString currSize = QzTools::fileSizeToString(received);
     QString fileSize = QzTools::fileSizeToString(total);
 
-    if (fileSize == tr("Unknown size")) {
-        ui->downloadInfo->setText(tr("%2 - unknown size (%3)").arg(currSize, speed));
+    if (fileSize == tr("Неизвестный размер")) {
+        ui->downloadInfo->setText(tr("%2 - неизвестный размер (%3)").arg(currSize, speed));
     }
     else {
-        ui->downloadInfo->setText(tr("Remaining %1 - %2 of %3 (%4)").arg(remTime, currSize, fileSize, speed));
+        ui->downloadInfo->setText(tr("Осталось %1 - %2 из %3 (%4)").arg(remTime, currSize, fileSize, speed));
     }
 }
 
@@ -263,7 +263,7 @@ void DownloadItem::stop()
     ui->progressBar->hide();
     ui->button->hide();
     m_item->setSizeHint(sizeHint());
-    ui->downloadInfo->setText(tr("Cancelled - %1").arg(m_download->url().host()));
+    ui->downloadInfo->setText(tr("Отменено - %1").arg(m_download->url().host()));
     m_download->cancel();
     m_downloading = false;
 
@@ -281,14 +281,14 @@ void DownloadItem::customContextMenuRequested(const QPoint &pos)
     QMenu menu;
     menu.addAction(QIcon::fromTheme("document-open"), tr("Открыть файл"), this, &DownloadItem::openFile);
 
-    menu.addAction(tr("Open Folder"), this, &DownloadItem::openFolder);
+    menu.addAction(tr("Открыть папку"), this, &DownloadItem::openFolder);
     menu.addSeparator();
-    menu.addAction(QIcon::fromTheme("edit-copy"), tr("Copy Download Link"), this, &DownloadItem::copyDownloadLink);
+    menu.addAction(QIcon::fromTheme("edit-copy"), tr("Копировать адрес загрузки"), this, &DownloadItem::copyDownloadLink);
     menu.addSeparator();
-    menu.addAction(QIcon::fromTheme("process-stop"), tr("Cancel downloading"), this, &DownloadItem::stop)->setEnabled(m_downloading);
-    menu.addAction(QIcon::fromTheme("list-remove"), tr("Remove From List"), this, &DownloadItem::clear)->setEnabled(!m_downloading);
+    menu.addAction(QIcon::fromTheme("process-stop"), tr("Отменить загрузку"), this, &DownloadItem::stop)->setEnabled(m_downloading);
+    menu.addAction(QIcon::fromTheme("list-remove"), tr("Удалить из списка"), this, &DownloadItem::clear)->setEnabled(!m_downloading);
 
-    if (m_downloading || ui->downloadInfo->text().startsWith(tr("Cancelled")) || ui->downloadInfo->text().startsWith(tr("Ошибка"))) {
+    if (m_downloading || ui->downloadInfo->text().startsWith(tr("Отменено")) || ui->downloadInfo->text().startsWith(tr("Ошибка"))) {
         menu.actions().at(0)->setEnabled(false);
     }
     menu.exec(mapToGlobal(pos));
@@ -314,7 +314,7 @@ void DownloadItem::openFile()
         QDesktopServices::openUrl(QUrl::fromLocalFile(info.absoluteFilePath()));
     }
     else {
-        QMessageBox::warning(m_item->listWidget()->parentWidget(), tr("Not found"), tr("Sorry, the file \n %1 \n was not found!").arg(info.absoluteFilePath()));
+        QMessageBox::warning(m_item->listWidget()->parentWidget(), tr("Не найден"), tr("Извините, файл \n %1 \n не найден!").arg(info.absoluteFilePath()));
     }
 }
 

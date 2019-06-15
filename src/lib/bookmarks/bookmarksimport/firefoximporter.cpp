@@ -39,8 +39,7 @@ FirefoxImporter::~FirefoxImporter()
 
 QString FirefoxImporter::description() const
 {
-    return BookmarksImporter::tr("Mozilla Firefox stores its bookmarks in <b>places.sqlite</b> SQLite "
-                                 "database. This file is usually located in");
+    return BookmarksImporter::tr("Mozilla Firefox хранит закладки в SQLite базе данных <b>places.sqlite</b>. Этот файл обычно находится в");
 }
 
 QString FirefoxImporter::standardPath() const
@@ -54,7 +53,7 @@ QString FirefoxImporter::standardPath() const
 
 QString FirefoxImporter::getPath(QWidget* parent)
 {
-    m_path = QFileDialog::getOpenFileName(parent, BookmarksImporter::tr("Choose file..."), standardPath(), QStringLiteral("Places (places.sqlite)"));
+    m_path = QFileDialog::getOpenFileName(parent, BookmarksImporter::tr("Выберите файл..."), standardPath(), QStringLiteral("Places (places.sqlite)"));
     return m_path;
 }
 
@@ -67,14 +66,14 @@ bool FirefoxImporter::prepareImport()
     QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), CONNECTION);
 
     if (!QFile::exists(m_path)) {
-        setError(BookmarksImportDialog::tr("File does not exist."));
+        setError(BookmarksImportDialog::tr("Файл не существует."));
         return false;
     }
 
     db.setDatabaseName(m_path);
 
     if (!db.open()) {
-        setError(BookmarksImportDialog::tr("Unable to open database. Is Firefox running?"));
+        setError(BookmarksImportDialog::tr("Невозможно открыть базу данных. Firefox выполняется?"));
         return false;
     }
 

@@ -140,12 +140,12 @@ void SessionManager::renameSession(QString sessionFilePath, SessionFlags flags)
 
     if (flags.testFlag(CloneSession)) {
         if (!QFile::copy(sessionFilePath, newSessionPath)) {
-            QMessageBox::information(mApp->activeWindow(), tr("Ошибка!"), tr("An error occurred when cloning session file."));
+            QMessageBox::information(mApp->activeWindow(), tr("Ошибка!"), tr("Произошла ошибка при клонировании файла сессии."));
             return;
         }
     } else {
         if (!QFile::rename(sessionFilePath, newSessionPath)) {
-            QMessageBox::information(mApp->activeWindow(), tr("Ошибка!"), tr("An error occurred when renaming session file."));
+            QMessageBox::information(mApp->activeWindow(), tr("Ошибка!"), tr("Произошла ошибка при переименовании файла сессии."));
             return;
         }
         if (isActive(sessionFilePath)) {

@@ -1500,7 +1500,7 @@ void BrowserWindow::closeEvent(QCloseEvent* event)
         dialog.setDefaultButton(QMessageBox::No);
         //~ singular There is still %n open tab and your session won't be stored.\nAre you sure you want to close this window?
         //~ plural There are still %n open tabs and your session won't be stored.\nAre you sure you want to close this window?
-        dialog.setText(tr("There are still %n open tabs and your session won't be stored.\nAre you sure you want to close this window?", "", m_tabWidget->count()));
+        dialog.setText(tr("У Вас %n открытые вкладки и Ваша сесссия не сохранится.\nВы уверены, что хотите закрыть это окно?", "", m_tabWidget->count()));
         dialog.setCheckBoxText(tr("Больше не спрашивать"));
         dialog.setWindowTitle(tr("Есть открытые вкладки"));
         dialog.setIcon(QMessageBox::Warning);

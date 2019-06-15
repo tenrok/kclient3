@@ -115,14 +115,14 @@ void BookmarksImportDialog::nextPage()
         }
 
         if (!m_importedFolder || m_importedFolder->children().isEmpty()) {
-            QMessageBox::warning(this, tr("Ошибка!"), tr("No bookmarks were found."));
+            QMessageBox::warning(this, tr("Ошибка!"), tr("Закладки не найдены."));
             return;
         }
 
         Q_ASSERT(m_importedFolder->isFolder());
 
         ui->stackedWidget->setCurrentIndex(++m_currentPage);
-        ui->nextButton->setText(tr("Finish"));
+        ui->nextButton->setText(tr("Готово"));
         showExportedBookmarks();
         break;
 
@@ -183,7 +183,7 @@ void BookmarksImportDialog::setFile()
 void BookmarksImportDialog::showImporterPage()
 {
     ui->iconLabel->setPixmap(ui->browserList->currentItem()->icon().pixmap(48));
-    ui->importingFromLabel->setText(tr("<b>Importing from %1</b>").arg(ui->browserList->currentItem()->text()));
+    ui->importingFromLabel->setText(tr("<b>Импорт из %1</b>").arg(ui->browserList->currentItem()->text()));
     ui->fileText1->setText(m_importer->description());
     ui->standardDirLabel->setText(QSL("<i>%1</i>").arg(m_importer->standardPath()));
 }

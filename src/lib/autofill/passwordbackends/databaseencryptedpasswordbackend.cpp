@@ -641,7 +641,7 @@ void MasterPasswordDialog::clearMasterPasswordAndConvert(bool forcedAskPass)
             mApp->autoFill()->passwordManager()->switchBackend(QSL("database"));
         }
         else {
-            QMessageBox::information(this, tr("Внимание!"), tr("Some data has not been decrypted. The master password was not cleared!"));
+            QMessageBox::information(this, tr("Внимание!"), tr("Некоторые данные не были расшифрованы. Мастер-пароль не был очищен!"));
             mApp->autoFill()->passwordManager()->switchBackend(QSL("database"));
         }
     }

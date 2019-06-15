@@ -134,7 +134,7 @@ void UserAgentDialog::editSite()
         QString site = siteItem->text();
         QString userAgent = userAgentItem->text();
 
-        if (showEditDialog(tr("Edit site"), &site, &userAgent)) {
+        if (showEditDialog(tr("Редактировать сайт"), &site, &userAgent)) {
             siteItem->setText(site);
             userAgentItem->setText(userAgent);
         }

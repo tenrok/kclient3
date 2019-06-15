@@ -27,7 +27,7 @@ LicenseViewer::LicenseViewer(QWidget* parent)
     : QWidget()
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowTitle(tr("License Viewer"));
+    setWindowTitle(tr("Просмотрщик лицензии"));
 
     m_textBrowser = new QTextBrowser(this);
 

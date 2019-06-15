@@ -580,7 +580,7 @@ void MainMenu::init()
     if (!WebInspector::isEnabled())
         m_actions.value(QSL("Tools/WebInspector"))->setVisible(false);
 
-    m_submenuExtensions = new QMenu(tr("&Extensions"));
+    m_submenuExtensions = new QMenu(tr("Расширения"));
     m_submenuExtensions->menuAction()->setVisible(false);
     m_menuTools->addMenu(m_submenuExtensions);
     m_menuTools->addSeparator();

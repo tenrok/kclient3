@@ -36,8 +36,8 @@ static QString dateTimeToString(const QDateTime &dateTime)
 
 HistoryModel::HistoryModel(History* history)
     : QAbstractItemModel(history)
-    , m_rootItem(new HistoryItem(0))
-    , m_todayItem(0)
+    , m_rootItem(new HistoryItem(nullptr))
+    , m_todayItem(nullptr)
     , m_history(history)
 {
     init();
@@ -57,9 +57,9 @@ QVariant HistoryModel::headerData(int section, Qt::Orientation orientation, int 
         case 1:
             return tr("Адрес");
         case 2:
-            return tr("Visit Date");
+            return tr("Дата посещения");
         case 3:
-            return tr("Visit Count");
+            return tr("Количество посещений");
         }
     }
 
@@ -186,7 +186,7 @@ QModelIndex HistoryModel::parent(const QModelIndex &index) const
 Qt::ItemFlags HistoryModel::flags(const QModelIndex &index) const
 {
     if (!index.isValid()) {
-        return 0;
+        return nullptr;
     }
 
     return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
@@ -253,7 +253,7 @@ void HistoryModel::removeTopLevelIndexes(const QList<QPersistentModelIndex> &ind
         endRemoveRows();
 
         if (item == m_todayItem) {
-            m_todayItem = 0;
+            m_todayItem = nullptr;
         }
     }
 }
@@ -263,8 +263,8 @@ void HistoryModel::resetHistory()
     beginResetModel();
 
     delete m_rootItem;
-    m_todayItem = 0;
-    m_rootItem = new HistoryItem(0);
+    m_todayItem = nullptr;
+    m_rootItem = new HistoryItem(nullptr);
 
     init();
 
@@ -334,10 +334,10 @@ void HistoryModel::historyEntryAdded(const HistoryEntry &entry)
     if (!m_todayItem) {
         beginInsertRows(QModelIndex(), 0, 0);
 
-        m_todayItem = new HistoryItem(0);
+        m_todayItem = new HistoryItem(nullptr);
         m_todayItem->setStartTimestamp(-1);
         m_todayItem->setEndTimestamp(QDateTime(QDate::currentDate()).toMSecsSinceEpoch());
-        m_todayItem->title = tr("Today");
+        m_todayItem->title = tr("Сегодня");
 
         m_rootItem->prependChild(m_todayItem);
 
@@ -400,7 +400,7 @@ void HistoryModel::historyEntryEdited(const HistoryEntry &before, const HistoryE
 
 HistoryItem* HistoryModel::findHistoryItem(const HistoryEntry &entry)
 {
-    HistoryItem* parentItem = 0;
+    HistoryItem* parentItem = nullptr;
     qint64 timestamp = entry.date.toMSecsSinceEpoch();
 
     for (int i = 0; i < m_rootItem->childCount(); ++i) {
@@ -413,7 +413,7 @@ HistoryItem* HistoryModel::findHistoryItem(const HistoryEntry &entry)
     }
 
     if (!parentItem) {
-        return 0;
+        return nullptr;
     }
 
     for (int i = 0; i < parentItem->childCount(); ++i) {
@@ -423,7 +423,7 @@ HistoryItem* HistoryModel::findHistoryItem(const HistoryEntry &entry)
         }
     }
 
-    return 0;
+    return nullptr;
 }
 
 void HistoryModel::checkEmptyParentItem(HistoryItem* item)
@@ -436,7 +436,7 @@ void HistoryModel::checkEmptyParentItem(HistoryItem* item)
         endRemoveRows();
 
         if (item == m_todayItem) {
-            m_todayItem = 0;
+            m_todayItem = nullptr;
         }
     }
 }
@@ -468,17 +468,17 @@ void HistoryModel::init()
         if (timestampDate == today) {
             endTimestamp = QDateTime(today).toMSecsSinceEpoch();
 
-            itemName = tr("Today");
+            itemName = tr("Сегодня");
         }
         else if (timestampDate >= week) {
             endTimestamp = QDateTime(week).toMSecsSinceEpoch();
 
-            itemName = tr("This Week");
+            itemName = tr("На этой неделе");
         }
         else if (timestampDate.month() == month.month() && timestampDate.year() == month.year()) {
             endTimestamp = QDateTime(month).toMSecsSinceEpoch();
 
-            itemName = tr("This Month");
+            itemName = tr("В этом месяце");
         }
         else {
             QDate startDate(timestampDate.year(), timestampDate.month(), timestampDate.daysInMonth());

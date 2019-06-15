@@ -165,7 +165,7 @@ bool TabIcon::event(QEvent *event)
     if (event->type() == QEvent::ToolTip) {
         QHelpEvent *e = static_cast<QHelpEvent*>(event);
         if (m_audioIconDisplayed && m_audioIconRect.contains(e->pos())) {
-            QToolTip::showText(e->globalPos(), m_tab->isMuted() ? tr("Unmute Tab") : tr("Mute Tab"), this);
+            QToolTip::showText(e->globalPos(), m_tab->isMuted() ? tr("Включить звук на вкладке") : tr("Выключить звук на вкладке"), this);
             event->accept();
             return true;
         }

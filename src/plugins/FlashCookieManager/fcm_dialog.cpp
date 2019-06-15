@@ -90,8 +90,8 @@ FCM_Dialog::FCM_Dialog(FCM_Plugin* manager, QWidget* parent)
 
 void FCM_Dialog::removeAll()
 {
-    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Confirmation"),
-                                         tr("Are you sure you want to delete all flash cookies on your computer?"), QMessageBox::Yes | QMessageBox::No);
+    QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Подтвержение"),
+                                         tr("Вы уверены, что хотите удалить все flash cookies с вашего компьютера?"), QMessageBox::Yes | QMessageBox::No);
     if (button != QMessageBox::Yes) {
         return;
     }
@@ -148,12 +148,12 @@ void FCM_Dialog::currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* p
     ui->textEdit->clear();
     const QVariant data = current->data(0, Qt::UserRole + 10);
     if (data.isNull()) {
-        ui->name->setText(tr("<flash cookie not selected>"));
-        ui->size->setText(tr("<flash cookie not selected>"));
-        ui->server->setText(tr("<flash cookie not selected>"));
-        ui->lastModified->setText(tr("<flash cookie not selected>"));
+        ui->name->setText(tr("<flash cookie не выбраны>"));
+        ui->size->setText(tr("<flash cookie не выбраны>"));
+        ui->server->setText(tr("<flash cookie не выбраны>"));
+        ui->lastModified->setText(tr("<flash cookie не выбраны>"));
 
-        ui->removeOne->setText(tr("Remove flash cookies"));
+        ui->removeOne->setText(tr("Удалить flash cookies"));
         ui->path->hide();
         ui->labelPath->hide();
         return;
@@ -163,16 +163,16 @@ void FCM_Dialog::currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* p
 
     QString suffix;
     if (flashCookie.path.startsWith(m_manager->flashPlayerDataPath() + QL1S("/macromedia.com/support/flashplayer/sys"))) {
-        suffix = tr(" (settings)");
+        suffix = tr(" (настройки)");
     }
     ui->name->setText(flashCookie.name + suffix);
-    ui->size->setText(QString::number(flashCookie.size) + tr(" Byte"));
+    ui->size->setText(QString::number(flashCookie.size) + tr(" Байт"));
     ui->textEdit->setPlainText(flashCookie.contents);
     ui->server->setText(flashCookie.origin);
     ui->path->setText(QString("<a href=\"%1\">%2</a>").arg(QUrl::fromLocalFile(flashCookie.path).toString()).arg(QDir::toNativeSeparators(flashCookie.path)));
     ui->lastModified->setText(flashCookie.lastModification.toString());
 
-    ui->removeOne->setText(tr("Remove flash cookie"));
+    ui->removeOne->setText(tr("Удалить flash cookie"));
 
     ui->labelPath->show();
     ui->path->show();
@@ -234,11 +234,11 @@ void FCM_Dialog::refreshFlashCookiesTree()
 
         QString suffix;
         if (flashCookie.path.startsWith(m_manager->flashPlayerDataPath() + QL1S("/macromedia.com/support/flashplayer/sys"))) {
-            suffix = tr(" (settings)");
+            suffix = tr(" (настройки)");
         }
 
         if (m_manager->newCookiesList().contains(flashCookie.path + QL1C('/') + flashCookie.name)) {
-            suffix += tr(" [new]");
+            suffix += tr(" [новый]");
             QFont font = item->font(0);
             font.setBold(true);
             item->setFont(0, font);
@@ -274,7 +274,7 @@ void FCM_Dialog::refreshFilters()
 
 void FCM_Dialog::addWhitelist()
 {
-    const QString origin = QInputDialog::getText(this, tr("Add to whitelist"), tr("Origin:"));
+    const QString origin = QInputDialog::getText(this, tr("Добавить в белый список"), tr("Источник:"));
 
     addWhitelist(origin);
 }
@@ -286,7 +286,7 @@ void FCM_Dialog::addWhitelist(const QString &origin)
     }
 
     if (!ui->blackList->findItems(origin, Qt::MatchFixedString).isEmpty()) {
-        QMessageBox::information(this, tr("Already whitelisted!"), tr("The server \"%1\" is already in blacklist, please remove it first.").arg(origin));
+        QMessageBox::information(this, tr("Уже в черном списке!"), tr("Источник \"%1\" уже находится в черном списке, сначала удалите его.").arg(origin));
         return;
     }
 
@@ -302,7 +302,7 @@ void FCM_Dialog::removeWhitelist()
 
 void FCM_Dialog::addBlacklist()
 {
-    const QString origin = QInputDialog::getText(this, tr("Add to blacklist"), tr("Origin:"));
+    const QString origin = QInputDialog::getText(this, tr("Добавить в чёрный список"), tr("Источник:"));
 
     addBlacklist(origin);
 }
@@ -314,7 +314,7 @@ void FCM_Dialog::addBlacklist(const QString &origin)
     }
 
     if (!ui->whiteList->findItems(origin, Qt::MatchFixedString).isEmpty()) {
-        QMessageBox::information(this, tr("Already whitelisted!"), tr("The origin \"%1\" is already in whitelist, please remove it first.").arg(origin));
+        QMessageBox::information(this, tr("Уже в белом списке!"), tr("Источник \"%1\" уже находится в белом списке, сначала удалите его.").arg(origin));
         return;
     }
 
@@ -371,8 +371,8 @@ void FCM_Dialog::reloadFromDisk()
 void FCM_Dialog::cookieTreeContextMenuRequested(const QPoint &pos)
 {
     QMenu menu;
-    QAction* actAddBlacklist = menu.addAction(tr("Add to blacklist"));
-    QAction* actAddWhitelist = menu.addAction(tr("Add to whitelist"));
+    QAction* actAddBlacklist = menu.addAction(tr("Добавить в чёрный список"));
+    QAction* actAddWhitelist = menu.addAction(tr("Добавить в белый список"));
 
     QTreeWidgetItem* item = ui->flashCookieTree->itemAt(pos);
 

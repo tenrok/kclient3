@@ -30,8 +30,8 @@ IeImporter::IeImporter(QObject* parent)
 
 QString IeImporter::description() const
 {
-    return BookmarksImporter::tr("Internet Explorer stores its bookmarks in <b>Favorites</b> folder. "
-                                 "This folder is usually located in");
+    return BookmarksImporter::tr("Internet Explorer хранит закладки в папке <b>Favorites</b>. "
+                                 "Эта папка обычно находится в");
 }
 
 QString IeImporter::standardPath() const
@@ -41,7 +41,7 @@ QString IeImporter::standardPath() const
 
 QString IeImporter::getPath(QWidget* parent)
 {
-    m_path = QFileDialog::getExistingDirectory(parent, BookmarksImporter::tr("Choose file..."), standardPath());
+    m_path = QFileDialog::getExistingDirectory(parent, BookmarksImporter::tr("Выберите файл..."), standardPath());
     return m_path;
 }
 
@@ -49,7 +49,7 @@ bool IeImporter::prepareImport()
 {
     QDir dir(m_path);
     if (!dir.exists()) {
-        setError(BookmarksImporter::tr("Directory does not exist."));
+        setError(BookmarksImporter::tr("Каталог не найден."));
         return false;
     }
 

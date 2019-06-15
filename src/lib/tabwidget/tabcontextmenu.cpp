@@ -85,8 +85,8 @@ void TabContextMenu::closeAllButCurrent()
 void TabContextMenu::closeToRight()
 {
     const QString label = m_options & HorizontalTabs
-            ? tr("Do you really want to close all tabs to the right?")
-            : tr("Do you really want to close all tabs to the bottom?");
+            ? tr("Вы действительно хотите закрыть все вкладки справа?")
+            : tr("Вы действительно хотите закрыть все вкладки снизу?");
 
     if (canCloseTabs(QLatin1String("AskOnClosingToRight"), tr("Закрыть вкладки"), label)) {
         emit closeToRight(m_clickedTab);
@@ -96,8 +96,8 @@ void TabContextMenu::closeToRight()
 void TabContextMenu::closeToLeft()
 {
     const QString label = m_options & HorizontalTabs
-            ? tr("Do you really want to close all tabs to the left?")
-            : tr("Do you really want to close all tabs to the top?");
+            ? tr("Вы действительно хотите закрыть все вкладки слева?")
+            : tr("Вы действительно хотите закрыть все вкладки сверху?");
 
     if (canCloseTabs(QLatin1String("AskOnClosingToLeft"), tr("Закрыть вкладки"), label)) {
         emit closeToLeft(m_clickedTab);

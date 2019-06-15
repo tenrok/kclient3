@@ -23,7 +23,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&lt;b&gt;Import Bookmarks&lt;/b&gt;</string>
+      <string>&lt;b&gt;Импортировать закладки&lt;/b&gt;</string>
      </property>
     </widget>
    </item>
@@ -47,7 +47,7 @@
            <string notr="true">Mozilla Firefox</string>
           </property>
           <property name="icon">
-           <iconset resource="../data/icons.qrc">
+           <iconset resource="../../data/icons.qrc">
             <normaloff>:/icons/browsers/firefox.png</normaloff>:/icons/browsers/firefox.png</iconset>
           </property>
          </item>
@@ -56,7 +56,7 @@
            <string notr="true">Google Chrome</string>
           </property>
           <property name="icon">
-           <iconset resource="../data/icons.qrc">
+           <iconset resource="../../data/icons.qrc">
             <normaloff>:/icons/browsers/chrome.png</normaloff>:/icons/browsers/chrome.png</iconset>
           </property>
          </item>
@@ -65,7 +65,7 @@
            <string notr="true">Opera</string>
           </property>
           <property name="icon">
-           <iconset resource="../data/icons.qrc">
+           <iconset resource="../../data/icons.qrc">
             <normaloff>:/icons/browsers/opera.png</normaloff>:/icons/browsers/opera.png</iconset>
           </property>
          </item>
@@ -74,7 +74,7 @@
            <string>Internet Explorer</string>
           </property>
           <property name="icon">
-           <iconset resource="../data/icons.qrc">
+           <iconset resource="../../data/icons.qrc">
             <normaloff>:/icons/browsers/ie.png</normaloff>:/icons/browsers/ie.png</iconset>
           </property>
          </item>
@@ -83,7 +83,7 @@
            <string>Html File</string>
           </property>
           <property name="icon">
-           <iconset resource="../data/icons.qrc">
+           <iconset resource="../../data/icons.qrc">
             <normaloff>:/icons/browsers/html.svg</normaloff>:/icons/browsers/html.svg</iconset>
           </property>
          </item>
@@ -92,7 +92,7 @@
        <item row="0" column="0" colspan="3">
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Choose from which you want to import bookmarks:</string>
+          <string>Выберите браузер, из которого Вы хотите импортировать закладки:</string>
          </property>
         </widget>
        </item>
@@ -289,7 +289,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../data/icons.qrc"/>
+  <include location="../../data/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

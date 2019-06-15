@@ -29,8 +29,8 @@ HtmlImporter::HtmlImporter(QObject* parent)
 
 QString HtmlImporter::description() const
 {
-    return BookmarksImporter::tr("You can import bookmarks from any browser that supports HTML exporting. "
-                                 "This file has usually these suffixes");
+    return BookmarksImporter::tr("Вы можете импортировать заклади из любого браузера, который поддерживает экспорт в HTML. "
+                                 "Этот файл обычно имеет эти суффиксы");
 }
 
 QString HtmlImporter::standardPath() const
@@ -40,8 +40,8 @@ QString HtmlImporter::standardPath() const
 
 QString HtmlImporter::getPath(QWidget* parent)
 {
-    const QString filter = BookmarksImporter::tr("HTML Bookmarks") + QLatin1String(" (*.htm *.html)");
-    m_path = QFileDialog::getOpenFileName(parent, BookmarksImporter::tr("Choose file..."), QDir::homePath(), filter);
+    const QString filter = BookmarksImporter::tr("HTML-закладки") + QLatin1String(" (*.htm *.html)");
+    m_path = QFileDialog::getOpenFileName(parent, BookmarksImporter::tr("Выберите файл..."), QDir::homePath(), filter);
     return m_path;
 }
 
@@ -50,7 +50,7 @@ bool HtmlImporter::prepareImport()
     m_file.setFileName(m_path);
 
     if (!m_file.open(QFile::ReadOnly)) {
-        setError(BookmarksImporter::tr("Unable to open file."));
+        setError(BookmarksImporter::tr("Невозможно открыть файл."));
         return false;
     }
 

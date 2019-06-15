@@ -205,11 +205,11 @@ void Bookmarks::init()
 
     m_folderToolbar = new BookmarkItem(BookmarkItem::Folder, m_root);
     m_folderToolbar->setTitle(tr("Панель закладок"));
-    m_folderToolbar->setDescription(tr("Bookmarks located in Bookmarks Toolbar"));
+    m_folderToolbar->setDescription(tr("Закладки находятся на панели закладок"));
 
     m_folderMenu = new BookmarkItem(BookmarkItem::Folder, m_root);
     m_folderMenu->setTitle(tr("Меню закладок"));
-    m_folderMenu->setDescription(tr("Bookmarks located in Bookmarks Menu"));
+    m_folderMenu->setDescription(tr("Закладки находятся в меню закладок"));
 
     m_folderUnsorted = new BookmarkItem(BookmarkItem::Folder, m_root);
     m_folderUnsorted->setTitle(tr("Несортированные закладки"));

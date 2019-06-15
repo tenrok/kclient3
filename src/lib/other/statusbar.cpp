@@ -247,7 +247,7 @@ void StatusBar::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::RightButton) {
         QMenu context;
-        context.addAction(tr("Hide"), m_window, &BrowserWindow::toggleShowStatusBar);
+        context.addAction(tr("Скрыть"), m_window, &BrowserWindow::toggleShowStatusBar);
         context.exec(QCursor::pos());
     }
 

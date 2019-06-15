@@ -148,7 +148,7 @@ void Updater::downCompleted()
         Version updated(html);
 
         if (current.isValid && updated.isValid && current < updated) {
-            mApp->desktopNotifications()->showNotification(QIcon(":icons/kclient.svg").pixmap(48), tr("Update available"), tr("New version of KClient is ready to download."));
+            mApp->desktopNotifications()->showNotification(QIcon(":icons/kclient.svg").pixmap(48), tr("Доступно обновление"), tr("Новая версия KClient готова к загрузке."));
         }
     }
 
@@ -157,5 +157,5 @@ void Updater::downCompleted()
 
 void Updater::downloadNewVersion()
 {
-    m_window->tabWidget()->addView(QUrl::fromEncoded(QByteArray(Qz::WWWADDRESS) + QByteArray("/download")), tr("Update"), Qz::NT_NotSelectedTab);
+    m_window->tabWidget()->addView(QUrl::fromEncoded(QByteArray(Qz::WWWADDRESS) + QByteArray("/download")), tr("Обновление"), Qz::NT_NotSelectedTab);
 }

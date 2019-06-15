@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Bookmarks</string>
+   <string>Закладки</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -29,7 +29,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="labelTitle">
         <property name="text">
-         <string>Title:</string>
+         <string>Заголовок:</string>
         </property>
        </widget>
       </item>
@@ -39,7 +39,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="labelAddress">
         <property name="text">
-         <string>Address:</string>
+         <string>Адрес:</string>
         </property>
        </widget>
       </item>
@@ -49,7 +49,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="labelKeyword">
         <property name="text">
-         <string>Keyword:</string>
+         <string>Ключевое слово:</string>
         </property>
        </widget>
       </item>
@@ -59,7 +59,7 @@
       <item row="3" column="0">
        <widget class="QLabel" name="labelDescription">
         <property name="text">
-         <string>Description</string>
+         <string>Описание:</string>
         </property>
        </widget>
       </item>

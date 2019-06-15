@@ -168,7 +168,7 @@ void CookieManager::currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem
     ui->server->setText(cookie.domain());
     ui->path->setText(cookie.path());
     cookie.isSecure() ? ui->secure->setText(tr("Только безопасные")) : ui->secure->setText(tr("Все соединения"));
-    cookie.isSessionCookie() ? ui->expiration->setText(tr("Session cookie")) : ui->expiration->setText(QDateTime(cookie.expirationDate()).toString("hh:mm:ss dddd d. MMMM yyyy"));
+    cookie.isSessionCookie() ? ui->expiration->setText(tr("Сессионные cookie")) : ui->expiration->setText(QDateTime(cookie.expirationDate()).toString("hh:mm:ss dddd d. MMMM yyyy"));
 
     ui->removeOne->setText(tr("Удалить cookie"));
 }
@@ -182,7 +182,7 @@ void CookieManager::addWhitelist()
     }
 
     if (!ui->blackList->findItems(server, Qt::MatchFixedString).isEmpty()) {
-        QMessageBox::information(this, tr("Already blacklisted!"), tr("The server \"%1\" is already in blacklist, please remove it first.").arg(server));
+        QMessageBox::information(this, tr("Уже в черном списке!"), tr("Сервер \"%1\" уже находится в чёрном списке, сначала удалите его.").arg(server));
         return;
     }
 
@@ -209,7 +209,7 @@ void CookieManager::addBlacklist(const QString &server)
     }
 
     if (!ui->whiteList->findItems(server, Qt::MatchFixedString).isEmpty()) {
-        QMessageBox::information(this, tr("Already whitelisted!"), tr("The server \"%1\" is already in whitelist, please remove it first.").arg(server));
+        QMessageBox::information(this, tr("Уже в белом списке!"), tr("Сервер \"%1\" уже находится в белом списке, сначала удалите его.").arg(server));
         return;
     }
 

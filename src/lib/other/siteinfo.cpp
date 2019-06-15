@@ -154,7 +154,7 @@ void SiteInfo::imagesCustomContextMenuRequested(const QPoint &p)
 
     QMenu menu;
     menu.addAction(QIcon::fromTheme("edit-copy"), tr("Копировать расположение изображения"), this, SLOT(copyActionData()))->setData(item->text(1));
-    menu.addAction(tr("Copy Image Name"), this, SLOT(copyActionData()))->setData(item->text(0));
+    menu.addAction(tr("Копировать имя изображения"), this, SLOT(copyActionData()))->setData(item->text(0));
     menu.addSeparator();
     menu.addAction(QIcon::fromTheme("document-save"), tr("Сохранить изображение на диск"), this, SLOT(saveImage()));
     menu.exec(ui->treeImages->viewport()->mapToGlobal(p));

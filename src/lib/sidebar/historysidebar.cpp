@@ -82,12 +82,12 @@ void HistorySideBar::openUrlInNewPrivateWindow(const QUrl &url)
 void HistorySideBar::createContextMenu(const QPoint &pos)
 {
     QMenu menu;
-    QAction* actNewTab = menu.addAction(IconProvider::newTabIcon(), tr("Open in new tab"));
-    QAction* actNewWindow = menu.addAction(IconProvider::newWindowIcon(), tr("Open in new window"));
-    QAction* actNewPrivateWindow = menu.addAction(IconProvider::privateBrowsingIcon(), tr("Open in new private window"));
+    QAction* actNewTab = menu.addAction(IconProvider::newTabIcon(), tr("Открыть в новой вкладке"));
+    QAction* actNewWindow = menu.addAction(IconProvider::newWindowIcon(), tr("Открыть в новом окне"));
+    QAction* actNewPrivateWindow = menu.addAction(IconProvider::privateBrowsingIcon(), tr("Открыть в новом приватном окне"));
 
     menu.addSeparator();
-    QAction* actDelete = menu.addAction(QIcon::fromTheme(QSL("edit-delete")), tr("Delete"));
+    QAction* actDelete = menu.addAction(QIcon::fromTheme(QSL("edit-delete")), tr("Удалить"));
 
     connect(actNewTab, SIGNAL(triggered()), this, SLOT(openUrlInNewTab()));
     connect(actNewWindow, SIGNAL(triggered()), this, SLOT(openUrlInNewWindow()));

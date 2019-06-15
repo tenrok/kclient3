@@ -144,8 +144,8 @@ QByteArray AesInterface::decrypt(const QByteArray &cipherData, const QByteArray 
     }
 
     if (cipherSections.at(0).toInt() > AesInterface::VERSION) {
-        QMessageBox::information(0, tr("Warning!"), tr("Data has been encrypted with a newer version of KClient."
-                                 "\nPlease install latest version of KClient."));
+        QMessageBox::information(0, tr("Внимание!"), tr("Данные были зашифрованы в более новой версии KClient."
+                                 "\nПожалуйста, установите последнюю версию KClient."));
         return QByteArray();
     }
 

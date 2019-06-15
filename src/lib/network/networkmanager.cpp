@@ -85,8 +85,8 @@ bool NetworkManager::certificateError(const QWebEngineCertificateError &error, Q
         return true;
 
     QString title = tr("Ошибка SSL сертификата!");
-    QString text1 = tr("The page you are trying to access has the following errors in the SSL certificate:");
-    QString text2 = tr("Would you like to make an exception for this certificate?");
+    QString text1 = tr("Страница, к которой вы пытаетесь получить доступ, содержит следующие ошибки в сертификате SSL:");
+    QString text2 = tr("Хотите сделать исключение для этого сертификата?");
 
     QString message = QSL("<b>%1</b><p>%2</p><ul><li>%3</li></ul><p>%4</p>").arg(title, text1, error.errorDescription(), text2);
 
@@ -127,7 +127,7 @@ void NetworkManager::authentication(const QUrl &url, QAuthenticator *auth, QWidg
     QLineEdit* pass = new QLineEdit(dialog);
     pass->setEchoMode(QLineEdit::Password);
     QCheckBox* save = new QCheckBox(dialog);
-    save->setText(tr("Save username and password for this site"));
+    save->setText(tr("Сохранить имя пользователя и пароль для этого сайта"));
 
     QDialogButtonBox* box = new QDialogButtonBox(dialog);
     box->addButton(QDialogButtonBox::Ok);
@@ -135,8 +135,8 @@ void NetworkManager::authentication(const QUrl &url, QAuthenticator *auth, QWidg
     connect(box, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
     connect(box, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
 
-    label->setText(tr("A username and password are being requested by %1. "
-                      "The site says: \"%2\"").arg(url.host(), auth->realm().toHtmlEscaped()));
+    label->setText(tr("Имя пользователя и пароль запрашиваются %1. "
+                      "Сайт сообщил: \"%2\"").arg(url.host(), auth->realm().toHtmlEscaped()));
 
     formLa->addRow(label);
     formLa->addRow(userLab, user);
@@ -199,7 +199,7 @@ void NetworkManager::proxyAuthentication(const QString &proxyHost, QAuthenticato
     }
 
     QDialog* dialog = new QDialog(parent);
-    dialog->setWindowTitle(tr("Proxy authorization required"));
+    dialog->setWindowTitle(tr("Требуется авторизация прокси"));
 
     QFormLayout* formLa = new QFormLayout(dialog);
 
@@ -219,7 +219,7 @@ void NetworkManager::proxyAuthentication(const QString &proxyHost, QAuthenticato
     connect(box, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
     connect(box, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
 
-    label->setText(tr("A username and password are being requested by proxy %1. ").arg(proxyHost));
+    label->setText(tr("Имя пользователя и пароль запрашиваются прокси %1. ").arg(proxyHost));
     formLa->addRow(label);
     formLa->addRow(userLab, user);
     formLa->addRow(passLab, pass);

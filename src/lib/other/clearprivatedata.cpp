@@ -151,7 +151,7 @@ void ClearPrivateData::dialogAccepted()
     QApplication::restoreOverrideCursor();
 
     ui->clear->setEnabled(false);
-    ui->clear->setText(tr("Done"));
+    ui->clear->setText(tr("Готово"));
 
     QTimer::singleShot(1000, this, &QWidget::close);
 }
@@ -169,7 +169,7 @@ void ClearPrivateData::optimizeDb()
 
     mApp->restoreOverrideCursor();
 
-    QMessageBox::information(this, tr("Database Optimized"), tr("Database successfully optimized.<br/><br/><b>Database Size Before: </b>%1<br/><b>Database Size After: </b>%2").arg(sizeBefore, sizeAfter));
+    QMessageBox::information(this, tr("База данных оптимизирована"), tr("База данных успешно оптимизирована.<br/><br/><b>Размер базы данных до: </b>%1<br/><b>Размер базы данных после: </b>%2").arg(sizeBefore, sizeAfter));
 }
 
 void ClearPrivateData::showCookieManager()

@@ -40,7 +40,7 @@
 // BookmarksFoldersMenu
 BookmarksFoldersMenu::BookmarksFoldersMenu(QWidget* parent)
     : QMenu(parent)
-    , m_selectedFolder(0)
+    , m_selectedFolder(nullptr)
 {
     init();
 }
@@ -73,7 +73,7 @@ void BookmarksFoldersMenu::init()
 
 void BookmarksFoldersMenu::createMenu(QMenu* menu, BookmarkItem* parent)
 {
-    QAction* act = menu->addAction(tr("Choose %1").arg(parent->title()));
+    QAction* act = menu->addAction(tr("Выберите %1").arg(parent->title()));
     act->setData(QVariant::fromValue<void*>(static_cast<void*>(parent)));
     connect(act, &QAction::triggered, this, &BookmarksFoldersMenu::folderChoosed);
 
@@ -149,11 +149,11 @@ bool BookmarksTools::addBookmarkDialog(QWidget* parent, const QUrl &url, const Q
     layout->addWidget(folderButton);
     layout->addWidget(box);
 
-    label->setText(Bookmarks::tr("Choose name and location of this bookmark."));
+    label->setText(Bookmarks::tr("Выберите название и размещение этой закладки."));
     edit->setText(title);
     edit->setCursorPosition(0);
     dialog->setWindowIcon(IconProvider::iconForUrl(url));
-    dialog->setWindowTitle(Bookmarks::tr("Add New Bookmark"));
+    dialog->setWindowTitle(Bookmarks::tr("Добавление новой закладки"));
 
     QSize size = dialog->size();
     size.setWidth(350);
@@ -193,8 +193,8 @@ bool BookmarksTools::bookmarkAllTabsDialog(QWidget* parent, TabWidget* tabWidget
     layout->addWidget(folderButton);
     layout->addWidget(box);
 
-    label->setText(Bookmarks::tr("Choose folder for bookmarks:"));
-    dialog->setWindowTitle(Bookmarks::tr("Bookmark All Tabs"));
+    label->setText(Bookmarks::tr("Выберите папку для закладок:"));
+    dialog->setWindowTitle(Bookmarks::tr("Добавить в закладки все вкладки"));
 
     QSize size = dialog->size();
     size.setWidth(350);
@@ -234,20 +234,20 @@ bool BookmarksTools::editBookmarkDialog(QWidget* parent, BookmarkItem *item)
     QObject::connect(box, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
     QObject::connect(box, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
 
-    layout->addRow(Bookmarks::tr("Title:"), title);
+    layout->addRow(Bookmarks::tr("Заголовок:"), title);
     title->setText(item->title());
     if (!item->isFolder()) {
-        layout->addRow(Bookmarks::tr("Address:"), address);
+        layout->addRow(Bookmarks::tr("Адрес:"), address);
         address->setText(item->urlString());
-        layout->addRow(Bookmarks::tr("Keyword:"), keyword);
+        layout->addRow(Bookmarks::tr("Ключевое слово:"), keyword);
         keyword->setText(item->keyword());
     }
-    layout->addRow(Bookmarks::tr("Description:"), description);
+    layout->addRow(Bookmarks::tr("Описание:"), description);
     description->document()->setPlainText(item->description());
     layout->addWidget(box);
 
     dialog->setWindowIcon(item->icon());
-    dialog->setWindowTitle(Bookmarks::tr("Edit Bookmark"));
+    dialog->setWindowTitle(Bookmarks::tr("Редактирование закладки"));
 
     dialog->exec();
 
@@ -338,7 +338,7 @@ void BookmarksTools::openFolderInTabs(BrowserWindow* window, BookmarkItem* folde
 
     if (showWarning) {
         const auto button = QMessageBox::warning(window, Bookmarks::tr("Подтверждение"),
-                                                 Bookmarks::tr("Are you sure you want to open all bookmarks from '%1' folder in tabs?").arg(folder->title()),
+                                                 Bookmarks::tr("Вы действительно хотите открыть все закладки из папки '%1' во вкладках?").arg(folder->title()),
                                                  QMessageBox::Yes | QMessageBox::No);
         if (button != QMessageBox::Yes) {
             return;

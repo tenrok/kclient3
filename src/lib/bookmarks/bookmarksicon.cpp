@@ -29,12 +29,12 @@
 
 BookmarksIcon::BookmarksIcon(QWidget* parent)
     : ClickableLabel(parent)
-    , m_view(0)
-    , m_bookmark(0)
+    , m_view(nullptr)
+    , m_bookmark(nullptr)
 {
     setObjectName("locationbar-bookmarkicon");
     setCursor(Qt::PointingHandCursor);
-    setToolTip(tr("Bookmark this Page"));
+    setToolTip(tr("Закладка для этой страницы"));
     setFocusPolicy(Qt::ClickFocus);
 
     connect(mApp->bookmarks(), SIGNAL(bookmarkAdded(BookmarkItem*)), this, SLOT(bookmarksChanged()));
@@ -60,7 +60,7 @@ void BookmarksIcon::checkBookmark(const QUrl &url, bool forceCheck)
     }
 
     QList<BookmarkItem*> items = mApp->bookmarks()->searchBookmarks(url);
-    m_bookmark = items.isEmpty() ? 0 : items.at(0);
+    m_bookmark = items.isEmpty() ? nullptr : items.at(0);
 
     if (m_bookmark || mApp->plugins()->speedDial()->pageForUrl(url).isValid()) {
         setBookmarkSaved();
@@ -97,7 +97,7 @@ void BookmarksIcon::setBookmarkSaved()
     setProperty("bookmarked", QVariant(true));
     style()->unpolish(this);
     style()->polish(this);
-    setToolTip(tr("Edit this bookmark"));
+    setToolTip(tr("Редактировать эту закладку"));
 }
 
 void BookmarksIcon::setBookmarkDisabled()
@@ -105,7 +105,7 @@ void BookmarksIcon::setBookmarkDisabled()
     setProperty("bookmarked", QVariant(false));
     style()->unpolish(this);
     style()->polish(this);
-    setToolTip(tr("Bookmark this Page"));
+    setToolTip(tr("Закладка для этой страницы"));
 }
 
 void BookmarksIcon::contextMenuEvent(QContextMenuEvent* ev)

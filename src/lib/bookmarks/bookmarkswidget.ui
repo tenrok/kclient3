@@ -17,7 +17,7 @@
    <item row="1" column="0">
     <widget class="QPushButton" name="bookmarksButton">
      <property name="text">
-      <string>Add to Bookmarks</string>
+      <string>Добавить в закладки</string>
      </property>
      <property name="flat">
       <bool>true</bool>
@@ -30,7 +30,7 @@
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="text">
-      <string>Add to Speed Dial</string>
+      <string>Добавить в быстрой доступ</string>
      </property>
      <property name="icon">
       <iconset>

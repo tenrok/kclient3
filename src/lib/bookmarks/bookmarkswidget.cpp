@@ -95,7 +95,7 @@ void BookmarksWidget::bookmarkEdited()
     }
 
     m_edited = true;
-    ui->bookmarksButton->setText(tr("Update Bookmark"));
+    ui->bookmarksButton->setText(tr("Обновить закладку"));
     ui->bookmarksButton->setFlat(true);
 }
 
@@ -109,16 +109,16 @@ void BookmarksWidget::init()
     const SpeedDial::Page page = m_speedDial->pageForUrl(m_view->url());
     if (page.url.isEmpty()) {
         ui->speeddialButton->setFlat(true);
-        ui->speeddialButton->setText(tr("Add to Speed Dial"));
+        ui->speeddialButton->setText(tr("Добавить в быстрый набор"));
     }
     else {
         ui->speeddialButton->setFlat(false);
-        ui->speeddialButton->setText(tr("Remove from Speed Dial"));
+        ui->speeddialButton->setText(tr("Удалить из быстрого набора"));
     }
 
     // Init Bookmarks button
     if (m_bookmark) {
-        ui->bookmarksButton->setText(tr("Remove from Bookmarks"));
+        ui->bookmarksButton->setText(tr("Удалить из закладок"));
         ui->bookmarksButton->setFlat(false);
 
         Q_ASSERT(m_bookmark->parent());

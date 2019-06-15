@@ -39,14 +39,14 @@ SiteInfoWidget::SiteInfoWidget(BrowserWindow* window, QWidget* parent)
 
     WebView* view = m_window->weView();
 
-    ui->titleLabel->setText(tr("<b>Site %1<b/>").arg(view->url().host()));
+    ui->titleLabel->setText(tr("<b>Сайт %1<b/>").arg(view->url().host()));
 
     if (view->url().scheme() == QL1S("https")) {
-        ui->secureLabel->setText(tr("Your connection to this site is <b>secured</b>."));
+        ui->secureLabel->setText(tr("Выше подключение к этому сайту <b>безопасно</b>."));
         ui->secureIcon->setPixmap(QPixmap(":/icons/locationbar/safe.png"));
     }
     else {
-        ui->secureLabel->setText(tr("Your connection to this site is <b>unsecured</b>."));
+        ui->secureLabel->setText(tr("Ваше подключение к этому сайту <b>не безопасно</b>."));
         ui->secureIcon->setPixmap(QPixmap(":/icons/locationbar/unsafe.png"));
     }
 
@@ -61,26 +61,26 @@ SiteInfoWidget::SiteInfoWidget(BrowserWindow* window, QWidget* parent)
     if (query.next()) {
         int count = query.value(0).toInt();
         if (count > 3) {
-            ui->historyLabel->setText(tr("This is your <b>%1</b> visit of this site.").arg(QString::number(count) + "."));
+            ui->historyLabel->setText(tr("Это ваше <b>%1</b> посещение этого сайта.").arg(QString::number(count) + "."));
             ui->historyIcon->setPixmap(QPixmap(":/icons/locationbar/visit3.png"));
         }
         else if (count == 0) {
-            ui->historyLabel->setText(tr("You have <b>never</b> visited this site before."));
+            ui->historyLabel->setText(tr("Вы <b>никогда</b> не посещали это сайт ранее."));
             ui->historyIcon->setPixmap(QPixmap(":/icons/locationbar/visit1.png"));
         }
         else {
             ui->historyIcon->setPixmap(QPixmap(":/icons/locationbar/visit2.png"));
             QString text;
             if (count == 1) {
-                text = tr("first");
+                text = tr("первый");
             }
             else if (count == 2) {
-                text = tr("second");
+                text = tr("второй");
             }
             else if (count == 3) {
-                text = tr("third");
+                text = tr("третий");
             }
-            ui->historyLabel->setText(tr("This is your <b>%1</b> visit of this site.").arg(text));
+            ui->historyLabel->setText(tr("Это ваше <b>%1</b> посещение этого сайта.").arg(text));
         }
     }
 
@@ -103,8 +103,8 @@ void SiteInfoWidget::updateProtocolHandler()
     const QUrl registeredUrl = mApp->protocolHandlerManager()->protocolHandlers().value(scheme);
 
     if (!scheme.isEmpty() && registeredUrl != page->registerProtocolHandlerRequestUrl()) {
-        ui->protocolHandlerLabel->setText(tr("Register as <b>%1</b> links handler").arg(page->registerProtocolHandlerRequestScheme()));
-        ui->protocolHandlerButton->setText(tr("Register"));
+        ui->protocolHandlerLabel->setText(tr("Зарегистрировать как <b>%1</b> обработчик ссылок").arg(page->registerProtocolHandlerRequestScheme()));
+        ui->protocolHandlerButton->setText(tr("Регистрация"));
     } else {
         ui->protocolHandlerLabel->hide();
         ui->protocolHandlerButton->hide();

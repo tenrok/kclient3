@@ -36,31 +36,31 @@ HTML5PermissionsNotification::HTML5PermissionsNotification(const QUrl &origin, Q
 
     ui->close->setIcon(IconProvider::standardIcon(QStyle::SP_DialogCloseButton));
 
-    const QString site = m_origin.host().isEmpty() ? tr("this site") : QString("<b>%1</b>").arg(m_origin.host());
+    const QString site = m_origin.host().isEmpty() ? tr("этот сайт") : QString("<b>%1</b>").arg(m_origin.host());
 
     switch (feature) {
     case QWebEnginePage::Notifications:
-        ui->textLabel->setText(tr("Allow %1 to show desktop notifications?").arg(site));
+        ui->textLabel->setText(tr("Разрешить %1 показывать экранные уведомления?").arg(site));
         break;
 
     case QWebEnginePage::Geolocation:
-        ui->textLabel->setText(tr("Allow %1 to locate your position?").arg(site));
+        ui->textLabel->setText(tr("Разрешить %1 определять вашу геолокацию?").arg(site));
         break;
 
     case QWebEnginePage::MediaAudioCapture:
-        ui->textLabel->setText(tr("Allow %1 to use your microphone?").arg(site));
+        ui->textLabel->setText(tr("Разрешить %1 доступ к вашему микрофону?").arg(site));
         break;
 
     case QWebEnginePage::MediaVideoCapture:
-        ui->textLabel->setText(tr("Allow %1 to use your camera?").arg(site));
+        ui->textLabel->setText(tr("Разрешить %1 доступ к вашей камере?").arg(site));
         break;
 
     case QWebEnginePage::MediaAudioVideoCapture:
-        ui->textLabel->setText(tr("Allow %1 to use your microphone and camera?").arg(site));
+        ui->textLabel->setText(tr("Разрешить %1 доступ к вашим микрофону и камере?").arg(site));
         break;
 
     case QWebEnginePage::MouseLock:
-        ui->textLabel->setText(tr("Allow %1 to hide your pointer?").arg(site));
+        ui->textLabel->setText(tr("Разрешить %1 скрывать указатель?").arg(site));
         break;
 
     default:

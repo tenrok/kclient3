@@ -107,9 +107,9 @@ bool RegisterQAppAssociation::registerAppCapabilities()
         capabilitiesKey = regLocalMachine.value("Software/RegisteredApplications/" + _appRegisteredName).toString();
 
         if (capabilitiesKey.isEmpty()) {
-            QMessageBox::warning(mApp->getWindow(), tr("Warning!"),
-                                 tr("There are some problems. Please, reinstall KClient.\n"
-                                    "Maybe relaunch with administrator right do a magic for you! ;)"));
+            QMessageBox::warning(mApp->getWindow(), tr("Внимание!"),
+                                 tr("Есть некоторые проблемы. Пожалуйста, переустановите KClient.\n"
+                                    "Может быть, после перезапуска с правами администратора свершится чудо! ;)"));
             return false;
         }
     }
@@ -262,7 +262,7 @@ void RegisterQAppAssociation::registerAllAssociation()
 #ifndef __MINGW32__
         // On Windows Vista or newer for updating icons 'pAAR->SetAppAsDefault()'
         // calls 'SHChangeNotify()'. Thus, we just need care about older Windows.
-        SHChangeNotify(SHCNE_ASSOCCHANGED, SHCNF_FLUSHNOWAIT, 0 , 0);
+        SHChangeNotify(SHCNE_ASSOCCHANGED, SHCNF_FLUSHNOWAIT, nullptr , nullptr);
 #endif
     }
 }

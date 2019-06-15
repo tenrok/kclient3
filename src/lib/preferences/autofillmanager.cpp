@@ -332,7 +332,7 @@ void AutoFillManager::slotImportPasswords()
     bool status = mApp->autoFill()->importPasswords(file.readAll());
     file.close();
 
-    ui->importExportLabel->setText(status ? tr("Импорт завершён удачно") : tr("Ошибка при импорте!"));
+    ui->importExportLabel->setText(status ? tr("Импорт завершён успешно") : tr("Ошибка при импорте!"));
     loadPasswords();
 
     QApplication::restoreOverrideCursor();
@@ -352,7 +352,7 @@ void AutoFillManager::slotExportPasswords()
     file.write(mApp->autoFill()->exportPasswords());
     file.close();
 
-    ui->importExportLabel->setText(tr("Экспорт завершён удачно"));
+    ui->importExportLabel->setText(tr("Экспорт завершён успешно"));
 
     QApplication::restoreOverrideCursor();
 }

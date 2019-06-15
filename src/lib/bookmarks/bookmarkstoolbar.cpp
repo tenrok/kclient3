@@ -35,7 +35,7 @@ BookmarksToolbar::BookmarksToolbar(BrowserWindow* window, QWidget* parent)
     : QWidget(parent)
     , m_window(window)
     , m_bookmarks(mApp->bookmarks())
-    , m_clickedBookmark(0)
+    , m_clickedBookmark(nullptr)
     , m_dropRow(-1)
 {
     setObjectName("bookmarksbar");
@@ -66,7 +66,7 @@ BookmarksToolbar::BookmarksToolbar(BrowserWindow* window, QWidget* parent)
 void BookmarksToolbar::contextMenuRequested(const QPoint &pos)
 {
     BookmarksToolbarButton* button = buttonAt(pos);
-    m_clickedBookmark = button ? button->bookmark() : 0;
+    m_clickedBookmark = button ? button->bookmark() : nullptr;
 
     QMenu menu;
     QAction* actNewTab = menu.addAction(IconProvider::newTabIcon(), tr("Открыть в новой вкладке"));

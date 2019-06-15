@@ -37,7 +37,7 @@
 BookmarksToolbarButton::BookmarksToolbarButton(BookmarkItem* bookmark, QWidget* parent)
     : QPushButton(parent)
     , m_bookmark(bookmark)
-    , m_window(0)
+    , m_window(nullptr)
     , m_showOnlyIcon(false)
 {
     init();

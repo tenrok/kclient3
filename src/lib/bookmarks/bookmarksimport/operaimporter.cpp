@@ -31,8 +31,8 @@ OperaImporter::OperaImporter(QObject* parent)
 
 QString OperaImporter::description() const
 {
-    return BookmarksImporter::tr("Opera stores its bookmarks in <b>bookmarks.adr</b> text file. "
-                                 "This file is usually located in");
+    return BookmarksImporter::tr("Opera хранить закладки в текстовом файле <b>bookmarks.adr</b>. "
+                                 "Этот файл обычно находится в");
 }
 
 QString OperaImporter::standardPath() const
@@ -46,7 +46,7 @@ QString OperaImporter::standardPath() const
 
 QString OperaImporter::getPath(QWidget* parent)
 {
-    m_path = QFileDialog::getOpenFileName(parent, BookmarksImporter::tr("Choose file..."), standardPath(), QStringLiteral("Bookmarks (*.adr)"));
+    m_path = QFileDialog::getOpenFileName(parent, BookmarksImporter::tr("Выберите файл..."), standardPath(), QStringLiteral("Bookmarks (*.adr)"));
     return m_path;
 }
 
@@ -55,19 +55,19 @@ bool OperaImporter::prepareImport()
     m_file.setFileName(m_path);
 
     if (!m_file.open(QFile::ReadOnly)) {
-        setError(BookmarksImporter::tr("Unable to open file."));
+        setError(BookmarksImporter::tr("Невозможно открыть файл."));
         return false;
     }
 
     m_stream.setDevice(&m_file);
 
     if (m_stream.readLine() != QLatin1String("Opera Hotlist version 2.0")) {
-        setError(BookmarksImporter::tr("File is not valid Opera bookmarks file!"));
+        setError(BookmarksImporter::tr("Недопустимый файл закладок Opera!"));
         return false;
     }
 
     if (!m_stream.readLine().startsWith(QLatin1String("Options: encoding = utf8"))) {
-        setError(BookmarksImporter::tr("Only UTF-8 encoded Opera bookmarks file is supported!"));
+        setError(BookmarksImporter::tr("Поддерживается только файл закладок Opera в кодировке UTF-8!"));
         return false;
     }
 

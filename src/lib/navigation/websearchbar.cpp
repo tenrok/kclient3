@@ -97,7 +97,7 @@ WebSearchBar::WebSearchBar(BrowserWindow* window)
     connect(m_openSearchEngine, &OpenSearchEngine::suggestions, this, &WebSearchBar::addSuggestions);
     connect(this, &QLineEdit::textEdited, m_openSearchEngine, &OpenSearchEngine::requestSuggestions);
 
-    editAction(PasteAndGo)->setText(tr("Paste And &Search"));
+    editAction(PasteAndGo)->setText(tr("Вставить и найти"));
     editAction(PasteAndGo)->setIcon(QIcon::fromTheme(QSL("edit-paste")));
     connect(editAction(PasteAndGo), &QAction::triggered, this, &WebSearchBar::pasteAndGo);
 
@@ -123,11 +123,11 @@ void WebSearchBar::aboutToShowMenu()
             if (title.isEmpty())
                 title = m_window->weView()->title();
 
-            menu->addAction(m_window->weView()->icon(), tr("Add %1 ...").arg(title), this, &WebSearchBar::addEngineFromAction)->setData(url);
+            menu->addAction(m_window->weView()->icon(), tr("Добавить %1 ...").arg(title), this, &WebSearchBar::addEngineFromAction)->setData(url);
         }
 
         menu->addSeparator();
-        menu->addAction(IconProvider::settingsIcon(), tr("Manage Search Engines"), this, &WebSearchBar::openSearchEnginesDialog);
+        menu->addAction(IconProvider::settingsIcon(), tr("Управление поисковыми системами"), this, &WebSearchBar::openSearchEnginesDialog);
     });
 }
 
@@ -261,7 +261,7 @@ void WebSearchBar::contextMenuEvent(QContextMenuEvent* event)
     act->setChecked(qzSettings->showWSBSearchSuggestions);
     connect(act, &QAction::triggered, this, &WebSearchBar::enableSearchSuggestions);
 
-    QAction* instantSearch = menu->addAction(tr("Search when engine changed"));
+    QAction* instantSearch = menu->addAction(tr("Поиск при изменении поисковой системы"));
     instantSearch->setCheckable(true);
     instantSearch->setChecked(qzSettings->searchOnEngineChange);
     connect(instantSearch, &QAction::triggered, this, &WebSearchBar::instantSearchChanged);

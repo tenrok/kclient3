@@ -137,7 +137,7 @@ void SessionManagerDialog::updateButtons()
     ui->cloneButton->setEnabled(item && !isBackup);
     ui->deleteButton->setEnabled(item && !isBackup && !isDefault && !isActive);
     ui->switchToButton->setEnabled(item && !isActive);
-    ui->switchToButton->setText(isBackup ? tr("Restore") : tr("Switch To"));
+    ui->switchToButton->setText(isBackup ? tr("Восстановить") : tr("Переключиться на"));
 }
 
 void SessionManagerDialog::updateItem(QTreeWidgetItem *item)

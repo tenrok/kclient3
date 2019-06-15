@@ -374,21 +374,21 @@ QString QzTools::alignTextToWidth(const QString &string, const QString &text, co
 QString QzTools::fileSizeToString(qint64 size)
 {
     if (size < 0) {
-        return QObject::tr("Unknown size");
+        return QObject::tr("Неизвестный размер");
     }
 
     double _size = size / 1024.0; // KB
     if (_size < 1000) {
-        return QString::number(_size > 1 ? _size : 1, 'f', 0) + " " + QObject::tr("KB");
+        return QString::number(_size > 1 ? _size : 1, 'f', 0) + " " + QObject::tr("КБ");
     }
 
     _size /= 1024; // MB
     if (_size < 1000) {
-        return QString::number(_size, 'f', 1) + " " + QObject::tr("MB");
+        return QString::number(_size, 'f', 1) + " " + QObject::tr("МБ");
     }
 
     _size /= 1024; // GB
-    return QString::number(_size, 'f', 2) + " " + QObject::tr("GB");
+    return QString::number(_size, 'f', 2) + " " + QObject::tr("ГБ");
 }
 
 QPixmap QzTools::createPixmapForSite(const QIcon &icon, const QString &title, const QString &url)
@@ -847,11 +847,11 @@ bool QzTools::startExternalProcess(const QString &executable, const QString &arg
 
     if (!success) {
         QString info = "<ul><li><b>%1</b>%2</li><li><b>%3</b>%4</li></ul>";
-        info = info.arg(QObject::tr("Executable: "), executable,
-                        QObject::tr("Arguments: "), arguments.join(QLatin1String(" ")));
+        info = info.arg(QObject::tr("Исполняемый файл: "), executable,
+                        QObject::tr("Параметры: "), arguments.join(QLatin1String(" ")));
 
-        QMessageBox::critical(0, QObject::tr("Cannot start external program"),
-                              QObject::tr("Cannot start external program! %1").arg(info));
+        QMessageBox::critical(0, QObject::tr("Невозможно запустить внешнюю программу"),
+                              QObject::tr("Невозможно запустить внешнюю программу! %1").arg(info));
     }
 
     return success;

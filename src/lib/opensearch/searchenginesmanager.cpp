@@ -313,7 +313,7 @@ void SearchEnginesManager::addEngineFromForm(const QVariantMap &formData, WebVie
         engine.url.replace(inputName + QL1S("=SEARCH"), inputName + QL1S("=%s"));
     }
 
-    EditSearchEngine dialog(SearchEnginesDialog::tr("Add Search Engine"), view);
+    EditSearchEngine dialog(SearchEnginesDialog::tr("Добавление поисковой системы"), view);
     dialog.setName(engine.name);
     dialog.setIcon(engine.icon);
     dialog.setUrl(engine.url);
@@ -399,15 +399,15 @@ void SearchEnginesManager::replyFinished()
 
     if (checkEngine(engine)) {
         addEngine(engine);
-        QMessageBox::information(0, tr("Search Engine Added"), tr("Search Engine \"%1\" has been successfully added.").arg(engine->name()));
+        QMessageBox::information(nullptr, tr("Поисковая система добавлена"), tr("Поисковая система \"%1\" была успешно добавлена.").arg(engine->name()));
     }
 }
 
 bool SearchEnginesManager::checkEngine(OpenSearchEngine* engine)
 {
     if (!engine->isValid()) {
-        QString errorString = tr("Search Engine is not valid!");
-        QMessageBox::warning(0, tr("Error"), tr("Error while adding Search Engine <br><b>Error Message: </b> %1").arg(errorString));
+        QString errorString = tr("Поисковая система не действительна!");
+        QMessageBox::warning(nullptr, tr("Ошибка"), tr("Ошибка при добавлении поисковой системы <br><b>Сообщение об ошибке: </b> %1").arg(errorString));
 
         return false;
     }

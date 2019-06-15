@@ -210,10 +210,10 @@ QString KClientSchemeReply::speeddialPage()
         dPage.replace(QLatin1String("%TITLE-EDIT%"), tr("Править"));
         dPage.replace(QLatin1String("%TITLE-REMOVE%"), tr("Удалить"));
         dPage.replace(QLatin1String("%TITLE-RELOAD%"), tr("Обновить"));
-        dPage.replace(QLatin1String("%TITLE-WARN%"), tr("Are you sure you want to remove this speed dial?"));
-        dPage.replace(QLatin1String("%TITLE-WARN-REL%"), tr("Are you sure you want to reload all speed dials?"));
+        dPage.replace(QLatin1String("%TITLE-WARN%"), tr("Вы уверены, что хотите удалить этот быстрый набор?"));
+        dPage.replace(QLatin1String("%TITLE-WARN-REL%"), tr("Вы уверены, что хотите обновить все быстрые наборы?"));
         dPage.replace(QLatin1String("%TITLE-FETCHTITLE%"), tr("Загрузить заголовок со страницы"));
-        dPage.replace(QLatin1String("%JAVASCRIPT-DISABLED%"), tr("SpeedDial requires enabled JavaScript."));
+        dPage.replace(QLatin1String("%JAVASCRIPT-DISABLED%"), tr("Быстрый набор требует JavaScript."));
         dPage.replace(QLatin1String("%URL%"), tr("Url"));
         dPage.replace(QLatin1String("%TITLE%"), tr("Заголовок"));
         dPage.replace(QLatin1String("%APPLY%"), tr("Применить"));
@@ -221,15 +221,15 @@ QString KClientSchemeReply::speeddialPage()
         dPage.replace(QLatin1String("%NEW-PAGE%"), tr("Новая страница"));
         dPage.replace(QLatin1String("%SETTINGS-TITLE%"), tr("Настройки быстрого доступа"));
         dPage.replace(QLatin1String("%TXT_PLACEMENT%"), tr("Размещение: "));
-        dPage.replace(QLatin1String("%TXT_AUTO%"), tr("Auto"));
-        dPage.replace(QLatin1String("%TXT_COVER%"), tr("Cover"));
-        dPage.replace(QLatin1String("%TXT_FIT%"), tr("Fit"));
-        dPage.replace(QLatin1String("%TXT_FWIDTH%"), tr("Fit Width"));
-        dPage.replace(QLatin1String("%TXT_FHEIGHT%"), tr("Fit Height"));
-        dPage.replace(QLatin1String("%TXT_NOTE%"), tr("Use custom wallpaper"));
-        dPage.replace(QLatin1String("%TXT_SELECTIMAGE%"), tr("Click to select image"));
-        dPage.replace(QLatin1String("%TXT_NRROWS%"), tr("Maximum pages in a row:"));
-        dPage.replace(QLatin1String("%TXT_SDSIZE%"), tr("Change size of pages:"));
+        dPage.replace(QLatin1String("%TXT_AUTO%"), tr("Автоматически"));
+        dPage.replace(QLatin1String("%TXT_COVER%"), tr("Заполнение"));
+        dPage.replace(QLatin1String("%TXT_FIT%"), tr("Подогнать"));
+        dPage.replace(QLatin1String("%TXT_FWIDTH%"), tr("Подогнать по ширине"));
+        dPage.replace(QLatin1String("%TXT_FHEIGHT%"), tr("Подогнать по высоте"));
+        dPage.replace(QLatin1String("%TXT_NOTE%"), tr("Использовать фоновое изображение"));
+        dPage.replace(QLatin1String("%TXT_SELECTIMAGE%"), tr("Щёлкните для выбора изображения"));
+        dPage.replace(QLatin1String("%TXT_NRROWS%"), tr("Максимум страниц в строке:"));
+        dPage.replace(QLatin1String("%TXT_SDSIZE%"), tr("Изменить размер страниц:"));
         dPage.replace(QLatin1String("%TXT_CNTRDLS%"), tr("Center speed dials"));
         dPage = QzTools::applyDirectionToPage(dPage);
     }
@@ -257,9 +257,9 @@ QString KClientSchemeReply::restorePage()
         rPage.replace(QLatin1String("%IMAGE%"), QzTools::pixmapToDataUrl(IconProvider::standardIcon(QStyle::SP_MessageBoxWarning).pixmap(45)).toString());
         rPage.replace(QLatin1String("%TITLE%"), tr("Восстановление сессии"));
         rPage.replace(QLatin1String("%OOPS%"), tr("Oops, KClient crashed."));
-        rPage.replace(QLatin1String("%APOLOGIZE%"), tr("We apologize for this. Would you like to restore the last saved state?"));
-        rPage.replace(QLatin1String("%TRY-REMOVING%"), tr("Try removing one or more tabs that you think cause troubles"));
-        rPage.replace(QLatin1String("%START-NEW%"), tr("Or you can start completely new session"));
+        rPage.replace(QLatin1String("%APOLOGIZE%"), tr("Мы приносим извинения за это. Вы хотите восстановить последнее сохраненное состояние?"));
+        rPage.replace(QLatin1String("%TRY-REMOVING%"), tr("Попробуйте удалить одну или несколько вкладок, которые, по вашему мнению, вызывают проблемы"));
+        rPage.replace(QLatin1String("%START-NEW%"), tr("Или вы можете начать совершенно новую сессию"));
         rPage.replace(QLatin1String("%WINDOW%"), tr("Окно"));
         rPage.replace(QLatin1String("%WINDOWS-AND-TABS%"), tr("Окна и вкладки"));
         rPage.replace(QLatin1String("%BUTTON-START-NEW%"), tr("Запустить новую сессию"));
@@ -282,10 +282,10 @@ QString KClientSchemeReply::configPage()
         cPage.replace(QLatin1String("%TITLE%"), tr("Информация о конфигурации"));
         cPage.replace(QLatin1String("%CONFIG%"), tr("Информация о конфигурации"));
         cPage.replace(QLatin1String("%INFORMATIONS-ABOUT-VERSION%"), tr("Информация о версии"));
-        cPage.replace(QLatin1String("%CONFIG-ABOUT%"), tr("This page contains information about KClient's current configuration - relevant for troubleshooting. Please include this information when submitting bug reports."));
-        cPage.replace(QLatin1String("%BROWSER-IDENTIFICATION%"), tr("Browser Identification"));
+        cPage.replace(QLatin1String("%CONFIG-ABOUT%"), tr("Эта страница содержит информацию о текущей конфигурации KClient - имеет отношение к устранению неполадок. Пожалуйста, включите эту информацию при отправке отчетов об ошибках."));
+        cPage.replace(QLatin1String("%BROWSER-IDENTIFICATION%"), tr("Идентификация браузера"));
         cPage.replace(QLatin1String("%PATHS%"), tr("Пути"));
-        cPage.replace(QLatin1String("%BUILD-CONFIG%"), tr("Build Configuration"));
+        cPage.replace(QLatin1String("%BUILD-CONFIG%"), tr("Конфигурация сборки"));
         cPage.replace(QLatin1String("%PREFS%"), tr("Настройки"));
         cPage.replace(QLatin1String("%OPTION%"), tr("Опция"));
         cPage.replace(QLatin1String("%VALUE%"), tr("Значение"));
@@ -321,7 +321,7 @@ QString KClientSchemeReply::configPage()
         cPage.replace(QLatin1String("%PATHS-TEXT%"),
                       QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Профиль"), DataPaths::currentProfilePath()) +
                       QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Настройки"), DataPaths::currentProfilePath() + "/settings.ini") +
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Сохранённая сесия"), SessionManager::defaultSessionPath()) +
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Сохранённая сессия"), SessionManager::defaultSessionPath()) +
                       QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Данные"), allPaths(DataPaths::AppData)) +
                       QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Темы"), allPaths(DataPaths::Themes)) +
                       QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Расширения"), allPaths(DataPaths::Plugins)));
@@ -343,7 +343,7 @@ QString KClientSchemeReply::configPage()
         QString portableBuild = mApp->isPortable() ? tr("<b>Включен</b>") : tr("Отключен");
 
         cPage.replace(QLatin1String("%BUILD-CONFIG-TEXT%"),
-                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Debug build"), debugBuild) +
+                      QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Отладочная сборка"), debugBuild) +
 #ifdef Q_OS_WIN
                       QString("<dt>%1</dt><dd>%2<dd>").arg(tr("Windows 7 API"), w7APIEnabled) +
 #endif
@@ -365,7 +365,7 @@ QString KClientSchemeReply::configPage()
     }
 
     if (pluginsString.isEmpty()) {
-        pluginsString = QString("<tr><td colspan=4 class=\"no-available-plugins\">%1</td></tr>").arg(tr("No available extensions."));
+        pluginsString = QString("<tr><td colspan=4 class=\"no-available-plugins\">%1</td></tr>").arg(tr("Нет доступных расширений."));
     }
 
     page.replace(QLatin1String("%PLUGINS-INFO%"), pluginsString);

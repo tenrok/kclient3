@@ -691,7 +691,7 @@ void WebView::createContextMenu(QMenu *menu, WebHitTestResult &hitTest)
         }
 
         if (menu->actions().isEmpty()) {
-            menu->addAction(tr("No suggestions"))->setEnabled(false);
+            menu->addAction(tr("Нет предложений"))->setEnabled(false);
         }
 
         menu->addSeparator();
@@ -930,7 +930,7 @@ void WebView::checkForForm(QAction *action, const QPoint &pos)
         if (!url.isEmpty() && (method == QL1S("get") || method == QL1S("post"))) {
             act->setVisible(true);
             act->setIcon(QIcon::fromTheme(QSL("edit-find"), QIcon(QSL(":icons/menu/search-icon.svg"))));
-            act->setText(tr("Create Search Engine"));
+            act->setText(tr("Создать поисковую систему"));
             connect(act.data(), &QAction::triggered, this, &WebView::createSearchEngine);
         }
     });

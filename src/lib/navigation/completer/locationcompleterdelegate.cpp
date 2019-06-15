@@ -154,7 +154,7 @@ void LocationCompleterDelegate::paint(QPainter* painter, const QStyleOptionViewI
         if (!opt.state.testFlag(QStyle::State_Selected) && !opt.state.testFlag(QStyle::State_MouseOver)) {
             link.clear();
         } else if (isVisitSearchItem && (!isWebSearch || m_forceVisitItem)) {
-            link = tr("Visit");
+            link = tr("Посетить");
         } else {
             QString searchEngineName = loadAction.searchEngine.name;
             if (searchEngineName.isEmpty()) {
@@ -194,7 +194,7 @@ void LocationCompleterDelegate::paint(QPainter* painter, const QStyleOptionViewI
 
         QRect textRect(linkRect);
         textRect.setX(textRect.x() + m_padding + 16 + m_padding);
-        viewItemDrawText(painter, &opt, textRect, tr("Switch to tab"), textPalette.color(colorLinkRole));
+        viewItemDrawText(painter, &opt, textRect, tr("Переключиться на вкладку"), textPalette.color(colorLinkRole));
     } else if (isVisitSearchItem || isSearchSuggestion) {
         viewItemDrawText(painter, &opt, linkRect, link, textPalette.color(colorLinkRole));
     } else {
@@ -218,7 +218,7 @@ QSize LocationCompleterDelegate::sizeHint(const QStyleOptionViewItem &option, co
 
         const QWidget* w = opt.widget;
         const QStyle* style = w ? w->style() : QApplication::style();
-        const int padding = style->pixelMetric(QStyle::PM_FocusFrameHMargin, 0) + 1;
+        const int padding = style->pixelMetric(QStyle::PM_FocusFrameHMargin, nullptr) + 1;
 
         m_padding = padding > 3 ? padding : 3;
         m_rowHeight = 4 * m_padding + qMax(16, opt.fontMetrics.height());

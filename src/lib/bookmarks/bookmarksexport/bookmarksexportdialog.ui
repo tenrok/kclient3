@@ -17,14 +17,14 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&lt;b&gt;Export Bookmarks&lt;/b&gt;</string>
+      <string>&lt;b&gt;Экспорт закладок&lt;/b&gt;</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Export options</string>
+      <string>Параметры экспорта</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
       <item row="1" column="1">
@@ -39,7 +39,7 @@
         <item>
          <widget class="QPushButton" name="chooseOutput">
           <property name="text">
-           <string>Choose...</string>
+           <string>Выберите...</string>
           </property>
          </widget>
         </item>
@@ -70,7 +70,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Output File:</string>
+         <string>Выходной файл:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -86,7 +86,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Format:</string>
+         <string>Формат:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

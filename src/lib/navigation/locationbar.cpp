@@ -45,7 +45,7 @@
 LocationBar::LocationBar(QWidget *parent)
     : LineEdit(parent)
     , m_window(nullptr)
-    , m_webView(0)
+    , m_webView(nullptr)
     , m_holdingAlt(false)
     , m_oldTextLength(0)
     , m_currentTextLength(0)
@@ -89,7 +89,7 @@ LocationBar::LocationBar(QWidget *parent)
     m_progressTimer->setSingleShot(true);
     connect(m_progressTimer, &QTimer::timeout, this, &LocationBar::hideProgress);
 
-    editAction(PasteAndGo)->setText(tr("Paste And &Go"));
+    editAction(PasteAndGo)->setText(tr("Вставить и перейти"));
     editAction(PasteAndGo)->setIcon(QIcon::fromTheme(QSL("edit-paste")));
     connect(editAction(PasteAndGo), &QAction::triggered, this, &LocationBar::pasteAndGo);
 

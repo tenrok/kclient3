@@ -43,7 +43,7 @@
    <item row="2" column="1" colspan="2">
     <widget class="SqueezeLabelV2" name="downloadInfo">
      <property name="text">
-      <string notr="true">Remaining 26 minutes - 339MB of 693 MB (350kB/s)</string>
+      <string notr="true">Осталось 26 минут - 339 МБ of 693 МБ (350 КБ/с)</string>
      </property>
     </widget>
    </item>
@@ -56,7 +56,16 @@
       </size>
      </property>
      <layout class="QHBoxLayout" name="progressFrame">
-      <property name="margin">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
        <number>0</number>
       </property>
       <item>

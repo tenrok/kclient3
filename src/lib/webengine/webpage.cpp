@@ -139,7 +139,7 @@ WebPage::~WebPage()
 
     if (m_runningLoop) {
         m_runningLoop->exit(1);
-        m_runningLoop = 0;
+        m_runningLoop = nullptr;
     }
 }
 
@@ -421,11 +421,11 @@ void WebPage::renderProcessTerminated(QWebEnginePage::RenderProcessTerminationSt
     QTimer::singleShot(0, this, [this]() {
         QString page = QzTools::readAllFileContents(":html/tabcrash.html");
         page.replace(QL1S("%IMAGE%"), QzTools::pixmapToDataUrl(IconProvider::standardIcon(QStyle::SP_MessageBoxWarning).pixmap(45)).toString());
-        page.replace(QL1S("%TITLE%"), tr("Failed loading page"));
-        page.replace(QL1S("%HEADING%"), tr("Failed loading page"));
-        page.replace(QL1S("%LI-1%"), tr("Something went wrong while loading this page."));
-        page.replace(QL1S("%LI-2%"), tr("Try reloading the page or closing some tabs to make more memory available."));
-        page.replace(QL1S("%RELOAD-PAGE%"), tr("Reload page"));
+        page.replace(QL1S("%TITLE%"), tr("Не удалось загрузить страницу"));
+        page.replace(QL1S("%HEADING%"), tr("Не удалось загрузить страницу"));
+        page.replace(QL1S("%LI-1%"), tr("При загрузке этой страницы что-то пошло не так."));
+        page.replace(QL1S("%LI-2%"), tr("Попробуйте перезагрузить страницу или закрыть некоторые вкладки, чтобы освободить больше памяти."));
+        page.replace(QL1S("%RELOAD-PAGE%"), tr("Перезагрузить страницу"));
         page = QzTools::applyDirectionToPage(page);
         setHtml(page.toUtf8(), url());
     });
@@ -562,7 +562,7 @@ bool WebPage::javaScriptPrompt(const QUrl &securityOrigin, const QString &msg, c
     if (eLoop.exec() == 1) {
         return result;
     }
-    m_runningLoop = 0;
+    m_runningLoop = nullptr;
 
     QString x = ui->lineEdit->text();
     bool _result = ui->buttonBox->buttonRole(clicked) == QDialogButtonBox::AcceptRole;
@@ -608,7 +608,7 @@ bool WebPage::javaScriptConfirm(const QUrl &securityOrigin, const QString &msg)
     if (eLoop.exec() == 1) {
         return false;
     }
-    m_runningLoop = 0;
+    m_runningLoop = nullptr;
 
     bool result = ui->buttonBox->buttonRole(clicked) == QDialogButtonBox::AcceptRole;
 
@@ -663,7 +663,7 @@ void WebPage::javaScriptAlert(const QUrl &securityOrigin, const QString &msg)
     if (eLoop.exec() == 1) {
         return;
     }
-    m_runningLoop = 0;
+    m_runningLoop = nullptr;
 
     m_blockAlerts = ui->preventAlerts->isChecked();
 

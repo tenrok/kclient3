@@ -109,7 +109,7 @@ int DownloadOptionsDialog::exec()
 void DownloadOptionsDialog::copyDownloadLink()
 {
     QApplication::clipboard()->setText(m_downloadItem->url().toString());
-    ui->copyDownloadLink->setText(tr("Download link copied."));
+    ui->copyDownloadLink->setText(tr("Адрес загрузки скопирован."));
 }
 
 void DownloadOptionsDialog::emitDialogFinished(int status)

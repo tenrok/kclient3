@@ -46,7 +46,7 @@ static QString titleForUrl(QString title, const QUrl &url)
         title = url.toString(QUrl::RemoveFragment);
     }
     if (title.isEmpty()) {
-        return NavigationBar::tr("Empty Page");
+        return NavigationBar::tr("Пустая страница");
     }
     return QzTools::truncatedText(title, 40);
 }
@@ -390,7 +390,7 @@ void NavigationBar::aboutToShowHistoryBackMenu()
     }
 
     m_menuBack->addSeparator();
-    m_menuBack->addAction(QIcon::fromTheme(QSL("edit-clear")), tr("Clear history"), this, &NavigationBar::clearHistory);
+    m_menuBack->addAction(QIcon::fromTheme(QSL("edit-clear")), tr("Очистить историю"), this, &NavigationBar::clearHistory);
 }
 
 void NavigationBar::aboutToShowHistoryNextMenu()
@@ -424,7 +424,7 @@ void NavigationBar::aboutToShowHistoryNextMenu()
     }
 
     m_menuForward->addSeparator();
-    m_menuForward->addAction(QIcon::fromTheme(QSL("edit-clear")), tr("Clear history"), this, &NavigationBar::clearHistory);
+    m_menuForward->addAction(QIcon::fromTheme(QSL("edit-clear")), tr("Очистить историю"), this, &NavigationBar::clearHistory);
 }
 
 void NavigationBar::aboutToShowToolsMenu()
@@ -461,7 +461,7 @@ void NavigationBar::contextMenuRequested(const QPoint &pos)
     QMenu menu;
     m_window->createToolbarsMenu(&menu);
     menu.addSeparator();
-    menu.addAction(IconProvider::settingsIcon(), tr("Configure Toolbar"), this, &NavigationBar::openConfigurationDialog);
+    menu.addAction(IconProvider::settingsIcon(), tr("Настроить панель"), this, &NavigationBar::openConfigurationDialog);
     menu.exec(mapToGlobal(pos));
 }
 

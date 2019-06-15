@@ -259,11 +259,11 @@ void DownloadManager::timerEvent(QTimerEvent* e)
         }
 
 #ifndef Q_OS_WIN
-        ui->speedLabel->setText(tr("%1% of %2 files (%3) %4 remaining").arg(QString::number(progress), QString::number(progresses.count()),
+        ui->speedLabel->setText(tr("%1% из %2 файлов (%3) %4 осталось").arg(QString::number(progress), QString::number(progresses.count()),
                                 DownloadItem::currentSpeedToString(speed),
                                 DownloadItem::remaingTimeToString(remaining)));
 #endif
-        setWindowTitle(tr("%1% - Download Manager").arg(progress));
+        setWindowTitle(tr("%1% - Менеджер загрузок").arg(progress));
 #ifdef Q_OS_WIN
         taskbarButton()->progress()->show();
         taskbarButton()->progress()->setValue(progress);
@@ -333,7 +333,7 @@ void DownloadManager::download(QWebEngineDownloadItem *downloadItem)
             break;
 
         case Save:
-            downloadPath = QFileDialog::getSaveFileName(mApp->activeWindow(), tr("Save file as..."), m_lastDownloadPath + QLatin1Char('/') + fileName);
+            downloadPath = QFileDialog::getSaveFileName(mApp->activeWindow(), tr("Сохранить файл как..."), m_lastDownloadPath + QLatin1Char('/') + fileName);
 
             if (!downloadPath.isEmpty()) {
                 m_lastDownloadPath = QFileInfo(downloadPath).absolutePath();
@@ -343,13 +343,13 @@ void DownloadManager::download(QWebEngineDownloadItem *downloadItem)
             break;
 
         case SavePage: {
-            const QString mhtml = tr("MIME HTML Archive (*.mhtml)");
-            const QString htmlSingle = tr("HTML Page, single (*.html)");
-            const QString htmlComplete = tr("HTML Page, complete (*.html)");
+            const QString mhtml = tr("MIME HTML архив (*.mhtml)");
+            const QString htmlSingle = tr("Только HTML страница (*.html)");
+            const QString htmlComplete = tr("HTML страница полностью (*.html)");
             const QString filter = QStringLiteral("%1;;%2;;%3").arg(mhtml, htmlSingle, htmlComplete);
 
             QString selectedFilter;
-            downloadPath = QFileDialog::getSaveFileName(mApp->activeWindow(), tr("Save page as..."),
+            downloadPath = QFileDialog::getSaveFileName(mApp->activeWindow(), tr("Сохранить страницу как..."),
                                                         m_lastDownloadPath + QLatin1Char('/') + fileName,
                                                         filter, &selectedFilter);
 
@@ -443,7 +443,7 @@ void DownloadManager::downloadFinished(bool success)
 
     if (downloadingAllFilesFinished) {
         if (success && qApp->activeWindow() != this) {
-            mApp->desktopNotifications()->showNotification(QIcon::fromTheme(QSL("download"), QIcon(QSL(":icons/other/download.svg"))).pixmap(48), tr("KClient: Download Finished"), tr("All files have been successfully downloaded."));
+            mApp->desktopNotifications()->showNotification(QIcon::fromTheme(QSL("download"), QIcon(QSL(":icons/other/download.svg"))).pixmap(48), tr("KClient: Загрузка завершена"), tr("Все файлы были удачно загружены."));
             if (!m_closeOnFinish) {
                 raise();
                 activateWindow();
@@ -498,7 +498,7 @@ void DownloadManager::closeEvent(QCloseEvent* e)
     if (mApp->windowCount() == 0) { // No main windows -> we are going to quit
         if (!canClose()) {
             QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Внимание"),
-                                                 tr("Are you sure you want to quit? All uncompleted downloads will be cancelled!"), QMessageBox::Yes | QMessageBox::No);
+                                                 tr("Вы точно хотите завершить? Все незавершённые загрузки будут отменены!"), QMessageBox::Yes | QMessageBox::No);
             if (button != QMessageBox::Yes) {
                 e->ignore();
                 return;

@@ -56,7 +56,7 @@ void HTML5PermissionsDialog::showFeaturePermissions(QWebEnginePage::Feature feat
     foreach (const QString &site, m_granted.value(feature)) {
         QTreeWidgetItem* item = new QTreeWidgetItem(ui->treeWidget);
         item->setText(0, site);
-        item->setText(1, tr("Allow"));
+        item->setText(1, tr("Разрешить"));
         item->setData(0, Qt::UserRole + 10, Allow);
         ui->treeWidget->addTopLevelItem(item);
     }
@@ -64,7 +64,7 @@ void HTML5PermissionsDialog::showFeaturePermissions(QWebEnginePage::Feature feat
     foreach (const QString &site, m_denied.value(feature)) {
         QTreeWidgetItem* item = new QTreeWidgetItem(ui->treeWidget);
         item->setText(0, site);
-        item->setText(1, tr("Deny"));
+        item->setText(1, tr("Запретить"));
         item->setData(0, Qt::UserRole + 10, Deny);
         ui->treeWidget->addTopLevelItem(item);
     }

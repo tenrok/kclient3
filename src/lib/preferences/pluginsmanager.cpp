@@ -181,7 +181,7 @@ void PluginsManager::itemChanged(QListWidgetItem* item)
 
     if (item->checkState() == Qt::Checked && !plugin.isLoaded()) {
         item->setCheckState(Qt::Unchecked);
-        QMessageBox::critical(this, tr("Error!"), tr("Cannot load extension!"));
+        QMessageBox::critical(this, tr("Ошибка!"), tr("Невозможно загрузить расширение!"));
     }
 
     item->setData(Qt::UserRole + 10, QVariant::fromValue(plugin));
