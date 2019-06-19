@@ -1,129 +1,130 @@
-image:
-  - Visual Studio 2017
-
-environment:
-  global:
-    KCLIENT_VER: 3.1.2
-    ARCH: x86
-    QMAKESPEC: win32-msvc
-    MAKETOOL: nmake
-    TOOLSDIR: C:\Qt\Tools\QtCreator
-  matrix:
-    - QT_DIR: C:\Qt\5.12.2\msvc2017
-    - ARCH: x64
-      QT_DIR: C:\Qt\5.12.2\msvc2017_64
-
 version: $(KCLIENT_VER).{build}
-
-# Branches to build
 branches:
   only:
-    - master
-
-# # Start builds on tags only
-# skip_non_tags: true
-
-# Skipping commits
-skip_commits:
-  files:
-    - README.md
-
-# cache:
- # - windows/dependencies
-
-build:
-  parallel: true
-  verbosity: detailed
-
-configuration:
-  - release
-
+  - master
+image: Visual Studio 2017
+configuration: release
+environment:
+  KCLIENT_VER: 3.1.3
+  ARCH: x86
+  QMAKESPEC: win32-msvc
+  MAKETOOL: nmake
+  TOOLSDIR: C:\Qt\Tools\QtCreator
+  matrix:
+  - QT_DIR: C:\Qt\5.12.2\msvc2017
+  - ARCH: x64
+    QT_DIR: C:\Qt\5.12.2\msvc2017_64
 install:
-  - set CPU=32
-  - IF /I "%ARCH%" == "x64" (set CPU=64)
-  - set OPENSSL_DIR="C:\OpenSSL-Win%CPU%"
-  - set ICU_DIR_NAME=icu4c-54_1-Win%CPU%-msvc10
-  - set ICU_DOWNLOAD_URL="http://download.icu-project.org/files/icu4c/54.1/%ICU_DIR_NAME%.zip"
-  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" %ARCH%
-  - set PATH=%QT_DIR%\bin;%TOOLSDIR%\bin;%OPENSSL_DIR%\bin;%CD%\bin;%PATH%
-  - echo "KClient BUILD %APPVEYOR_BUILD_VERSION%_%QMAKESPEC%_%CONFIGURATION%_%ARCH%"
+- cmd: >-
+    set CPU=32
 
+    IF /I "%ARCH%" == "x64" (set CPU=64)
+
+    set OPENSSL_DIR="C:\OpenSSL-Win%CPU%"
+
+    set ICU_DIR_NAME=icu4c-54_1-Win%CPU%-msvc10
+
+    set ICU_DOWNLOAD_URL="http://download.icu-project.org/files/icu4c/54.1/%ICU_DIR_NAME%.zip"
+
+    call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" %ARCH%
+
+    set PATH=%QT_DIR%\bin;%TOOLSDIR%\bin;%OPENSSL_DIR%\bin;%CD%\bin;%PATH%
+
+    echo "KClient BUILD %APPVEYOR_BUILD_VERSION%_%QMAKESPEC%_%CONFIGURATION%_%ARCH%"
 build_script:
-  - set APP_DIR=%CD%
-  - echo "Clone, compile and install ECM..."
-  # - git clone git://anongit.kde.org/extra-cmake-modules
-  - git clone https://github.com/KDE/extra-cmake-modules.git
-  - mkdir "%APP_DIR%\extra-cmake-modules\build"
-  - cd "%APP_DIR%\extra-cmake-modules\build"
-  - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "NMake Makefiles JOM" ..
-  - call %MAKETOOL%
-  - call %MAKETOOL% install
-  - if not exist "%APP_DIR%\build\bin" (mkdir "%APP_DIR%\build\bin")
-  - cd "%APP_DIR%\build"
-  - echo "Generating NMake Makefiles JOM using CMake..."
-  - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DOPENSSL_ROOT_DIR=%OPENSSL_DIR% -G "NMake Makefiles JOM" ..
-  - echo "Build KClient..."
-  - call %MAKETOOL%
+- cmd: >-
+    set APP_DIR=%CD%
 
-after_build:
-  # Prepare dependencies
-  - echo [Paths]> %APP_DIR%\build\bin\qt.conf && echo Plugins=".">> %APP_DIR%\build\bin\qt.conf
-  - copy %APP_DIR%\COPYING %APP_DIR%\build\bin\COPYRIGHT.txt
-  - if not exist "%APP_DIR%\windows\dependencies" (mkdir "%APP_DIR%\windows\dependencies")
-  - cd "%APP_DIR%\windows\dependencies"
-  - if not exist "%ICU_DIR_NAME%.zip" (appveyor DownloadFile %ICU_DOWNLOAD_URL%) else (echo "Use cached %ICU_DIR_NAME%.zip")
-  - if not exist "master.tar.gz" (appveyor DownloadFile "http://chromium.googlesource.com/chromium/deps/hunspell_dictionaries/+archive/master.tar.gz") else (echo "Use cached master.tar.gz")
-  - mkdir "%APP_DIR%\windows\wininstall"
-  - cd "%APP_DIR%\windows\wininstall"
-  # Prepare icu
-  - 7z x "%APP_DIR%\windows\dependencies\%ICU_DIR_NAME%.zip"
-  # Prepare qtwebengine_dictionaries
-  - mkdir "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries"
-  - cd "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries"
-  - 7z x "%APP_DIR%\windows\dependencies\master.tar.gz" && 7z x "master.tar"
-  - mkdir "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries\doc"
-  - move README* "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries\doc\"
-  - move COPYING* "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries\doc\"
-  - cd "%APP_DIR%\windows"
-  # Set paths
-  - set OPENSSL_BIN_DIR=%OPENSSL_DIR%\bin
-  - set MSVC_REDIST_DIR="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Redist\MSVC\14.16.27012\%ARCH%\Microsoft.VC141.CRT"
-  - IF /I "%ARCH%" == "x64" (set ICU_BIN_DIR="%APP_DIR%\windows\wininstall\icu\bin64") else (set ICU_BIN_DIR="%APP_DIR%\windows\wininstall\icu\bin")
-  - set QTWEBENGINE_DICTIONARIES_DIR="%APP_DIR%\windows\wininstall\qtwebengine_dictionaries"
-  - set KCLIENT_BIN_DIR=%APP_DIR%\build\bin
-  - set QT_BIN_DIR=%QT_DIR%\bin
-  - set QT_PLUGINS_DIR=%QT_DIR%\plugins
-  # Make installer
-  - call "C:\Program Files (x86)\Inno Setup 5\ISCC.exe" KClient.iss
+    echo "Clone, compile and install ECM..."
 
+    git clone https://github.com/KDE/extra-cmake-modules.git
+
+    mkdir "%APP_DIR%\extra-cmake-modules\build"
+
+    cd "%APP_DIR%\extra-cmake-modules\build"
+
+    cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "NMake Makefiles JOM" ..
+
+    call %MAKETOOL%
+
+    call %MAKETOOL% install
+
+    if not exist "%APP_DIR%\build\bin" (mkdir "%APP_DIR%\build\bin")
+
+    cd "%APP_DIR%\build"
+
+    echo "Generating NMake Makefiles JOM using CMake..."
+
+    cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DOPENSSL_ROOT_DIR=%OPENSSL_DIR% -G "NMake Makefiles JOM" ..
+
+    echo "Build KClient..."
+
+    call %MAKETOOL%
 artifacts:
-  - path: windows\KClient*.exe
-    name: KClient Installer (%ARCH%)
-
+- path: windows\KClient*.exe
+  name: KClient Installer (%ARCH%)
 deploy:
-  description: 'KClient $(KCLIENT_VER) Windows Installer Released'
-  provider: GitHub
+- provider: GitHub
+  description: KClient $(KCLIENT_VER) Windows Installer Released
   auth_token:
-    secure: nAZcMYsx5Zmo48uM1pKudu7G+qlWslyP4MHz5xin7U47TaqtfXYR5zVzzCqnZDf7 # Your encrypted token from GitHub
-  artifact: /.*\.exe/ # KClient Installer
-  draft: false
-  prerelease: false
+    secure: nAZcMYsx5Zmo48uM1pKudu7G+qlWslyP4MHz5xin7U47TaqtfXYR5zVzzCqnZDf7
+  artifact: /.*\.exe/
   on:
-    branch: master          # Release from master branch only
-    appveyor_repo_tag: true # Deploy on tag push only
+    branch: master
+    appveyor_repo_tag: true
+notifications:
+- provider: Email
+  to:
+  - admin@kornet35.ru
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: false
+on_success:
+- cmd: >-
+    echo [Paths]> %APP_DIR%\build\bin\qt.conf && echo Plugins=".">> %APP_DIR%\build\bin\qt.conf
 
-# notifications:
-  # - provider: Email
-    # to:
-      # - admin@kornet35.ru
-    # on_build_success: true
-    # on_build_failure: true
-    # #on_build_status_changed: true
+    copy %APP_DIR%\COPYING %APP_DIR%\build\bin\COPYRIGHT.txt
 
-# # Remote desktop connection on init
-# init:
-  # - ps: IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+    if not exist "%APP_DIR%\windows\dependencies" (mkdir "%APP_DIR%\windows\dependencies")
 
-# # Remote desktop connection on finish and block build to not destroy VM
-# on_finish:
-  # - ps: $blockRdp = $true; IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+    cd "%APP_DIR%\windows\dependencies"
+
+    if not exist "%ICU_DIR_NAME%.zip" (appveyor DownloadFile %ICU_DOWNLOAD_URL%) else (echo "Use cached %ICU_DIR_NAME%.zip")
+
+    if not exist "master.tar.gz" (appveyor DownloadFile "http://chromium.googlesource.com/chromium/deps/hunspell_dictionaries/+archive/master.tar.gz") else (echo "Use cached master.tar.gz")
+
+    mkdir "%APP_DIR%\windows\wininstall"
+
+    cd "%APP_DIR%\windows\wininstall"
+
+    7z x "%APP_DIR%\windows\dependencies\%ICU_DIR_NAME%.zip"
+
+    mkdir "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries"
+
+    cd "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries"
+
+    7z x "%APP_DIR%\windows\dependencies\master.tar.gz" && 7z x "master.tar"
+
+    mkdir "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries\doc"
+
+    move README* "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries\doc\"
+
+    move COPYING* "%APP_DIR%\windows\wininstall\qtwebengine_dictionaries\doc\"
+
+    cd "%APP_DIR%\windows"
+
+    set OPENSSL_BIN_DIR=%OPENSSL_DIR%\bin
+
+    set MSVC_REDIST_DIR="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Redist\MSVC\14.16.27012\%ARCH%\Microsoft.VC141.CRT"
+
+    IF /I "%ARCH%" == "x64" (set ICU_BIN_DIR="%APP_DIR%\windows\wininstall\icu\bin64") else (set ICU_BIN_DIR="%APP_DIR%\windows\wininstall\icu\bin")
+
+    set QTWEBENGINE_DICTIONARIES_DIR="%APP_DIR%\windows\wininstall\qtwebengine_dictionaries"
+
+    set KCLIENT_BIN_DIR=%APP_DIR%\build\bin
+
+    set QT_BIN_DIR=%QT_DIR%\bin
+
+    set QT_PLUGINS_DIR=%QT_DIR%\plugins
+
+    call "C:\Program Files (x86)\Inno Setup 5\ISCC.exe" KClient.iss
