@@ -100,7 +100,6 @@ artifacts:
 deploy:
 - provider: GitHub
   description: 'KClient $(KCLIENT_VER) Windows Installer Released'
-  provider: GitHub
   auth_token:
     secure: nAZcMYsx5Zmo48uM1pKudu7G+qlWslyP4MHz5xin7U47TaqtfXYR5zVzzCqnZDf7 # Your encrypted token from GitHub
   artifact: /.*\.exe/ # KClient Installer
