@@ -210,7 +210,7 @@ void PopupWindow::loadStarted()
 {
     show();
     setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
-    raise();
+    //raise();
 
     m_progressBar->setValue(0);
     m_progressBar->show();
