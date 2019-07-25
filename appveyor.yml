@@ -1,15 +1,16 @@
 image: Visual Studio 2017
 
 environment:
-  KCLIENT_VER: 3.1.4
-  ARCH: x86
-  QMAKESPEC: win32-msvc
-  MAKETOOL: nmake
-  TOOLSDIR: C:\Qt\Tools\QtCreator
+  global:
+    KCLIENT_VER: 3.1.4
+    ARCH: x86
+    QMAKESPEC: win32-msvc
+    MAKETOOL: nmake
+    TOOLSDIR: C:\Qt\Tools\QtCreator
   matrix:
-  - QT_DIR: C:\Qt\5.12.2\msvc2017
-  - ARCH: x64
-    QT_DIR: C:\Qt\5.12.2\msvc2017_64
+    - QT_DIR: C:\Qt\5.12.2\msvc2017
+    - ARCH: x64
+      QT_DIR: C:\Qt\5.12.2\msvc2017_64
 
 version: $(KCLIENT_VER).{build}
 
