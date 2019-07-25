@@ -41,6 +41,7 @@ AppPublisher=KORNET LLC
 AppPublisherURL=http://kornet35.ru
 AppVerName={#AppVerName}
 AppVersion={#AppVersion}
+;ChangesAssociations=yes
 DefaultDirName={pf}\KORNET\{#AppName}
 DefaultGroupName=KORNET\{#AppName}
 MinVersion=6.1.7600
@@ -93,7 +94,7 @@ Name: "translations"; Description: "Переводы"; Types: full;
 [Files]
 Source: "{#KCLIENT_BIN_DIR}\plugins\*.dll"; DestDir: "{app}\{#AppVersion}\plugins"; Components: "plugins"; Flags: ignoreversion
 Source: "{#KCLIENT_BIN_DIR}\COPYRIGHT.txt"; DestDir: "{app}\{#AppVersion}"; Components: "main"
-Source: "{#KCLIENT_BIN_DIR}\kclient.exe"; DestDir: "{app}\{#AppVersion}"; Components: "main"; Flags: ignoreversion
+Source: "{#KCLIENT_BIN_DIR}\{#AppExeName}"; DestDir: "{app}\{#AppVersion}"; Components: "main"; Flags: ignoreversion
 Source: "{#KCLIENT_BIN_DIR}\KClientPrivate.dll"; DestDir: "{app}\{#AppVersion}"; Components: "main"; Flags: ignoreversion
 Source: "{#KCLIENT_BIN_DIR}\qt.conf"; DestDir: "{app}\{#AppVersion}"; Components: "main"
 Source: "{#OPENSSL_BIN_DIR}\libeay32.dll"; DestDir: "{app}\{#AppVersion}"; Components: "main"
@@ -147,6 +148,24 @@ Source: "{#QTWEBENGINE_DICTIONARIES_DIR}\ru*RU*.bdic"; DestDir: "{app}\{#AppVers
 [Icons]
 Name: "{group}\{#AppVerName}"; Filename: "{app}\{#AppVersion}\{#AppExeName}"; WorkingDir: "{app}\{#AppVersion}"
 Name: "{commondesktop}\{#AppVerName}"; Filename: "{app}\{#AppVersion}\{#AppExeName}"; WorkingDir: "{app}\{#AppVersion}"; Tasks: "desktopicon"
+
+[Registry]
+Root: HKCR; Subkey: "KClientHTML"; ValueType: string; ValueName: ""; ValueData: "Falkon HTML Document"; Flags: uninsdeletekey
+Root: HKCR; Subkey: "KClientHTML\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"                 
+Root: HKCR; Subkey: "KClientHTML\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#AppVersion}\{#AppExeName}"" ""%1"""
+Root: HKCR; Subkey: "KClientURL"; ValueType: string; ValueName: ""; ValueData: "Falkon HTML Document"; Flags: uninsdeletekey
+Root: HKCR; Subkey: "KClientURL\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"                 
+Root: HKCR; Subkey: "KClientURL\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#AppVersion}\{#AppExeName}"" ""%1"""
+Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationDescription"; ValueData: "KClient browser"
+Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationIcon"; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"
+Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationName"; ValueData: "{#AppName}"
+Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\FileAssociations"; ValueType: string; ValueName: ".htm"; ValueData: "KClientHTML"
+Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\FileAssociations"; ValueType: string; ValueName: ".html"; ValueData: "KClientHTML"
+Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "http"; ValueData: "KClientURL"
+Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "https"; ValueData: "KClientURL"
+Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "ftp"; ValueData: "KClientURL"
+Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\Startmenu"; ValueType: string; ValueName: "StartMenuInternet"; ValueData: "{app}\{#AppVersion}\{#AppExeName}"
+Root: HKLM; Subkey: "Software\RegisteredApplications"; ValueType: string; ValueName: "{#AppName}"; ValueData: "Software\KORNET\{#AppName}\Capabilities"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"
