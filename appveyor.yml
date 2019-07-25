@@ -1,10 +1,3 @@
-version: $(KCLIENT_VER).{build}
-
-# Branches to build
-branches:
-  only:
-  - master
-
 image: Visual Studio 2017
 
 environment:
@@ -18,6 +11,13 @@ environment:
   - ARCH: x64
     QT_DIR: C:\Qt\5.12.2\msvc2017_64
 
+version: $(KCLIENT_VER).{build}
+
+# Branches to build
+branches:
+  only:
+  - master
+
 # # Start builds on tags only
 # skip_non_tags: true
 
@@ -26,8 +26,8 @@ skip_commits:
   files:
   - README.md
 
-# cache:
- # - windows/dependencies
+cache:
+  - windows/dependencies
 
 build:
   parallel: true
@@ -109,13 +109,13 @@ deploy:
     branch: master # Release from master branch only
     appveyor_repo_tag: true # Deploy on tag push only
 
-notifications:
-- provider: Email
-  to:
-  - admin@kornet35.ru
-  on_build_success: true
-  on_build_failure: true
-  #on_build_status_changed: true
+# notifications:
+# - provider: Email
+  # to:
+  # - admin@kornet35.ru
+  # on_build_success: true
+  # on_build_failure: true
+  # #on_build_status_changed: true
 
 # # Remote desktop connection on init
 # init:
