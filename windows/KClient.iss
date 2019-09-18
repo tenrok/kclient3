@@ -150,10 +150,10 @@ Name: "{group}\{#AppVerName}"; Filename: "{app}\{#AppVersion}\{#AppExeName}"; Wo
 Name: "{commondesktop}\{#AppVerName}"; Filename: "{app}\{#AppVersion}\{#AppExeName}"; WorkingDir: "{app}\{#AppVersion}"; Tasks: "desktopicon"
 
 [Registry]
-Root: HKCR; Subkey: "KClientHTML"; ValueType: string; ValueName: ""; ValueData: "Falkon HTML Document"; Flags: uninsdeletekey
+Root: HKCR; Subkey: "KClientHTML"; ValueType: string; ValueName: ""; ValueData: "KClient HTML Document"; Flags: uninsdeletekey
 Root: HKCR; Subkey: "KClientHTML\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"                 
 Root: HKCR; Subkey: "KClientHTML\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#AppVersion}\{#AppExeName}"" ""%1"""
-Root: HKCR; Subkey: "KClientURL"; ValueType: string; ValueName: ""; ValueData: "Falkon HTML Document"; Flags: uninsdeletekey
+Root: HKCR; Subkey: "KClientURL"; ValueType: string; ValueName: ""; ValueData: "KClient HTML Document"; Flags: uninsdeletekey
 Root: HKCR; Subkey: "KClientURL\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"                 
 Root: HKCR; Subkey: "KClientURL\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#AppVersion}\{#AppExeName}"" ""%1"""
 Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationDescription"; ValueData: "KClient browser"

@@ -7,9 +7,9 @@ environment:
   MAKETOOL: nmake
   TOOLSDIR: C:\Qt\Tools\QtCreator
   matrix:
-  - QT_DIR: C:\Qt\5.12.2\msvc2017
+  - QT_DIR: C:\Qt\latest\msvc2017
   - ARCH: x64
-    QT_DIR: C:\Qt\5.12.2\msvc2017_64
+    QT_DIR: C:\Qt\latest\msvc2017_64
 
 version: $(KCLIENT_VER).{build}
 

@@ -1,7 +1,7 @@
 # KClient
-[![Build status](https://ci.appveyor.com/api/projects/status/94xj04do4ej4by9y?svg=true)](https://ci.appveyor.com/project/solodyagin/kclient3)
-[![Release](https://img.shields.io/github/release/solodyagin/kclient3.svg)](https://github.com/solodyagin/kclient3/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/solodyagin/kclient3/latest/total.svg?maxAge=3600)](https://github.com/solodyagin/kclient3/releases)
+[![Build status](https://ci.appveyor.com/api/projects/status/gjxpyq0v4dvb3xjg?svg=true)](https://ci.appveyor.com/project/tenrok/kclient3)
+[![Release](https://img.shields.io/github/release/tenrok/kclient3.svg)](https://github.com/tenrok/kclient3/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/tenrok/kclient3/latest/total.svg?maxAge=3600)](https://github.com/tenrok/kclient3/releases)
 
 KClient - веб-браузер, основанный на исходном коде Falkon.
 
@@ -27,4 +27,4 @@ KClient - веб-браузер, основанный на исходном ко
 
 ## Загрузки
 
-KClient можно скачать по ссылке [releases](https://github.com/solodyagin/kclient3/releases).
+KClient можно скачать по ссылке [releases](https://github.com/tenrok/kclient3/releases).
