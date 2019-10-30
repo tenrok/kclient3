@@ -14,9 +14,9 @@ environment:
 version: $(KCLIENT_VER).{build}
 
 # Branches to build
-branches:
-  only:
-  - master
+# branches:
+  # only:
+  # - master
 
 configuration: release
 
