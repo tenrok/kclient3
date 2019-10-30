@@ -222,7 +222,7 @@ Preferences::Preferences(BrowserWindow* window)
 
     // APPEREANCE
     settings.beginGroup("Browser-View-Settings");
-    ui->showStatusbar->setChecked(settings.value("showStatusBar", true).toBool());
+    ui->showStatusbar->setChecked(settings.value("showStatusBar", false).toBool());
     // NOTE: instantBookmarksToolbar and showBookmarksToolbar cannot be both enabled at the same time
     ui->instantBookmarksToolbar->setChecked(settings.value("instantBookmarksToolbar", false).toBool());
     ui->showBookmarksToolbar->setChecked(settings.value("showBookmarksToolbar", false).toBool());
