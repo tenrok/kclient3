@@ -439,7 +439,7 @@ BrowserWindow* MainApplication::createWindow(Qz::BrowserWindowType type, const Q
 
 MainApplication::AfterLaunch MainApplication::afterLaunch() const
 {
-    return static_cast<AfterLaunch>(Settings().value(QSL("Web-URL-Settings/afterLaunch"), RestoreSession).toInt());
+    return static_cast<AfterLaunch>(Settings().value(QSL("Web-URL-Settings/afterLaunch"), OpenHomePage).toInt());
 }
 
 void MainApplication::openSession(BrowserWindow* window, RestoreData &restoreData)
@@ -1068,7 +1068,7 @@ void MainApplication::checkDefaultWebBrowser()
     if (!associationManager()->isDefaultForAllCapabilities()) {
         CheckBoxDialog dialog(QMessageBox::Yes | QMessageBox::No, getWindow());
         dialog.setDefaultButton(QMessageBox::Yes);
-        dialog.setText(tr("KClient не является браузером по-умолчанию. Хотите сделать его браузером по-умолчанию?"));
+        dialog.setText(tr("KClient не является браузером по-умолчанию. Хотите сделать его таковым?"));
         dialog.setCheckBoxText(tr("Всегда выполнять эту проверку при запуске KClient."));
         dialog.setDefaultCheckState(Qt::Checked);
         dialog.setWindowTitle(tr("Браузер по-умолчанию"));

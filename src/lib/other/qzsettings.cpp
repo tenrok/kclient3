@@ -55,7 +55,7 @@ void QzSettings::loadSettings()
     settings.beginGroup("Browser-Tabs-Settings");
     newTabPosition = settings.value("OpenNewTabsSelected", true).toBool() ? Qz::NT_CleanSelectedTab : Qz::NT_CleanNotSelectedTab;
     tabsOnTop = settings.value("TabsOnTop", false).toBool();
-    openPopupsInTabs = settings.value("OpenPopupsInTabs", true).toBool();
+    openPopupsInTabs = settings.value("OpenPopupsInTabs", false).toBool();
     alwaysSwitchTabsWithWheel = settings.value("AlwaysSwitchTabsWithWheel", false).toBool();
     settings.endGroup();
 }

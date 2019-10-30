@@ -151,21 +151,41 @@ Name: "{commondesktop}\{#AppVerName}"; Filename: "{app}\{#AppVersion}\{#AppExeNa
 
 [Registry]
 Root: HKCR; Subkey: "KClientHTML"; ValueType: string; ValueName: ""; ValueData: "KClient HTML Document"; Flags: uninsdeletekey
+Root: HKCR; Subkey: "KClientHTML"; ValueType: string; ValueName: "FriendlyTypeName"; ValueData: "KClient HTML Document"
 Root: HKCR; Subkey: "KClientHTML\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"                 
 Root: HKCR; Subkey: "KClientHTML\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#AppVersion}\{#AppExeName}"" ""%1"""
-Root: HKCR; Subkey: "KClientURL"; ValueType: string; ValueName: ""; ValueData: "KClient HTML Document"; Flags: uninsdeletekey
+Root: HKCR; Subkey: "KClientURL"; ValueType: string; ValueName: ""; ValueData: "KClient URL"; Flags: uninsdeletekey
+Root: HKCR; Subkey: "KClientURL"; ValueType: string; ValueName: "FriendlyTypeName"; ValueData: "KClient URL"
+Root: HKCR; Subkey: "KClientURL"; ValueType: string; ValueName: "URL Protocol"; ValueData: ""
 Root: HKCR; Subkey: "KClientURL\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"                 
 Root: HKCR; Subkey: "KClientURL\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#AppVersion}\{#AppExeName}"" ""%1"""
-Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationDescription"; ValueData: "KClient browser"
-Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationIcon"; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"
-Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationName"; ValueData: "{#AppName}"
-Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\FileAssociations"; ValueType: string; ValueName: ".htm"; ValueData: "KClientHTML"
-Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\FileAssociations"; ValueType: string; ValueName: ".html"; ValueData: "KClientHTML"
-Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "http"; ValueData: "KClientURL"
-Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "https"; ValueData: "KClientURL"
-Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "ftp"; ValueData: "KClientURL"
-Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\Startmenu"; ValueType: string; ValueName: "StartMenuInternet"; ValueData: "{app}\{#AppVersion}\{#AppExeName}"
-Root: HKLM; Subkey: "Software\RegisteredApplications"; ValueType: string; ValueName: "{#AppName}"; ValueData: "Software\KORNET\{#AppName}\Capabilities"
+;Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationDescription"; ValueData: "KClient browser"
+;Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationIcon"; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"
+;Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationName"; ValueData: "{#AppName}"
+;Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\FileAssociations"; ValueType: string; ValueName: ".htm"; ValueData: "KClientHTML"
+;Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\FileAssociations"; ValueType: string; ValueName: ".html"; ValueData: "KClientHTML"
+;Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "http"; ValueData: "KClientURL"
+;Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "https"; ValueData: "KClientURL"
+;Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "ftp"; ValueData: "KClientURL"
+;Root: HKLM; Subkey: "Software\KORNET\{#AppName}\Capabilities\Startmenu"; ValueType: string; ValueName: "StartMenuInternet"; ValueData: "{app}\{#AppVersion}\{#AppExeName}"
+;Root: HKLM; Subkey: "Software\RegisteredApplications"; ValueType: string; ValueName: "{#AppName}"; ValueData: "Software\KORNET\{#AppName}\Capabilities"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}"; ValueType: string; ValueName: ""; ValueData: "{#AppName}"; Flags: uninsdeletekey
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationDescription"; ValueData: "KClient browser"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationIcon"; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities"; ValueType: string; ValueName: "ApplicationName"; ValueData: "{#AppName}"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities\FileAssociations"; ValueType: string; ValueName: ".htm"; ValueData: "KClientHTML"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities\FileAssociations"; ValueType: string; ValueName: ".html"; ValueData: "KClientHTML"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "http"; ValueData: "KClientURL"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "https"; ValueData: "KClientURL"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities\URLAssociations"; ValueType: string; ValueName: "ftp"; ValueData: "KClientURL"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities\Startmenu"; ValueType: string; ValueName: "StartMenuInternet"; ValueData: "{#AppName}"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppVersion}\{#AppExeName},0"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\InstallInfo"; ValueType: string; ValueName: "HideIconsCommand"; ValueData: """{app}\{#AppVersion}\{#AppExeName}"" --hideicons"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\InstallInfo"; ValueType: dword; ValueName: "IconsVisible"; ValueData: "1"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\InstallInfo"; ValueType: string; ValueName: "ReinstallCommand"; ValueData: """{app}\{#AppVersion}\{#AppExeName}"" --makedefaultbrowser"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\InstallInfo"; ValueType: string; ValueName: "ShowIconsCommand"; ValueData: """{app}\{#AppVersion}\{#AppExeName}"" --showicons"
+Root: HKLM; Subkey: "Software\Clients\StartMenuInternet\{#AppName}\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#AppVersion}\{#AppExeName}"""
+Root: HKLM; Subkey: "Software\RegisteredApplications"; ValueType: string; ValueName: "{#AppName}"; ValueData: "Software\Clients\StartMenuInternet\{#AppName}\Capabilities"; Flags: uninsdeletevalue
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"
