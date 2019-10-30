@@ -142,8 +142,8 @@ Preferences::Preferences(BrowserWindow* window)
     Settings settings;
     //GENERAL URLs
     settings.beginGroup("Web-URL-Settings");
-    m_homepage = settings.value("homepage", QUrl(QSL("kclient:start"))).toUrl();
-    m_newTabUrl = settings.value("newTabUrl", QUrl(QSL("kclient:speeddial"))).toUrl();
+    m_homepage = settings.value("homepage", QUrl(QSL("https://ks.kornet35.ru/"))).toUrl();
+    m_newTabUrl = settings.value("newTabUrl", QUrl(QSL("https://ks.kornet35.ru/"))).toUrl();
     ui->homepage->setText(m_homepage.toEncoded());
     ui->newTabUrl->setText(m_newTabUrl.toEncoded());
     settings.endGroup();
@@ -240,7 +240,7 @@ Preferences::Preferences(BrowserWindow* window)
     ui->activateLastTab->setChecked(settings.value("ActivateLastTabWhenClosingActual", true).toBool());
     ui->openNewTabAfterActive->setChecked(settings.value("newTabAfterActive", true).toBool());
     ui->openNewEmptyTabAfterActive->setChecked(settings.value("newEmptyTabAfterActive", true).toBool());
-    ui->openPopupsInTabs->setChecked(settings.value("OpenPopupsInTabs", true).toBool());
+    ui->openPopupsInTabs->setChecked(settings.value("OpenPopupsInTabs", false).toBool());
     ui->alwaysSwitchTabsWithWheel->setChecked(settings.value("AlwaysSwitchTabsWithWheel", false).toBool());
     ui->switchToNewTabs->setChecked(settings.value("OpenNewTabsSelected", true).toBool());
     ui->dontCloseOnLastTab->setChecked(settings.value("dontCloseWithOneTab", true).toBool());
