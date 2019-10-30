@@ -13,10 +13,10 @@ environment:
 
 version: $(KCLIENT_VER).{build}
 
-# Branches to build
-branches:
-  only:
-  - master
+# # Branches to build
+# branches:
+  # only:
+  # - master
 
 configuration: release
 
