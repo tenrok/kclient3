@@ -931,7 +931,7 @@ void MainApplication::loadSettings()
     webSettings->setAttribute(QWebEngineSettings::LocalStorageEnabled, settings.value(QSL("HTML5StorageEnabled"), true).toBool());
     webSettings->setAttribute(QWebEngineSettings::PluginsEnabled, settings.value(QSL("allowPlugins"), true).toBool());
     webSettings->setAttribute(QWebEngineSettings::JavascriptEnabled, settings.value(QSL("allowJavaScript"), true).toBool());
-    webSettings->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, settings.value(QSL("allowJavaScriptOpenWindow"), false).toBool());
+    webSettings->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, settings.value(QSL("allowJavaScriptOpenWindow"), true).toBool());
     webSettings->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, settings.value(QSL("allowJavaScriptAccessClipboard"), true).toBool());
     webSettings->setAttribute(QWebEngineSettings::LinksIncludedInFocusChain, settings.value(QSL("IncludeLinkInFocusChain"), false).toBool());
     webSettings->setAttribute(QWebEngineSettings::XSSAuditingEnabled, settings.value(QSL("XSSAuditing"), false).toBool());
@@ -944,7 +944,7 @@ void MainApplication::loadSettings()
     webSettings->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, false);
 
 #if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-    webSettings->setAttribute(QWebEngineSettings::AllowWindowActivationFromJavaScript, settings.value(QSL("allowJavaScriptActivateWindow"), false).toBool());
+    webSettings->setAttribute(QWebEngineSettings::AllowWindowActivationFromJavaScript, settings.value(QSL("allowJavaScriptActivateWindow"), true).toBool());
 #endif
 
 #if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 11, 0)
