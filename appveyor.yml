@@ -109,13 +109,13 @@ deploy:
     branch: master # Release from master branch only
     appveyor_repo_tag: true # Deploy on tag push only
 
-# notifications:
-# - provider: Email
-  # to:
-  # - admin@kornet35.ru
-  # on_build_success: true
-  # on_build_failure: true
-  # # #on_build_status_changed: true
+notifications:
+- provider: Email
+  to:
+  - admin@kornet35.ru
+  on_build_success: true
+  on_build_failure: true
+  #on_build_status_changed: true
 
 # # Remote desktop connection on init
 # init:
