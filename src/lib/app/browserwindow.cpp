@@ -575,7 +575,7 @@ void BrowserWindow::loadSettings()
 
     //Url settings
     settings.beginGroup(QSL("Web-URL-Settings"));
-    m_homepage = settings.value(QSL("homepage"), QUrl(QSL("https://volsmz.ru/ks/"))).toUrl();
+    m_homepage = settings.value(QSL("homepage"), QUrl(QSL("http://kornet35.ru/"))).toUrl();
     settings.endGroup();
 
     //Browser Window settings
